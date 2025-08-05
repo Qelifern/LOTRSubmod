@@ -1,8 +1,8 @@
 #!gfx:interface\auto_generated\lotr_goals.gfx
 
 focus_tree = {
-id = 'easterlings'
-country = {
+    id = easterlings
+    country = {
     factor = 0
     modifier = {
         add = 10
@@ -681,19 +681,74 @@ focus = {
 }
 
 focus = {
-	id = RHU_take_swamp
+	id = RHU_take_west
 	icon = GFX_goal_demand_sudetenland
 	x = 2
 	y = 1
 	relative_position_id = RHU_go_solo
 	prerequisite = { focus = RHU_go_solo focus = RHU_create_faction focus = RHU_join_the_dark_pact }
 	available = {
-		DAG = {
+		RHO = {
             exists = yes
             NOT = {
                 is_in_faction_with = RHU
             }
         }
+	}
+	ai_will_do = {
+        base = 25
+        modifier = {
+            add = -20
+            has_war = yes
+        }
+        modifier = {
+            add = -20
+            RHO = {
+                is_puppet = yes
+            }
+        }
+    }
+	cost = 10
+	completion_reward = {
+        add_state_claim = 96
+        add_state_claim = 97
+        add_state_claim = 99
+        create_wargoal = {
+            type = annex_everything target = RHO
+        }
+        if = {
+            limit = {
+                is_in_faction_with = MOR
+            }
+            MOR = {
+                create_wargoal = {
+                    type = annex_everything target = RHO
+                }
+            }
+        }
+	}
+}
+
+focus = {
+	id = RHU_take_swamp
+	icon = GFX_goal_demand_sudetenland
+	x = 0
+	y = 1
+	relative_position_id = RHU_take_west
+	prerequisite = { focus = RHU_take_west }
+	available = {
+        DAG = {
+            exists = yes
+            NOT = {
+                is_in_faction_with = RHU
+            }
+        }
+        controls_state = 137
+        controls_state = 103
+        controls_state = 97
+        controls_state = 96
+        controls_state = 99
+        controls_state = 93
 	}
 	ai_will_do = {
         base = 25
@@ -949,7 +1004,8 @@ focus = {
     }
 	cost = 10
 	completion_reward = {
-		add_ideas = MOR_servant_morgoth
+		add_ideas = RHU_servant_morgoth
+        
 	}
 }
 
@@ -975,10 +1031,16 @@ focus = {
             factor = -15
             has_war = yes
         }
+        modifier = {
+            factor = 0
+            is_historical_focus_on = yes
+        }
     }
     cost = 10
     will_lead_to_war_with = DOR
     completion_reward = {
+        add_state_claim = 137
+        add_state_claim = 103
         create_wargoal = {
             type = annex_everything target = DOR
         }
@@ -1158,18 +1220,27 @@ focus = {
     available = {
         NOT = {
             has_global_flag = ERE_has_given_resources_rights
-            has_war_with =  RHU
+            has_war_with =  ERE
         }
-        ERE = {
-            controls_state = 93
+        OR = {
+            IRH = {
+                controls_state = 93
+            }
+            ERE = {
+                controls_state = 93
+            }
         }
+        
     }
     will_lead_to_war_with = ERE
-    cost = 5
+    will_lead_to_war_with = IRH
+    cost = 10
     completion_reward = {
         ERE = {
             country_event = { id = erebor.4 }
         }
+        add_ideas = RHU_crush_the_dwarves
+        
     }
 }
 

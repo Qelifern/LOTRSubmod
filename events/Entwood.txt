@@ -22,7 +22,7 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 150
+		days = 120
 	}
 	
 	option = { #Accept
@@ -51,12 +51,29 @@ country_event = {
 			}
 		}
 		declare_war_on = { target = ISE type = puppet_wargoal_focus } 
-		hidden_effect = { news_event = { hours = 10 id = news.349 }}
+		if = {
+			limit = {
+				ROH = {
+					has_war_with = ISE
+				}
+			}
+			give_military_access = ROH
+			ROH = {
+				give_military_access = ENT
+			}
+		}
+		hidden_effect = { 
+			news_event = { hours = 10 id = news.349 }
+		}
 	}
 	option = { #Refuse
 		name = entwood.1.b
 		ai_chance = {
 			base = 75
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
 		}
 	}
 	
@@ -194,7 +211,7 @@ country_event = {
 
 	option = {
 		name = entwood.8.a
-		create_wargoal = { type = annex_everything target = FROM }
+		####create_wargoal = { type = annex_everything target = FROM }
 	}
 }
 

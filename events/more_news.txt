@@ -1,0 +1,69 @@
+###########################
+# News Events
+###########################
+
+add_namespace = more_news
+
+
+
+#Orcs Seize Dol Guldur
+news_event = {
+	id = more_news.1
+	title = more_news.1.t
+	desc = more_news.1.d
+
+	picture = GFX_report_event_orcs_marching
+
+
+	is_triggered_only = yes
+
+	major = yes
+
+
+
+	option = {
+		name = more_news.1.a
+		trigger = {
+			NOT = {
+				has_government = belligerent
+			}
+		}
+	}
+	option = {
+		name = more_news.1.b
+		trigger = { has_government = belligerent }
+	}
+
+	
+}
+
+
+#The Dwarves retake the Grey Mountains
+news_event = {
+	id = more_news.2
+	title = more_news.2.t
+	desc = more_news.2.d
+
+	picture = GFX_report_event_cold_drake_slain
+
+
+	is_triggered_only = yes
+
+	major = yes
+
+
+	option = {
+		name = more_news.2.a
+		trigger = {
+			NOT = {
+				has_government = belligerent
+			}
+		}
+	}
+	option = {
+		name = more_news.2.b
+		trigger = { has_government = belligerent }
+	}
+
+	
+}

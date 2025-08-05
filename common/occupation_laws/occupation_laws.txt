@@ -110,6 +110,26 @@ no_garrison = {
 	}
 }
 
+liberated_peoples = {
+	icon = 2
+	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"
+
+	visible = {
+		has_completed_focus = ROH_liberate_the_people
+	}
+
+	state_modifier = {
+		resistance_target 				= -0.50
+		compliance_gain 				= 0.025
+		required_garrison_factor 		= -0.5
+		resistance_damage_to_garrison 	= -0.25
+	}
+
+	ai_will_do = {
+		base = 50
+	}
+}
+
 autonomous_occupation = {
 	icon = 2
 	sound_effect = "Martial_Law_Interface_Autonomous_Occupation_Unique_DEM"

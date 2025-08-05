@@ -1,0 +1,622 @@
+#!gfx:interface\auto_generated\lotr_goals.gfx
+
+focus_tree = {
+	id = dolguldur
+	country = {
+		factor=0
+		modifier = {
+			add = 100
+			tag = DGU
+		}
+		modifier = {
+			add = 100
+			original_tag = DGU
+		}
+	}
+
+	default = no
+
+	continuous_focus_position = { x = 60 y = 1300 }
+
+	shared_focus = army_effort
+	shared_focus = aviation_effort
+	shared_focus = naval_effort
+	shared_focus = industrial_effort
+
+
+
+	#initial focus
+	focus = {
+		id = DGU_fortress_restored
+		icon = GFX_goal_mor_dark_dol_guldur_fortress
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 40
+		y = 0
+		cost = 2
+		available = {
+			87 = {
+				owner = { original_tag = DGU }
+				controller = { original_tag = DGU }
+			}
+		}
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		completion_reward = {
+			add_named_threat = { threat = 5 name = "Restored the Fortress of Dol Guldur" }
+			add_political_power = 300
+			87 = {
+				add_building_construction = { type = castle province = 4266 level = 3 instant_build = yes }
+				add_building_construction = {
+					type = laboratory
+					level = 1
+					instant_build = yes
+					province = 4266
+				}
+			}
+			
+		}
+	}
+
+	#Gather resources
+	focus = {
+		id = DGU_gather_resources
+		icon = GFX_goal_generic_construction2
+		relative_position_id = DGU_fortress_restored
+		ai_will_do = { factor = 90 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = DGU_fortress_restored
+		}
+		available = {
+			87 = {
+				owner = { original_tag = DGU }
+				controller = { original_tag = DGU }
+			}
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_resource = { type = steel amount = 10 state = 87 }
+			add_resource = { type = oil amount = 16 state = 87 }
+			add_resource = { type = chromium amount = 18 state = 87 }
+			add_resource = { type = tungsten amount = 2 state = 87 }
+		}
+	}
+
+	#start the war machine
+	focus = {
+		id = DGU_start_the_war_machine
+		icon = GFX_goal_generic_anvil
+		relative_position_id = DGU_fortress_restored
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 1
+		y = 1
+		cost = 5
+		prerequisite = {
+			focus = DGU_fortress_restored
+		}
+		available = {
+			87 = {
+				owner = { original_tag = DGU }
+				controller = { original_tag = DGU }
+			}
+		}
+		completion_reward = {
+			add_political_power = 50
+			87 = {
+				add_extra_state_shared_building_slots = 22
+				add_building_construction = {
+					type = industrial_complex
+					level = 6
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 10
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+
+	#deploy the troops
+	focus = {
+		id = DGU_deploy_the_troops
+		icon = GFX_goal_generic_allies_build_infantry
+		relative_position_id = DGU_start_the_war_machine
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -1
+		y = 1
+		cost = 5
+		prerequisite = { focus = DGU_start_the_war_machine }
+		prerequisite = { focus = DGU_gather_resources }
+		
+		completion_reward = {
+			custom_effect_tooltip = DGU_deploy_the_troops_tt
+			add_war_support = 0.1
+			add_stability = 0.1
+			hidden_effect = {
+				load_oob = "DGU_more_orcs"
+			}
+		}
+	}
+
+
+	#seize mirkwood outskirts
+	focus = {
+		id = DGU_mirkwood_outskirts
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = DGU_deploy_the_troops
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = { focus = DGU_deploy_the_troops }
+		
+		completion_reward = {
+			add_war_support = 0.1
+			DGU = {
+				transfer_state = 191
+				add_state_core = 191
+			}
+
+			191 = {
+				add_building_construction = {
+					type = supply_node
+					level = 1
+					instant_build = yes
+					province = 6392
+				}
+			}
+
+			build_railway = {
+				level = 2
+				path = { 1146 5427 3860 4982 6392 1714 3538 }
+			}
+
+			
+
+			
+		}
+	}
+
+
+	#the elves of mirkwood shall fall
+	focus = {
+		id = DGU_mirkwood_war
+		icon = GFX_goal_generic_major_war
+		relative_position_id = DGU_mirkwood_outskirts
+		ai_will_do = { factor = 0 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -4
+		y = 1
+		cost = 5
+		prerequisite = { focus = DGU_mirkwood_outskirts }
+		mutually_exclusive = {
+			focus = DGU_mirkwood_war
+			focus = DGU_lothlorien_war
+			focus = DGU_vales_war
+		}
+		will_lead_to_war_with = MIR
+		
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = MIR }
+		}
+	}
+
+	focus = {
+		id = DGU_mirkwood_defeated
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = DGU_mirkwood_war
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = DGU_mirkwood_war }
+
+		available = {
+			OR = {
+				MIR = {
+					exists = no
+				}
+				MIR = {
+					is_puppet_of = DGU
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_state_core = 190
+			add_state_core = 86
+			add_state_claim = 85
+			add_state_claim = 84
+			add_state_claim = 82
+			add_state_claim = 81
+			add_state_claim = 83
+			add_state_claim = 80
+		}
+	}
+
+	focus = {
+		id = DGU_mirkwood_north_outskirts
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = DGU_mirkwood_defeated
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = { focus = DGU_mirkwood_defeated }
+		
+
+		bypass = {
+			ERE = {
+				has_completed_focus = ERE_grey_mountains
+			}
+		}
+
+
+		available = {
+			ERE = {
+				NOT = {
+					has_completed_focus = ERE_grey_mountains
+				}
+			}
+		}
+
+		completion_reward = {
+			add_war_support = 0.1
+			DGU = {
+				transfer_state = 193
+				add_state_claim = 193
+			}
+		}
+	}
+
+	focus = {
+		id = DGU_strike_on_ere
+		icon = GFX_goal_generic_major_war
+		relative_position_id = DGU_mirkwood_north_outskirts
+		prerequisite = { focus = DGU_mirkwood_north_outskirts }
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		cost = 5
+		
+		will_lead_to_war_with = ERE
+
+		available = {
+			date > 3022.1.1
+		}
+
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = ERE }
+		}
+	}
+
+	
+
+	#the elves of lothlorien shall fall
+	focus = {
+		id = DGU_lothlorien_war
+		icon = GFX_goal_generic_major_war
+		relative_position_id = DGU_mirkwood_outskirts
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 4
+		y = 1
+		cost = 5
+		prerequisite = { focus = DGU_mirkwood_outskirts }
+		mutually_exclusive = {
+			focus = DGU_mirkwood_war
+			focus = DGU_lothlorien_war
+			focus = DGU_vales_war
+		}
+		will_lead_to_war_with = LTH
+		
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = LTH }
+		}
+	}
+
+	#the northmen of the vale shall fall
+	focus = {
+		id = DGU_vales_war
+		icon = GFX_goal_generic_major_war
+		relative_position_id = DGU_mirkwood_outskirts
+		ai_will_do = { factor = 0 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = DGU_mirkwood_outskirts }
+		mutually_exclusive = {
+			focus = DGU_mirkwood_war
+			focus = DGU_lothlorien_war
+			focus = DGU_vales_war
+		}
+		will_lead_to_war_with = VAL
+		
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = VAL }
+		}
+	}
+
+	focus = {
+		id = DGU_vales_defeated
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = DGU_vales_war
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = DGU_vales_war }
+
+		available = {
+			OR = {
+				VAL = {
+					exists = no
+				}
+				VAL = {
+					is_puppet_of = DGU
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_state_claim = 198
+			add_state_claim = 72
+			add_state_claim = 195
+			add_state_claim = 199
+			add_state_claim = 70
+			add_state_claim = 71
+			add_state_claim = 197
+			add_state_claim = 196
+			add_state_claim = 69
+			add_state_claim = 68
+		}
+	}
+
+	focus = {
+		id = DGU_gundabad_annex
+		icon = GFX_goal_skull_treaty
+		relative_position_id = DGU_vales_defeated
+		prerequisite = { focus = DGU_vales_defeated }
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		cost = 5
+
+		bypass = {
+			NOT = {
+				GUN = {
+					has_government = belligerent
+					is_puppet = no
+				}
+			}
+		}
+
+		available = {
+			GUN = {
+				has_government = belligerent
+				is_puppet = no
+				has_war = no
+			}
+			
+			date > 3022.1.1
+			
+		}
+		
+		completion_reward = {
+			annex_country = {
+				target = GUN
+				transfer_troops = yes
+			}
+			add_state_core = 61
+		}
+	}
+
+	focus = {
+		id = DGU_moria_annex
+		icon = GFX_goal_skull_treaty
+		relative_position_id = DGU_gundabad_annex
+		prerequisite = { focus = DGU_gundabad_annex }
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		cost = 5
+
+		available = {
+			MOA = {
+				has_civil_war = no
+				has_war = no
+				
+			}
+		}
+		
+		completion_reward = {
+
+
+			if = {
+				limit = {
+					MOA = {
+						OR = {
+							has_government = belligerent
+							has_government = revolutionary
+						}					
+					}
+				}
+				annex_country = {
+					target = MOA
+					transfer_troops = yes
+				}
+			} 
+			else = {
+				create_wargoal = { type = annex_everything target = MOA }
+			}
+
+
+			add_state_core = 73
+			add_state_core = 134
+			
+		}
+	}
+
+
+
+	focus = {
+		id = DGU_lothlorien_defeated
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = DGU_lothlorien_war
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = DGU_lothlorien_war }
+
+		available = {
+			OR = {
+				LTH = {
+					exists = no
+				}
+				LTH = {
+					is_puppet_of = DGU
+				}
+			}
+		}
+		
+		completion_reward = {
+			add_state_claim = 75
+			add_state_claim = 222
+			add_state_claim = 76
+			add_state_claim = 160
+			add_state_claim = 74
+		}
+	}
+
+	focus = {
+		id = DGU_strike_north
+		icon = GFX_goal_generic_major_war
+		relative_position_id = DGU_lothlorien_defeated
+		prerequisite = { focus = DGU_lothlorien_defeated }
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		cost = 5
+
+		available = {
+			date > 3022.1.1
+		}
+		
+		will_lead_to_war_with = VAL
+
+		completion_reward = {
+			create_wargoal = { type = annex_everything target = VAL }
+		}
+	}
+
+	focus = {
+		id = DGU_link_up_with_gundabad
+		icon = GFX_goal_generic_nazgul_raised_fist
+		relative_position_id = DGU_strike_north
+		prerequisite = { focus = DGU_strike_north }
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = 0
+		y = 1
+		cost = 5
+		
+		completion_reward = {
+			GUN = {
+				create_wargoal = { type = annex_everything target = VAL }
+			}
+		}
+	}
+
+	focus = {
+		id = DGU_merge_with_mordor
+		icon = GFX_goal_skull_treaty
+		relative_position_id = DGU_link_up_with_gundabad
+		prerequisite = { focus = DGU_link_up_with_gundabad focus = DGU_moria_annex focus = DGU_strike_on_ere }
+		ai_will_do = { factor = 100 }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		x = -4
+		y = 1
+		cost = 5
+
+		available = {
+			OR = {
+				has_war = no
+				OR = {
+					VAL = {
+						has_capitulated = yes
+					}
+					has_war_with = ERE
+				}
+				
+			}	
+			
+		}
+		
+		completion_reward = {
+			set_rule = {
+				can_join_factions = yes
+			}
+			
+			if = {
+				limit = {
+					LTH = {
+						is_puppet_of = DGU
+					}
+				}
+				annex_country = {
+					target = LTH
+					transfer_troops = yes
+				}
+			}
+			
+			if = {
+				limit = {
+					VAL = {
+						is_puppet_of = DGU
+					}
+				}
+				annex_country = {
+					target = VAL
+					transfer_troops = yes
+				}
+			}
+			if = {
+				limit = {
+					MIR = {
+						is_puppet_of = DGU
+					}
+				}
+				annex_country = {
+					target = MIR
+					transfer_troops = yes
+				}
+			}
+			
+			
+			MOR = {
+				puppet = DGU
+			}
+			
+		}
+	}
+
+}

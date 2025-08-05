@@ -18,7 +18,7 @@ focus_tree = {
     	original_tag = MOR
     	has_government = revolutionary
     }
-	}
+}
 
 default = no
 
@@ -2565,29 +2565,29 @@ focus = {
 			NOT = {
 				has_completed_focus = purgetheorcsofdolguldur
 			}
-			owns_state = 87
+		}
+		DGU = {
+			has_government = belligerent
 		}
 	}
 	bypass = {
 		DGU = {
-			exists = yes
-			is_in_faction_with = MOR
+			OR = {
+				exists = yes
+				NOT = {
+					has_government = belligerent
+				}
+			}
+			
 		}
 	}
 	search_filters = { FOCUS_FILTER_MANPOWER }
 	completion_reward = {
 		add_manpower = -1000
-		add_equipment_to_stockpile = { type = infantry_equipment_1   amount = -1500  }
-		87 = {
-			add_state_modifier = { modifier = {  compliance_gain = -0.05 } }
-			add_compliance = -15
+		DGU = {
+			add_manpower = 1000
+			add_equipment_to_stockpile = { type = infantry_equipment_1   amount = 1500  }
 		}
-		MIR = {
-			country_event = {
-				id = mirkwood.8
-			}
-		}
-		custom_effect_tooltip = setup_dol_guldur
 	}
 }
 
@@ -2596,12 +2596,6 @@ focus = {
 	icon = GFX_goal_mor_dark_dol_guldur_fortress
 	ai_will_do = {
 		factor = 15
-		modifier = {
-			add = 75
-			87 = {
-				compliance < 35
-			}
-		}
 	}
 	x = 0
 	y = 1
@@ -2610,8 +2604,13 @@ focus = {
 	cost = 10
 	bypass = {
 		DGU = {
-			exists = yes
-			is_in_faction_with = MOR
+			OR = {
+				exists = yes
+				NOT = {
+					has_government = belligerent
+				}
+			}
+			
 		}
 	}
 	available = {
@@ -2619,44 +2618,24 @@ focus = {
 			NOT = {
 				has_completed_focus = purgetheorcsofdolguldur
 			}
-			owns_state = 87
 		}
-		NOT = {
-			87 = {
-				is_core_of = MIR
-			}
-		}
-		87 = {
-			compliance < 40
+		DGU = {
+			has_government = belligerent
 		}
 	}
 	completion_reward = {
-		hidden_effect = {
-			MIR = {
-				release = DGU
+		87 = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
 			}
-			DGU = {
-				set_state_controller = 87
-				set_state_owner = 87
-				load_oob = "DGU_Orcs"
-				set_politics = {
-					ruling_party = belligerent
-					elections_allowed = no
-				}
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
 			}
-		}
-		add_to_faction = DGU
-		puppet = DGU
-		MIR = {
-			country_event = {
-				id = mirkwood.11
-			}
-			create_wargoal = {
-				type = annex_everything target = DGU
-			}
-		}
-		hidden_effect = {
-			add_named_threat = { threat = 3 name = "Dol Guldur seized by orcs" }
 		}
 	}
 }
@@ -2674,7 +2653,6 @@ focus = {
 		DGU = {
 			has_war = no
 			exists = yes
-			is_puppet_of = MOR
 			has_government = belligerent
 		}
 	}
@@ -2810,10 +2788,16 @@ focus = {
 	available = {
 		controls_state = 87
 	}
-	cost = 10
+	cost = 5
 	search_filters = { FOCUS_FILTER_MANPOWER }
 	completion_reward = {
-		add_state_core = 87
+		every_state = {
+			limit = {
+				is_core_of = DGU
+				is_controlled_by = DGU
+			}
+			add_core_of = MOR
+		}
 	}
 }
 
@@ -2843,7 +2827,7 @@ focus = {
 	cost = 10
 	completion_reward = {
 		MIR = {
-			country_event = { id = mirkwood.10 }
+			country_event = { id = mirkwood.9 }
 		}
 	}
 }
@@ -2878,11 +2862,6 @@ focus = {
 		}
 	}
 	available = { has_civil_war = no }
-	bypass = {
-		RHU = {
-			is_in_faction_with = MOR
-		}
-	}
 	x = 0
 	y = 1
 	relative_position_id = seekalliesintheeast
@@ -2983,7 +2962,14 @@ focus = {
 focus = {
 	id = war_with_dorwinion
 	icon = GFX_goal_mor_wargoal_dorwinion
-	ai_will_do = { factor = 10 }
+	ai_will_do = { 
+		base = 10 
+		modifier = {
+			factor = 0
+			is_historical_focus_on = yes
+		}
+		
+	}
 	x = 0
 	y = 1
 	search_filters = { FOCUS_FILTER_ANNEXATION }
@@ -3111,6 +3097,42 @@ focus = {
 			add_stability = -0.1
 			add_war_support = -0.1
 			add_political_power = -50
+		}
+	}
+}
+
+focus = {
+	id = MOR_demand_attack_val
+	icon = GFX_goal_generic_political_pressure
+	x = 10
+	y = 1
+	relative_position_id = submittosauron
+	ai_will_do = { factor = 25 }
+	cost = 10
+	prerequisite = { focus = submittosauron }
+	search_filters = { FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_WAR_SUPPORT}
+
+
+	available = {
+
+		has_government = belligerent
+		
+		GUN = {
+			has_government = belligerent
+		}
+
+		date > 3022.1.1
+
+		DGU = {
+			exists = no
+		}
+
+		
+	}
+
+	completion_reward = {
+		GUN = {
+			create_wargoal = { type = annex_everything target = VAL }
 		}
 	}
 }
@@ -3295,6 +3317,7 @@ focus = {
 				is_puppet = no
 				is_subject = no
 				exists  = yes
+				NOT = { tag = DGU }
 				NOT = { is_in_faction_with = MOR }
 			}
 			country_event = {

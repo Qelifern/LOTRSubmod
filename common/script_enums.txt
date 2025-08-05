@@ -566,6 +566,12 @@ script_enum_equipment_bonus_type = {
 	carrack
 	longship
 	galley
+
+
+	# MORE LOTR Stuff
+	heavy_infantry_equipment
+	heavy_infantry_equipment_0
+	heavy_infantry_equipment_1
 }
 
 script_enum_ringevent_localiaztion_key = {

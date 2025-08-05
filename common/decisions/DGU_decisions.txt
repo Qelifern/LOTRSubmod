@@ -1,0 +1,166 @@
+################
+##### DGU ######
+################
+form_the_shadow_of_anduin_category = {
+
+	form_the_shadow_of_anduin = {
+
+		icon = generic_form_nation
+
+		on_map_mode = decision_view_only
+
+		highlight_states = { 
+			highlight_state_targets = {
+
+				### Lothlorien
+				state = 75
+				state = 222
+				state = 76
+				state = 160
+				state = 74
+
+				### Vales of anduin
+				state = 72
+				state = 198
+				state = 195
+				state = 199
+				state = 70
+				state = 71
+				state = 197
+				state = 196
+				state = 69
+				state = 68
+
+
+				## dol guldur
+				state = 87
+
+
+				### mirkwood
+				state = 191
+				state = 86
+				state = 190
+				state = 85
+				state = 84
+				state = 82
+				state = 81
+				state = 83
+				state = 80
+
+			}
+		}
+
+		allowed = {
+			original_tag = DGU
+		}
+
+		visible = {
+			NOT = { has_global_flag = form_the_shadow_of_anduin }
+		}
+
+		available = {
+			is_subject = no
+
+			# dol guldur
+			controls_state = 87
+
+			# Lothlorien
+			custom_trigger_tooltip = {
+				tooltip = form_controls_shadow_of_anduin_lothlorien_tt
+				controls_state = 75
+				controls_state = 222
+				controls_state = 76
+				controls_state = 160
+				controls_state = 74
+			}
+
+			# Vales of Anduin
+			custom_trigger_tooltip = {
+				tooltip = form_controls_shadow_of_anduin_valesofanduin_tt
+				controls_state = 72
+				controls_state = 198
+				controls_state = 195
+				controls_state = 199
+				controls_state = 70
+				controls_state = 71
+				controls_state = 197
+				controls_state = 196
+				controls_state = 69
+				controls_state = 68
+			}
+
+			### mirkwood
+			custom_trigger_tooltip = {
+				tooltip = form_controls_shadow_of_anduin_mirkwood_tt
+				controls_state = 191
+				controls_state = 86
+				controls_state = 190
+				controls_state = 85
+				controls_state = 84
+				controls_state = 82
+				controls_state = 81
+				controls_state = 83
+				controls_state = 80
+			}
+
+		}
+
+		complete_effect = {
+			set_global_flag = form_the_shadow_of_anduin
+			set_cosmetic_tag = DGU_shadow_of_anduin_name
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			87 = { add_core_of = ROOT } # Dol Guldur
+
+			# Lothlorien
+			custom_effect_tooltip = form_shadow_of_anduin_lothlorien_tt 
+			hidden_effect = {
+				75 = { add_core_of = ROOT } 
+				222 = { add_core_of = ROOT } 
+				76 = { add_core_of = ROOT } 
+				160 = { add_core_of = ROOT } 
+				74 = { add_core_of = ROOT } 
+			}
+
+			# Vales of Anduin
+			custom_effect_tooltip = form_shadow_of_anduin_valesofanduin_tt
+			hidden_effect = {
+				72 = { add_core_of = ROOT } 
+				198 = { add_core_of = ROOT } 
+				195 = { add_core_of = ROOT } 
+				199 = { add_core_of = ROOT }
+				70 = { add_core_of = ROOT } 
+				71 = { add_core_of = ROOT }
+				197 = { add_core_of = ROOT } 
+				196 = { add_core_of = ROOT }
+				69 = { add_core_of = ROOT } 
+				68 = { add_core_of = ROOT }
+
+			}
+
+			# Mirkwood
+			custom_effect_tooltip = form_shadow_of_anduin_mirkwood_tt
+			hidden_effect = {
+				191 = { add_core_of = ROOT } 
+				86 = { add_core_of = ROOT } 
+				190 = { add_core_of = ROOT } 
+				85 = { add_core_of = ROOT } 
+				84 = { add_core_of = ROOT } 
+				82 = { add_core_of = ROOT } 
+				81 = { add_core_of = ROOT } 
+				83 = { add_core_of = ROOT } 
+				80 = { add_core_of = ROOT } 
+
+			}
+
+			hidden_effect = {
+				news_event = { id = more_news.3 hours = 6 }
+				set_global_flag = form_the_shadow_of_anduin
+			}
+		}
+		ai_will_do = {
+			base = 200
+		}
+	}
+}

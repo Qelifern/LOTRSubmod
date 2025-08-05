@@ -1,0 +1,27 @@
+spriteTypes = {
+
+    SpriteType = {
+        name = "GFX_idea_ang_new_age_of_angmar"
+        texturefile = "gfx/interface/ideas/national_spirits/ang/ang_new_age_of_angmar.dds"
+    }
+	
+	SpriteType = {
+        name = "GFX_idea_ang_army_modifier"
+        texturefile = "gfx/interface/ideas/dynamic_modifiers/ang/ang_army_modifier.dds"
+    }
+	
+	SpriteType = {
+        name = "GFX_idea_ang_frozen_fleet"
+        texturefile = "gfx/interface/ideas/national_spirits/ang/ang_frozen_fleet.dds"
+    }
+	
+	SpriteType = {
+        name = "GFX_idea_ang_sea_based_trade"
+        texturefile = "gfx/interface/ideas/national_spirits/ang/ang_sea_based_trade.dds"
+    }
+	
+	SpriteType = {
+        name = "GFX_idea_ang_economic_prosperity"
+        texturefile = "gfx/interface/ideas/national_spirits/ang/ang_economic_prosperity.dds"
+    }
+}

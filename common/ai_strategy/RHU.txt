@@ -1,0 +1,128 @@
+RHU_default_strategy = {
+    enable = {
+        has_government = belligerent
+    }
+    allowed = {
+        original_tag = RHU
+    }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = prepare_for_war
+        id = ERE
+        value = 75
+    }
+
+    ai_strategy = {
+        type = prepare_for_war
+        id = GON
+        value = 25
+    }
+
+    ai_strategy = {
+        type = prepare_for_war
+        id = DOR
+        value = 25
+    }
+
+    ai_strategy = {
+        type = prepare_for_war
+        id = RHO
+        value = 25
+    }
+
+    ai_strategy = {
+        type = front_armor_score
+        id = ERE
+        value = 50
+    }
+
+    ai_strategy = {
+        type = front_armor_score
+        id = GON
+        value = 25
+    }
+
+    ai_strategy = {
+        type = front_armor_score
+        id = RHO
+        value = 25
+    }
+
+    ai_strategy = {
+        type = front_armor_score
+        id = DOR
+        value = 25
+    }
+
+    ai_strategy = {
+        type = conquer
+        id = DOR
+        value = 200
+    }
+
+    ai_strategy = {
+        type = conquer
+        id = RHO
+        value = 200
+    }
+
+    
+}
+
+RHU_dont_declare_war_on_dag = {
+    enable = {
+        has_government = belligerent
+        OR = {
+            country_exists = GON
+            NOT = {
+                GON = {
+                    has_government = belligerent
+                }
+            }
+		}
+    }
+    allowed = {
+        original_tag = RHU
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = avoid_starting_wars
+        id = DAG
+        value = -100
+    }
+}
+
+RHU_dont_declare_war_on_ere = {
+    enable = {
+        has_government = belligerent
+        OR = {
+            country_exists = RHO
+            NOT = {
+                RHO = {
+                    has_government = belligerent
+                }
+            }
+		}
+        OR = {
+            country_exists = DOR
+            NOT = {
+                DOR = {
+                    has_government = belligerent
+                }
+            }
+		}
+    }
+    allowed = {
+        original_tag = RHU
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = avoid_starting_wars
+        id = ERE
+        value = -100
+    }
+}

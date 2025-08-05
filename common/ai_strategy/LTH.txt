@@ -13,6 +13,48 @@ LTH_prioritize_homeland = {
 		id = hollin
 		value = 50
 	}
+
+    
+}
+
+LTH_lone_wolf = {
+    enable = {
+        is_historical_focus_on = yes
+    }
+    allowed = {
+        original_tag = LTH
+    }
+
+    abort_when_not_enabled = yes
+
+
+    ai_strategy = {
+        type = diplo_action_desire
+        id = GON
+        value = -1000
+        target = offer_join_faction
+    }
+
+    ai_strategy = {
+        type = diplo_action_desire
+        id = GON
+        value = -1000
+        target = join_faction
+    }
+
+    ai_strategy = {
+        type = diplo_action_desire
+        id = RIV
+        value = 25
+        target = offer_join_faction
+    }
+
+    ai_strategy = {
+        type = diplo_action_desire
+        id = RIV
+        value = 25
+        target = join_faction
+    }
 }
 
 LTH_build_civs_in_caras = {

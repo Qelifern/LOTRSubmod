@@ -23,18 +23,6 @@ mirkwood.5.t:0 "The Spiders declare war"
 mirkwood.5.d:0 "The Great Spiders of the Mirkwood have gathered in the West and taken up arms against us! They have declared themselves a free and independent nation of Mirkwood and will not stop until put down violently."
 mirkwood.5.a:0 "War it is then."
 
-mirkwood.6.t:0 "Orcs of Dol Guldur overrun Emyn Lûm!"
-mirkwood.6.d:0 "A Horde of orcs coming from the ruin of Dul Guldur have overrun the southern city of Emyn Lûm. Our soldiers have reclaimed the land and driven the orcs back to Dol Guldur, but many lost their lives. If Dol Guldur is not dealt with, Sauron and his disciples may launch an all out attack from the fortress!"
-mirkwood.6.a:0 "Dol Guldur must be dealth with."
-
-mirkwood.7.t:0 "Dol Guldur declares war"
-mirkwood.7.d:0 "The Orcs of Dol Guldur, lead by the ringwarith Khamûl, have taken up arms against us and now control all of Dol Guldur's surroundings!"
-mirkwood.7.a:0 "War it is then."
-
-mirkwood.8.t:0 "Dol Guldur"
-mirkwood.8.d:0 "We have recieved word that enemy troops are gathering at the fortress of Dol Guldur. Mordor's heavy-handed meddling in the region is becoming a rising cause for concern and must be dealt with urgently!"
-mirkwood.8.a:0 "This is bad..."
-
 mirkwood.9.t:0 "[From.GetName] demands Dol Guldur"
 mirkwood.9.d:0 "[From.GetName] have made their demands clear. They will welcome us if we return Dol Guldur back to Mordor."
 mirkwood.9.a:0 "We never wanted that cursed rock!"
@@ -57,3 +45,25 @@ mirkwood.13.t:0 "[From.GetName] requests acces to our resources"
 mirkwood.13.d:0 "[From.GetName] is requesting a part of our string production. Saying that they need it for there every growing industry. They would much appreciete if we would grant them this acces."
 mirkwood.13.a:0 "Sharing is caring"
 mirkwood.13.b:0 "We would never!"
+
+
+mirkwood.14.t:0 "Orcs are gathering in Dol Guldur"
+mirkwood.14.d:0 "Dol Guldur, the old fortress in southern Mirkwood, is showing signs of renewed life. Our scouts have reported a significant increase in Orc activity. They're not just raiding; they're rebuilding the fortress and gathering a larger force. This suggests they are mustering for new raids, and the long-dormant threat from Dol Guldur is rising once more."
+mirkwood.14.a:0 "We must deal with this."
+
+
+mirkwood.15.t:0 "The Elves of Mirkwood retreats from Dol Guldur"
+mirkwood.15.d:0 "Elves in the southern reaches of Mirkwood are repositioning their forces. With increased activity and troop movements reported at the fortress of Dol Guldur, Elven command has ordered a strategic withdrawal. The troops are falling back from their forward positions to reinforce the main defenses in the northern parts of the forest. This consolidation is a direct response to the growing presence of enemy forces and the threat of large-scale military action from the fortress."
+mirkwood.15.a:0 "We have let this get out of hand..."
+mirkwood.15.b:0 "March! For the will of Sauron leads us!"
+
+
+
+mirkwood.16.t:0 "Lothlórien has fallen to the orcs!"
+mirkwood.16.d:0 "The golden woods of Lothlórien, once a sanctuary of Elven grace and timeless beauty, have been overrun by the forces of darkness. Galadriel’s light no longer guards the forest, and the Mallorn trees now burn beneath black banners. The heart of Elvendom in the East has been silenced, and a deep shadow spreads across the Anduin."
+mirkwood.16.a:0 "War!"
+mirkwood.16.b:0 "We cannot afford to upset their overlord."
+
+
+
+

@@ -346,3 +346,11 @@ MOR_will_lead_to_war_if_accepted:0 "§RIf they will accept war will be declared 
 mordor_research_name:0 "Dark Pact Research Sharing Group"
 mordor_research_desc:0 "Reduced research time for technologies researched by other Dark Pact countries."
 mor_tenacious_negotiator:0 "Tenacious Negotiator"
+
+
+
+
+### MORE LOTR
+
+MOR_demand_attack_val:0 "Demand Gundabad strikes at the Vale"
+MOR_demand_attack_val_desc:0 ""

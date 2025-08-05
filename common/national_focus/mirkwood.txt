@@ -529,7 +529,13 @@ focus_tree = {
 	focus = {
 		id = butcherthemarket
 		icon = GFX_goal_generic_trade
-		ai_will_do = { factor = 4 }
+		ai_will_do = { 
+			factor = 4 
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
 		x =15
 		y =2
 		mutually_exclusive = { focus = exploittherubbermonopoly }
@@ -1139,8 +1145,49 @@ focus_tree = {
 		icon = GFX_goal_generic_major_war
 		ai_will_do = { factor = 7 }
 		available = {
-			NOT = { has_global_flag = mirkwood_dolguldur_attack }
-			controls_state = 87
+			date > 3020.1.1
+
+			if = {
+				limit = {
+					DGU = {
+						exists = yes
+					}
+				}
+				DGU = {
+					has_war = no
+				}
+			}
+			
+			OR = {
+				controls_state = 87
+				DGU = {
+					OR = {
+						has_government = unaligned
+						has_government = cooperative
+					}
+
+					controls_state = 87
+				}
+				DGU = {
+					is_puppet = yes
+					NOT = {
+						has_government = belligerent
+					}
+				}
+				LTH = {
+					controls_state = 87
+					is_in_faction_with = MIR
+				}
+				VAL = {
+					controls_state = 87
+					is_in_faction_with = MIR
+				}
+				RIV = {
+					controls_state = 87
+					is_in_faction_with = MIR
+				}
+			}
+			
 		}
 		x =11
 		y =9
@@ -1148,9 +1195,229 @@ focus_tree = {
 		prerequisite = { focus = dealwithdolguldur}
 		cost = 10
 		completion_reward = {
-			add_manpower = -5000
-			set_global_flag = mirkwood_dolguldur_purged
+
+
+			every_state = {
+				limit = {
+					is_owned_and_controlled_by = DGU
+					NOT = {
+						is_core_of = DGU
+					}
+				}
+
+				if = {
+					limit = {
+						THIS = {
+							is_core_of = VAL
+						}
+					}
+
+
+
+					if = {
+						limit = {
+							VAL = {
+								exists = no
+							}
+						}
+						if = {
+							limit = {
+								MIR = {
+									has_government = belligerent
+								}
+							}
+							VAL = {
+								set_politics = { ruling_party = belligerent elections_allowed = no }
+							}
+						}
+						if = {
+							limit = {
+								MIR = {
+									has_government = unaligned
+								}
+							}
+							VAL = {
+								set_politics = { ruling_party = unaligned elections_allowed = yes }
+							}
+						}
+	
+						if = {
+							limit = {
+								
+								MIR = {
+									has_government = cooperative
+								}
+							}
+							VAL = {
+								set_politics = { ruling_party = cooperative elections_allowed = yes }
+							}
+						}
+	
+						if = {
+							limit = {
+								MIR = {
+									has_government = revolutionary
+								}
+							}
+							VAL = {
+								set_politics = { ruling_party = revolutionary elections_allowed = no }
+							}
+						}
+					}
+
+
+					transfer_state_to = VAL
+				}
+
+				if = {
+					limit = {
+						THIS = {
+							is_core_of = LTH
+						}
+					}
+
+
+
+					if = {
+						limit = {
+							LTH = {
+								exists = no
+							}
+						}
+						if = {
+							limit = {
+								MIR = {
+									has_government = belligerent
+								}
+							}
+							LTH = {
+								set_politics = { ruling_party = belligerent elections_allowed = no }
+							}
+						}
+						if = {
+							limit = {
+								MIR = {
+									has_government = unaligned
+								}
+							}
+							LTH = {
+								set_politics = { ruling_party = unaligned elections_allowed = yes }
+							}
+						}
+	
+						if = {
+							limit = {
+								MIR = {
+									has_government = cooperative
+								}
+							}
+							LTH = {
+								set_politics = { ruling_party = cooperative elections_allowed = yes }
+							}
+						}
+	
+						if = {
+							limit = {
+								MIR = {
+									has_government = revolutionary
+								}
+							}
+							LTH = {
+								set_politics = { ruling_party = revolutionary elections_allowed = no }
+							}
+						}
+					}
+
+					transfer_state_to = LTH
+				}
+
+				if = {
+					limit = {
+						THIS = {
+							is_core_of = NDH
+						}
+					}
+					if = {
+						limit = {
+							NDH = {
+								exists = no
+							}
+						}
+						transfer_state_to = LTH
+					}
+					else = {
+
+						transfer_state_to = NDH
+
+						if = {
+							limit = {
+								MIR = {
+									has_government = belligerent
+								}
+							}
+							NDH = {
+								set_politics = { ruling_party = belligerent elections_allowed = no }
+							}
+						}
+						if = {
+							limit = {
+								
+								MIR = {
+									has_government = unaligned
+								}
+							}
+							NDH = {
+								set_politics = { ruling_party = unaligned elections_allowed = yes }
+							}
+						}
+	
+						if = {
+							limit = {
+								MIR = {
+									has_government = cooperative
+								}
+							}
+							NDH = {
+								set_politics = { ruling_party = cooperative elections_allowed = yes }
+							}
+						}
+	
+						if = {
+							limit = {
+								MIR = {
+									has_government = revolutionary
+								}
+							}
+							NDH = {
+								set_politics = { ruling_party = revolutionary elections_allowed = no }
+							}
+						}
+					}
+					
+				}
+				
+			}
+
+
+
 			add_state_core = 87
+			annex_country = {
+				target = DGU
+				transfer_troops = no
+			}
+
+			87 = {
+				remove_building = {
+					type = arms_factory
+					level = 10
+				}
+				remove_building = {
+					type = industrial_complex
+					level = 6
+				}
+			}
+
+			
 		}
 	}
 

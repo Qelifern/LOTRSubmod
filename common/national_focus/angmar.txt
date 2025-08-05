@@ -14,28 +14,683 @@ focus_tree = {
 	default = no
 	reset_on_civilwar = no
 
-	############default focuses
-	shared_focus = army_effort
-	shared_focus = aviation_effort
-	shared_focus = naval_effort
-	shared_focus = industrial_effort
-
 	#Custom focuses start here
-	#Focus for The Fate of Angmar
+	
+
+	#Army
+	focus = {
+		id = ANG_army_of_angmar
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 2
+		y = 0
+		cost = 5
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			army_experience = 15
+			
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = ANG_legacy_of_long_past_wars
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = ANG_army_of_angmar }
+		x = 0
+		y = 2
+		relative_position_id = ANG_army_of_angmar
+		cost = 10
+
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			army_experience = 10
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = ANG_new_army_doctrine
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = ANG_legacy_of_long_past_wars }
+		x = 0
+		y = 2
+		relative_position_id = ANG_legacy_of_long_past_wars
+		cost = 10
+
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			army_experience = 10
+			add_to_variable = { ANG_army_max_planning_factor = 0.1 }
+			add_to_variable = { ANG_army_special_forces_cap = 0.25 }
+			custom_effect_tooltip = ANG_new_army_doctrine_tt
+		}
+	}
+
+	focus = {
+		id = ANG_embrace_mounted_combat
+		icon = GFX_goal_generic_horse_drawn_equipment
+		prerequisite = { focus = ANG_new_army_doctrine }
+		x = -1
+		y = 2
+		mutually_exclusive = { focus = ANG_embrace_mounted_combat focus = ANG_traditonal_warfare}
+		relative_position_id = ANG_new_army_doctrine
+		cost = 10
+
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			add_to_variable = { ANG_army_army_armor_attack_factor = 0.1 }
+			add_to_variable = { ANG_army_army_armor_defence_factor = 0.05 }
+			custom_effect_tooltip = ANG_embrace_mounted_combat_tt
+		}
+	}
+
+	focus = {
+		id = ANG_traditonal_warfare
+		icon = GFX_goal_generic_sword_arrow_and_shield
+		prerequisite = { focus = ANG_new_army_doctrine }
+		x = 1
+		y = 2
+		mutually_exclusive = { focus = ANG_embrace_mounted_combat focus = ANG_traditonal_warfare}
+		relative_position_id = ANG_new_army_doctrine
+		cost = 10
+
+		search_filters = {  FOCUS_FILTER_RESEARCH }
+		
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		completion_reward = {
+			add_to_variable = { ANG_army_dig_in_speed_factor = 0.2 }
+			add_to_variable = { ANG_army_breakthrough_factor = 0.025 }
+			add_to_variable = { ANG_army_army_morale_factor = 0.1 }
+			add_to_variable = { ANG_army_army_org_regain = 0.05 }
+			add_to_variable = { ANG_army_army_infantry_attack_factor = 0.05 }
+			add_to_variable = { ANG_army_army_infantry_defence_factor = 0.1 }
+			custom_effect_tooltip = ANG_traditonal_warfare_tt
+		}
+	}
+	
 
 
-	#Focus for Denounce the Witch King
+	###Rebuilding Angmar
+
+	focus = {
+		id = ANG_let_rebuilding_commence
+		icon = GFX_goal_generic_production
+		relative_position_id = ANG_army_of_angmar
+		x = 5
+		y = 0
+		cost = 5
+
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 8
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				add = 15
+				date < 3019.1.1
+			}
+		}
+	}
+
+	focus = {
+		id = ANG_refurbish_old_roads
+		icon = GFX_goal_generic_infrastructure_investment
+		prerequisite = { focus = ANG_let_rebuilding_commence }
+		relative_position_id = ANG_let_rebuilding_commence
+		x = -1
+		y = 1
+		cost = 5
+
+
+		ai_will_do = {
+			factor = 6
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				59 = {
+					free_building_slots = {
+						building = infrastructure
+						size < 2
+					}
+				}
+				153 = {
+					free_building_slots = {
+						building = infrastructure
+						size < 2
+					}
+				}
+			}
+		}
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			59 = {
+				
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				
+			}
+			153 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ANG_clear_the_mountain_pass
+		icon = GFX_goal_ANG_clear_mountain_pass
+		prerequisite = { focus = ANG_refurbish_old_roads }
+		relative_position_id = ANG_refurbish_old_roads
+		x = 0
+		y = 1
+		cost = 10
 
 
 
+		ai_will_do = {
+			factor = 5
+		}
+
+		bypass = {
+			60 = {
+				free_building_slots = {
+					building = infrastructure
+					size < 2
+					include_locked = yes
+				}
+			}
+			
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			60 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ANG_delve_northeast_mountains
+		icon = GFX_focus_research
+		prerequisite = { focus = ANG_clear_the_mountain_pass }
+		relative_position_id = ANG_clear_the_mountain_pass
+		x = 0
+		y = 1
+		cost = 5
 
 
 
+		ai_will_do = {
+			factor = 3
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	
+
+	
+
+	focus = {
+		id = ANG_spin_up_the_factories
+		icon = GFX_goal_generic_anvil
+		prerequisite = { focus = ANG_let_rebuilding_commence }
+		relative_position_id = ANG_let_rebuilding_commence
+		x = 1
+		y = 1
+		cost = 10
 
 
 
+		ai_will_do = {
+			factor = 3
+		}
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 8
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			152 = {
+				add_extra_state_shared_building_slots = 8
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ANG_leather_trade_forochel
+		icon = GFX_goal_generic_infrastructure_investment
+		prerequisite = { focus = ANG_spin_up_the_factories }
+		relative_position_id = ANG_spin_up_the_factories
+		x = 0
+		y = 1
+		cost = 12
 
 
+		ai_will_do = {
+			factor = 3
+		}
+
+		completion_reward = {
+			57 = {  
+				add_resource = {
+					type = rubber
+					amount = 24
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ANG_invite_dwarves_to_mines
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = ANG_leather_trade_forochel }
+		relative_position_id = ANG_leather_trade_forochel
+		x = 0
+		y = 1
+		cost = 10
+
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		completion_reward = {
+			ERE = {
+				add_opinion_modifier = { 
+					target = ANG
+					modifier = medium_increase
+				}
+			}
+			add_opinion_modifier = { 
+				target = ERE
+				modifier = medium_increase
+			}
+			60 = {  
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ANG_carn_dum_library
+		icon = GFX_focus_research
+		prerequisite = { focus = ANG_delve_northeast_mountains }
+		prerequisite = { focus = ANG_invite_dwarves_to_mines }
+		relative_position_id = ANG_delve_northeast_mountains
+		x = 1
+		y = 1
+		cost = 5
+
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	
+
+	
+	###END Rebuilding Angmar
+
+
+	###Navy of Angmar
+	focus = {
+		id = ANG_restore_dockyards
+		icon = GFX_goal_lth_river_ships_navigation
+		x = 12
+		y = 0
+		cost = 10
+
+		search_filters = {  FOCUS_FILTER_INDUSTRY }
+		
+
+		ai_will_do = {
+			factor = 3
+		}
+
+
+		complete_tooltip = {
+			navy_experience = 25
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = dockyard
+				level = 3
+				instant_build = yes
+			}
+		}
+		
+		completion_reward = {
+			navy_experience = 25
+			57 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}		
+		}
+	}
+
+	focus = {
+		id = ANG_spies_of_angmar
+		icon = GFX_focus_generic_secret_service_agency
+		prerequisite = { focus = ANG_restore_dockyards }
+		relative_position_id = ANG_restore_dockyards
+		x = 1
+		y = 1
+		cost = 2
+
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		bypass = {
+			has_intelligence_agency = yes
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				if = {
+					limit = {
+						has_intelligence_agency = no
+					}
+					create_intelligence_agency = yes
+				}
+				
+			}
+			
+		}
+	}
+
+	focus = {
+		id = ANG_streamline_our_spy_methods
+		icon = GFX_focus_generic_secret_service_agency
+		prerequisite = { focus = ANG_spies_of_angmar }
+		relative_position_id = ANG_spies_of_angmar
+		x = 0
+		y = 1
+		cost = 2
+
+		available = {
+			has_intelligence_agency = yes
+		}
+
+
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				upgrade_intelligence_agency = upgrade_invisible_ink
+				upgrade_intelligence_agency = upgrade_suicide_pills
+				
+			}
+			
+			
+		}
+	}
+
+	focus = {
+		id = ANG_the_frozen_fleet
+		icon = GFX_focus_CHL_armada_de_chile
+		prerequisite = { focus = ANG_restore_dockyards }
+		relative_position_id = ANG_restore_dockyards
+		x = -1
+		y = 1
+		cost = 5
+
+
+		ai_will_do = {
+			factor = 3
+		}
+		
+		completion_reward = {
+			add_ideas = ANG_frozen_fleet
+			navy_experience = 25
+		}
+	}
+
+	focus = {
+		id = ANG_extend_dockyards
+		icon = GFX_goal_lth_river_ships_navigation
+		prerequisite = { focus = ANG_the_frozen_fleet }
+		relative_position_id = ANG_the_frozen_fleet
+		x = 0
+		y = 1
+		cost = 5
+
+		search_filters = {  FOCUS_FILTER_INDUSTRY }
+		
+
+		ai_will_do = {
+			factor = 3
+		}
+		
+		complete_tooltip = {
+			navy_experience = 25
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = dockyard
+				level = 2
+				instant_build = yes
+			}
+		}
+		
+		completion_reward = {
+			navy_experience = 25
+			57 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}		
+		}
+	}
+
+	focus = {
+		id = ANG_sea_based_trade
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = ANG_extend_dockyards }
+		prerequisite = { focus = ANG_streamline_our_spy_methods }
+		relative_position_id = ANG_extend_dockyards
+		x = 1
+		y = 1
+		cost = 4
+
+		search_filters = {  FOCUS_FILTER_INDUSTRY }
+		
+
+		ai_will_do = {
+			factor = 3
+		}
+		
+		completion_reward = {
+			add_ideas = ANG_sea_based_trade_idea
+		}
+	}
+
+	focus = {
+		id = ANG_economic_prosperity
+		icon = GFX_focus_DEN_no_regulations
+		prerequisite = { focus = ANG_carn_dum_library }
+		prerequisite = { focus = ANG_sea_based_trade }
+		relative_position_id = ANG_carn_dum_library
+		x = 3
+		y = 1
+		cost = 5
+
+
+
+		ai_will_do = {
+			factor = 3
+		}
+
+		completion_reward = {
+			add_ideas = ANG_economic_prosperity_idea
+		}
+	}
+
+	### END NAVAL
 
 
 	#Focus for The Fate of Angmar
@@ -54,7 +709,7 @@ focus_tree = {
 				}
 			}
 		}
-		x = 42
+		x = 45
 		y = 0
 		cost = 5
 		completion_reward = { add_political_power = 100 }
@@ -88,11 +743,11 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_1
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		ai_will_do = { factor = 5 }
-		relative_position_id = ANG_stay_true_to_the_people
-		x = 11
+		relative_position_id = thefateofangmar
+		x = -26
 		y = 1
-		prerequisite = { focus = ANG_stay_true_to_the_people focus = ANG_seek_former_glory focus = ANG_the_path_of_balance}
-		cost = 10
+		available = { has_completed_focus = ANG_let_rebuilding_commence }
+		cost = 5
 		completion_reward = { 
 			add_tech_bonus = {
 				name = industrial_bonus
@@ -223,11 +878,11 @@ focus_tree = {
 		cost = 10
 		completion_reward = { 
 			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
 			}
 			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
 			}
 		}
@@ -284,7 +939,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		prerequisite = { focus = ANG_stay_true_to_the_people }
-		cost = 10
+		cost = 5
 		completion_reward = { 
 			153 = {
 				add_resource = {
@@ -479,6 +1134,7 @@ focus_tree = {
 			RHD = { 
 				country_event = { id = rhudaur.4 }
 			}
+			custom_effect_tooltip = ANG_reunification_with_rhudaur_tt
 		}
 	}
 
@@ -553,6 +1209,7 @@ focus_tree = {
 			CAR = { 
 				country_event = { id = angmar.7 }
 			}
+			custom_effect_tooltip = ANG_invite_tt
 		}
 	}
 
@@ -586,6 +1243,7 @@ focus_tree = {
 			ART = { 
 				country_event = { id = angmar.7 }
 			}
+			custom_effect_tooltip = ANG_invite_tt
 		}
 	}
 
@@ -595,6 +1253,7 @@ focus_tree = {
 		icon = GFX_goal_generic_territory_or_war
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
 		ai_will_do = { factor = 8 }
+		cancel_if_invalid = yes
 		available = { 
 			has_government = cooperative 
 			is_in_faction = yes
@@ -604,6 +1263,9 @@ focus_tree = {
 				controls_state = 41
 				controls_state = 147
 				controls_state = 148
+				NOT = {
+					has_war_with = ANG
+				}
 			}
 		}
 		bypass = {
@@ -620,6 +1282,7 @@ focus_tree = {
 			ART = { 
 				country_event = { id = angmar.8 }
 			}
+			custom_effect_tooltip = ANG_request_control_north_arthedain_tt
 		}
 	}
 
@@ -884,20 +1547,30 @@ focus_tree = {
 		completion_reward = {
 			news_event = news.402
 			set_cosmetic_tag = ANG_new_arnor
-			if = {
-				limit = {
-					controls_state = 62
-					controls_state = 63
-					controls_state = 151
-					controls_state = 64
+			swap_ideas = {
+				remove_idea = ANG_shell_of_a_formor_power
+				add_idea = ANG_interventionism
+			}
+
+			custom_effect_tooltip = ANG_establish_new_arnor_tt
+			set_rule = { can_send_volunteers = yes }
+			set_rule = { can_declare_war_on_same_ideology = yes }
+			set_rule = { can_puppet = yes }
+			set_rule = { can_only_justify_war_on_threat_country = no }
+
+			hidden_effect = {
+				annex_country = {
+					target = RHD
+					transfer_troops = yes
 				}
 				add_state_core = 62
 				add_state_core = 63
 				add_state_core = 151
 				add_state_core = 64
 			}
-			remove_ideas = ANG_shell_of_a_formor_power
+
 		}
+		
 	}
 
 	focus = {
@@ -1241,7 +1914,7 @@ focus_tree = {
 		x = -5
 		y = 2
 		prerequisite = { focus = ANG_protector_of_the_north focus = ANG_join_erebor focus = ANG_join_gondor focus = ANG_non_agression focus = ANG_deterrence}
-		cost = 12
+		cost = 10
 		completion_reward = {
 			add_research_slot = 1
 			capital_scope = {
@@ -1478,7 +2151,9 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 25
 			lotr_switch_to_orcs = yes
+			add_named_threat = { threat = 5 name = "Angmar has joined forces with the orcs." }
 		}
+		
 	}
 
 	#Strengthen the new Government
@@ -1559,7 +2234,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		prerequisite = { focus = ANG_find_a_new_leader}
-		cost = 5
+		cost = 4
 		available = {
 			GUN = {
 				OR = {
@@ -1646,7 +2321,7 @@ focus_tree = {
 		relative_position_id = ANG_strengthen_our_bonds
 		x = 0
 		y = 1
-		prerequisite = { focus = ANG_strengthen_our_bonds focus = ANG_intergrate_rhudaur }
+		prerequisite = { focus = ANG_strengthen_our_bonds }
 		cost = 10
 		completion_reward = { 
 			swap_ideas = {
@@ -1677,7 +2352,9 @@ focus_tree = {
 		prerequisite = { focus = ANG_strengthen_the_new_goverment}
 		cost = 5
 		completion_reward = { 
-			MOR = { country_event = { id = mordor.52 } }
+			MOR = {
+				add_to_faction = ANG
+			}
 		}
 	}
 
@@ -1791,21 +2468,7 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = ANG_strengthen_the_army
-		icon = GFX_goal_lth_cleanse_orcs_from_moria
-		x = -2
-		y = 1
-		relative_position_id = ANG_our_own_empire
-		ai_will_do = { factor = 25 }
-		cost = 10
-		prerequisite = { focus = ANG_unite_with_sauron focus = ANG_our_own_empire}
-		search_filters = { FOCUS_FILTER_MANPOWER }
-		available = { has_government = belligerent	}
-		completion_reward = {
-			add_timed_idea = { idea = ANG_orc_farming days = 365 }
-		}
-	}
+
 
 	#Focus for Welcome back the old Master
 	focus = {
@@ -1879,10 +2542,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_war_support = 0.10
-			swap_ideas = {
-				remove_idea = volunteer_service
-				add_idea = limited_levy
-			}
+			add_ideas = ANG_witch_king_force
+			
 		}
 	}
 
@@ -2025,28 +2686,18 @@ focus_tree = {
 		prerequisite = { focus = ANG_ruler_of_the_west_coast }
 		cost = 10
 		available_if_capitulated = no
-		will_lead_to_war_with = LIN
-		will_lead_to_war_with = ART
+		will_lead_to_war_with = RHD
 		available = {
 		}
 		completion_reward = {
 			if = {
 				limit = {
 					NOT = {
-						is_in_faction_with = LIN
-						has_non_aggression_pact_with = LIN
+						is_in_faction_with = RHD
+						has_non_aggression_pact_with = RHD
 					}
 				}
-				create_wargoal = { type = take_state_focus target = LIN generator = { 52 142 50 } }
-			}
-			if = {
-				limit = {
-					NOT = {
-						is_in_faction_with = ART
-						has_non_aggression_pact_with = ART
-					}
-				}
-				create_wargoal = { type = take_state_focus target = ART generator = { 40 42 } }
+				create_wargoal = { type = annex_everything target = RHD }
 			}
 		}		
 	}
@@ -2066,6 +2717,8 @@ focus_tree = {
 		bypass = {
 			controls_state = 62
 			controls_state = 63
+			controls_state = 151
+			controls_state = 64
 		}
 		relative_position_id = ANG_welcome_back_the_old_master
 		x = 7
@@ -2077,6 +2730,8 @@ focus_tree = {
 		completion_reward = {
 			add_state_claim = 62
 			add_state_claim = 63
+			add_state_claim = 151
+			add_state_claim = 64
 		}
 	}
 
@@ -2110,6 +2765,62 @@ focus_tree = {
 	}
 
 	focus = {
+		id = ANG_war_ART
+		icon = GFX_goal_generic_major_war
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		ai_will_do = { factor = 3 }
+		relative_position_id = ANG_reclaim_cardolan
+		x = 0
+		y = 1
+		prerequisite = { focus = ANG_reclaim_cardolan }
+		cost = 5
+		available_if_capitulated = no
+		will_lead_to_war_with = ART
+		available = {
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						is_in_faction_with = ART
+						has_non_aggression_pact_with = ART
+					}
+				}
+				create_wargoal = { type = annex_everything target = ART }
+			}
+		}		
+	}
+
+	focus = {
+		id = ANG_war_CAR
+		icon = GFX_goal_generic_major_war
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		ai_will_do = { factor = 3 }
+		relative_position_id = ANG_reclaim_cardolan
+		x = -2
+		y = 1
+		prerequisite = { focus = ANG_reclaim_cardolan }
+		cost = 5
+		available_if_capitulated = no
+		will_lead_to_war_with = CAR
+		available = {
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						is_in_faction_with = CAR
+						has_non_aggression_pact_with = CAR
+					}
+				}
+				create_wargoal = { type = annex_everything target = CAR }
+			}
+		}		
+	}
+
+	
+
+	focus = {
 		id = ANG_intergrate_rhudaur
 		icon = GFX_goal_generic_dangerous_deal
 		search_filters = { FOCUS_FILTER_MANPOWER }
@@ -2127,6 +2838,33 @@ focus_tree = {
 			add_state_core = 62
 			add_state_core = 63
 		}
+	}
+
+	focus = {
+		id = ANG_war_LIN
+		icon = GFX_goal_generic_major_war
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
+		ai_will_do = { factor = 3 }
+		relative_position_id = ANG_intergrate_rhudaur
+		x = 0
+		y = 1
+		prerequisite = { focus = ANG_intergrate_rhudaur }
+		cost = 5
+		available_if_capitulated = no
+		will_lead_to_war_with = LIN
+		available = {
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						is_in_faction_with = LIN
+						has_non_aggression_pact_with = LIN
+					}
+				}
+				create_wargoal = { type = annex_everything target = LIN }
+			}
+		}		
 	}
 
 	focus = {
@@ -2151,12 +2889,6 @@ focus_tree = {
 			controls_state = 40
 			controls_state = 41
 			controls_state =  147
-			controls_state =  46
-			controls_state = 143
-			#North of Cardolan
-			controls_state = 145
-			controls_state = 149
-			controls_state = 150
 		}
 		relative_position_id = ANG_intergrate_rhudaur
 		x = -2
@@ -2187,7 +2919,7 @@ focus_tree = {
 		relative_position_id = ANG_reinstate_our_formor_glory
 		x = -1
 		y = 1
-		prerequisite = { focus = ANG_reinstate_our_formor_glory focus = ANG_tell_the_world }
+		prerequisite = { focus = ANG_reclaim_cardolan focus = ANG_tell_the_world }
 		cost = 10
 		will_lead_to_war_with = RIV
 		completion_reward = {
@@ -2208,7 +2940,7 @@ focus_tree = {
 		relative_position_id = ANG_reinstate_our_formor_glory
 		x = 1
 		y = 1
-		prerequisite = { focus = ANG_reinstate_our_formor_glory focus = ANG_tell_the_world }
+		prerequisite = { focus = ANG_intergrate_rhudaur focus = ANG_tell_the_world }
 		cost = 10
 		will_lead_to_war_with = VAL
 		completion_reward = {
@@ -2216,12 +2948,955 @@ focus_tree = {
 		}
 	}
 
-	####### hidden part #######
+	#Beginning of Expanded focuses
+
+	focus = {
+		id = ANG_the_path_of_balance
+		icon = GFX_goal_support_unaligned
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				add = 15
+				has_country_flag = gameplan_going_unaligned
+			}
+		}
+		available = {
+		}
+		prerequisite = {
+			focus = thefateofangmar
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_UNALIGNED }
+		mutually_exclusive = { focus = ANG_stay_true_to_the_people focus = ANG_seek_former_glory }
+		x = -17
+		y = 1
+		relative_position_id = thefateofangmar
+		cost = 5
+		completion_reward = { 
+			add_timed_idea = { idea = generic_unaligned days = 365 }
+		}
+	}
+	focus = {
+		id = ANG_denounce_the_witch_king_neutral_path
+		icon = GFX_goal_ANG_denounce_witch_king
+		ai_will_do = { factor = 4 }
+		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
+		relative_position_id = ANG_the_path_of_balance
+		x = 0
+		y = 1
+		prerequisite = { focus = ANG_the_path_of_balance}
+		cost = 10
+		completion_reward = {
+			news_event = { hours = 48 id = news.352 }
+			MOR = { add_opinion_modifier = { target = ANG modifier = ang_witch_king_denounced } }
+			set_global_flag = witch_king_denounced
+			remove_ideas = ANG_legacy_of_the_witch_king_0
+		}
+	}
+	focus = {
+		id = ANG_its_in_the_past
+		icon = GFX_goal_lth_elves_shaking_hands
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		prerequisite = { focus = ANG_denounce_the_witch_king_neutral_path }
+		relative_position_id = ANG_denounce_the_witch_king_neutral_path
+		x = 4
+		y = 1
+		cost = 10
+		completion_reward = {
+			CAR = { 
+				remove_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past_trade } 
+				remove_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past }
+			}
+			ART = { 
+				remove_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past_trade } 
+				remove_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past }
+			}
+			RHD = { 
+				remove_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past_trade }
+				remove_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past }
+			}
+		}
+	}
+
+	focus = {
+		id = ANG_neutral_foreign_policy
+		icon = GFX_goal_goal_generic_neutrality_focus
+		ai_will_do = {
+			factor = 15
+		}
+		prerequisite = {
+			focus = ANG_its_in_the_past
+		}
+		available = {
+		}
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		relative_position_id = ANG_its_in_the_past
+		x = 0
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_ideas = unaligned_idea
+		}
+		mutually_exclusive = {
+			focus = ANG_align_with_erebor
+			focus = ANG_create_faction
+		}
+	}
+
+	focus = {
+		id = ANG_deterrence
+		icon = GFX_goal_generic_defensive_fort
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = ANG_neutral_foreign_policy }
+		relative_position_id = ANG_neutral_foreign_policy
+		x = 1
+		y = 1
+		cost = 5
+		completion_reward = {
+			add_ideas = deterrence
+		}
+	}
+
+
+
+
+	focus = {
+		id = ANG_non_agression
+		icon = GFX_goal_generic_peace_dove
+		prerequisite = { focus = ANG_neutral_foreign_policy }
+		search_filters = { FOCUS_FILTER_POLITICAL }
+		relative_position_id = ANG_neutral_foreign_policy
+		x = -1
+		y = 1
+		cost = 4
+		completion_reward = {
+			every_neighbor_country  = {
+				limit = {
+					NOT = {
+						original_tag = ANG
+						original_tag = NEP
+					}
+				}
+				country_event = { id = angmar.9 }
+			}
+		}
+	}
+
+	focus = {
+		id = ANG_align_with_erebor
+		icon = GFX_goal_mor_erebor_flag
+		x = 6
+		y = 1
+		relative_position_id = ANG_its_in_the_past
+		cost = 5
+		prerequisite = {
+			focus = ANG_its_in_the_past
+		}
+		available = {
+		}
+		mutually_exclusive = {
+			focus = ANG_neutral_foreign_policy
+			focus = ANG_create_faction
+		}
+		completion_reward = {
+			add_political_power = 25
+			add_opinion_modifier = {
+				target = ERE
+				modifier = large_increase
+			}
+		}
+	}
+	focus = {
+		id = ANG_import_dwarven_steel
+		icon = GFX_goal_goal_generic_trade
+		x = -2
+		y = 1
+		relative_position_id = ANG_align_with_erebor
+		cost = 5
+		prerequisite = {
+			focus = ANG_align_with_erebor
+		}
+		available = {
+		}
+		completion_reward = {
+			add_opinion_modifier = {
+				target = ERE
+				modifier = small_increase
+			}
+			add_resource = {
+				type = steel
+				amount = 10
+				state = 152
+			}
+		}
+	}
+	focus = {
+		id = ANG_learn_from_the_dwarves
+		icon = GFX_goal_lth_dwarf_elf_handshake
+		x = 2
+		y = 1
+		relative_position_id = ANG_align_with_erebor
+		cost = 5
+		prerequisite = {
+			focus = ANG_align_with_erebor
+		}
+		available = {
+		}
+		completion_reward = { 
+			add_tech_bonus = {
+				name = special_bonus
+				bonus = 0.5
+				uses = 2
+				category = lotr_labour_metalworking
+			}
+			add_tech_bonus = {
+				name = special_bonus
+				bonus = 1
+				uses = 1
+				category = lotr_labour_construction_industry
+			}
+		}
+	}
+	focus = {
+		id = ANG_join_erebor
+		icon = GFX_goal_dwarves_soldiers_army
+		x = 0
+		y = 1
+		relative_position_id = ANG_align_with_erebor
+		cost = 5
+		prerequisite = {
+			focus = ANG_align_with_erebor
+		}
+		available = {
+			NOT = {
+				has_war_with = ERE
+			}
+			NOT = {
+				is_puppet = yes
+			}
+			NOT = {
+				has_war = yes
+			}
+			NOT = {
+				is_in_faction = yes
+			}
+		}
+		completion_reward = {
+			ERE = {
+				country_event = {
+					id = erebor.6
+				}
+			} 
+		}
+	}
+
+	focus = {
+		id = ANG_rally_the_people
+		icon = GFX_goal_ANG_rally_people_peasant_militia
+		relative_position_id = ANG_denounce_the_witch_king_neutral_path
+		x = -4
+		y = 1
+		prerequisite = {
+			focus = ANG_denounce_the_witch_king_neutral_path
+		}
+		cost = 10
+		completion_reward = {
+			add_timed_idea = {
+				idea = ANG_people_of_angmar
+				days = 365
+			}
+		}
+	}
+	focus = {
+		id = ANG_skirmishes_with_the_gundabad_orcs
+		icon = GFX_goal_ANG_orc_fight_skirmish
+		relative_position_id = ANG_rally_the_people
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ANG_rally_the_people
+		}
+		cost = 5
+		completion_reward = {
+			add_timed_idea = {
+				idea = ANG_skirmishes
+				days = 28
+			}
+		}
+	}
+	focus = {
+		id = ANG_put_the_squeeze_in
+		icon = GFX_goal_wargoal_gundabad
+		relative_position_id = ANG_skirmishes_with_the_gundabad_orcs
+		x = -1
+		y = 1
+		prerequisite = {
+			focus = ANG_skirmishes_with_the_gundabad_orcs
+		}
+		bypass = {
+			GUN = {
+				exists = no
+			}
+		}
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+		available = {
+			GUN = {
+				NOT = { has_government = cooperative }
+			}
+			GUN = {
+				NOT = { has_government = unaligned }
+			}
+		}
+		mutually_exclusive = {
+			focus = ANG_mend_the_conflict
+		}
+		cost = 10
+		will_lead_to_war_with = GUN
+		completion_reward = { 
+			add_state_claim = 61
+			create_wargoal = { target = GUN type = annex_everything  }
+		}
+	}
+	focus = {
+		id = ANG_mend_the_conflict
+		icon = GFX_goal_gundabad_flag
+		relative_position_id = ANG_skirmishes_with_the_gundabad_orcs
+		x = 1
+		y = 1
+		prerequisite = {
+			focus = ANG_skirmishes_with_the_gundabad_orcs
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 3
+		}
+		available = {
+			GUN = {
+				NOT = { has_government = belligerent }
+			}
+			GUN = {
+				NOT = { has_government = revolutionary }
+			}
+			GUN = {
+				exists = yes
+			}
+		}
+		mutually_exclusive = {
+			focus = ANG_put_the_squeeze_in
+		}
+		cost = 10
+		completion_reward = { 
+			add_stability = 0.1
+			add_opinion_modifier = {
+				target = GUN
+				modifier = large_increase
+			}
+		}
+	}
+	focus = {
+		id = ANG_sign_a_pact_with_gundabad
+		icon = GFX_goal_ELU_invite_durinvii_to_the_throne_treaty
+		relative_position_id = ANG_mend_the_conflict
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ANG_mend_the_conflict
+		}
+		available = {
+			GUN = {
+				exists = yes
+			}
+		}
+		cost = 5
+		completion_reward = {
+			diplomatic_relation = {
+				country = GUN
+				relation = non_aggression_pact
+				active = yes
+			}
+		}
+	}
+	focus = {
+		id = ANG_trade_deal_with_gundabad
+		icon = GFX_goal_goal_generic_positive_trade_relations
+		relative_position_id = ANG_sign_a_pact_with_gundabad
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ANG_sign_a_pact_with_gundabad
+		}
+		available = {
+			GUN = {
+				exists = yes
+			}
+		}
+		cost = 5
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 12
+				state = 152
+			}
+			add_resource = {
+				type = oil
+				amount = 8
+				state = 61
+			}
+		}
+	}
+	focus = {
+		id = ANG_sole_masters_of_gundabad
+		icon = GFX_goal_lth_orc_bound_by_chains
+		relative_position_id = ANG_put_the_squeeze_in
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = ANG_put_the_squeeze_in
+		}
+		available = {
+			GUN = {
+				exists = no
+			}
+			ANG = {
+				controls_state = 61
+			}
+		}
+		cost = 10
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_core_of = GUN
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+
+
+
+
+	focus = {
+		id = ANG_invite_forodwaith_settlers
+		icon = GFX_goal_ANG_forodwaithi_winter_settlers
+		relative_position_id = ANG_denounce_the_witch_king_neutral_path
+		x = 0
+		y = 1
+		prerequisite = {
+			focus = ANG_denounce_the_witch_king_neutral_path
+		}
+		cost = 10
+		completion_reward = {
+			add_stability = -0.1
+			add_ideas = ANG_forodwaith_settlers
+		}
+	}
+	focus = {
+		id = ANG_integrate_the_settlers
+		icon = GFX_goal_ROH_integrate_the_settlements
+		relative_position_id = ANG_invite_forodwaith_settlers
+		x = -2
+		y = 1
+		prerequisite = {
+			focus = ANG_rally_the_people
+		}
+		prerequisite = {
+			focus = ANG_invite_forodwaith_settlers
+		}
+		cost = 10
+		completion_reward = {
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = ANG_forodwaith_settlers
+				add_idea = ANG_forodwaith_settlers_2
+			}
+		}
+	}
+	focus = {
+		id = ANG_better_roads
+		icon = GFX_goal_ROH_wold_improve_infrastructure
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = ANG_invite_forodwaith_settlers }
+		relative_position_id = ANG_invite_forodwaith_settlers
+		x = 0
+		y = 1
+		cost = 10
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+
+				}
+				add_building_construction = { type = infrastructure level = 2 instant_build = yes }
+				add_extra_state_shared_building_slots = 2
+			}
+			build_railway = {
+				level = 1
+				start_province = 4426
+				target_province = 1918
+				build_only_on_allied = yes
+			}
+			build_railway = {
+				level = 1
+				start_province = 1918
+				target_province = 1236
+				build_only_on_allied = yes
+			}
+			build_railway = {
+				level = 1
+				start_province = 1236
+				target_province = 5769
+				build_only_on_allied = yes
+			}
+		}
+	}
+	focus = {
+		id = ANG_learn_from_their_methods
+		icon = GFX_goal_ANG_fishery_food_forodwaith
+		relative_position_id = ANG_invite_forodwaith_settlers
+		x = 2
+		y = 1
+		prerequisite = {
+			focus = ANG_invite_forodwaith_settlers
+		}
+		cost = 10
+		completion_reward = {
+			57 = {
+				add_building_construction = {
+					type = fishery
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = ANG_give_the_settlers_jobs
+		icon = GFX_goal_generic_peasantry_welfare
+		relative_position_id = ANG_invite_forodwaith_settlers
+		x = 0
+		y = 2
+		prerequisite = {
+			focus = ANG_integrate_the_settlers
+		}
+		prerequisite = {
+			focus = ANG_better_roads
+		}
+		prerequisite = {
+			focus = ANG_learn_from_their_methods
+		}
+		cost = 10
+		completion_reward = {
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = ANG_forodwaith_settlers_2
+				add_idea = ANG_forodwaith_settlers_3
+			}
+		}
+	}
+
+	focus = {
+		id = ANG_request_investment_neighbours
+		icon = GFX_goal_generic_monetary_union_deal
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		relative_position_id = ANG_give_the_settlers_jobs
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = {
+			focus = ANG_give_the_settlers_jobs
+		}
+		completion_reward = {
+			add_political_power = 150
+			custom_effect_tooltip = ANG_tooltip_request_investment
+			custom_effect_tooltip = ANG_investment_request_tt
+		}
+	}
+	focus = {
+		id = ANG_focus_on_industry_1
+		icon = GFX_goal_generic_windmill
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		relative_position_id = ANG_request_investment_neighbours
+		x = -1
+		y = 1
+		prerequisite = { focus = ANG_request_investment_neighbours }
+		cost = 10
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+			}
+		}
+	}
+
+	focus = {
+		id = ANG_focus_on_industry_2
+		icon = GFX_goal_generic_windmill
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		prerequisite = { focus = ANG_request_investment_neighbours }
+		relative_position_id = ANG_request_investment_neighbours
+		x = 1
+		y = 1
+		cost = 5
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+			}
+		}
+	}
+
+	focus = {
+		id = ANG_a_new_age_for_angmar
+		icon = GFX_goal_ANG_a_new_age_for_angmar
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		relative_position_id = ANG_request_investment_neighbours
+		x = 0
+		y = 2
+		cost = 10
+		available = {
+			num_of_civilian_factories > 25
+		}
+		prerequisite = {
+			focus = ANG_sole_masters_of_gundabad
+			focus = ANG_trade_deal_with_gundabad
+		}
+		prerequisite = {
+			focus = ANG_focus_on_industry_1
+		}
+		prerequisite = {
+			focus = ANG_focus_on_industry_2
+		}
+		prerequisite = {
+			focus = ANG_create_a_university
+		}
+		completion_reward = {
+			add_manpower = 20000
+			if = {
+				limit = {
+					has_idea = ANG_shell_of_a_formor_power
+				}
+				swap_ideas = {
+					remove_idea = ANG_shell_of_a_formor_power
+					add_idea = ANG_new_age_of_angmar
+				}
+			}
+			else = {
+				effect_tooltip = {
+					swap_ideas = {
+						remove_idea = ANG_shell_of_a_formor_power
+						add_idea = ANG_new_age_of_angmar
+					}
+				}
+				hidden_effect = {
+					add_ideas = ANG_new_age_of_angmar
+				}
+			}
+		}
+		
+	}
+
+	#Focus for Establish Orc Breeding Grounds
+	focus = {
+		id = ANG_establish_orc_breeding_grounds
+		icon = GFX_goal_army_uruk_hai
+		ai_will_do = { factor = 40 }
+		x = 4
+		y = 0
+		available = { has_completed_focus = ANG_join_forces_with_orcs }
+		relative_position_id = ANG_join_forces_with_orcs
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		cost = 10
+		available_if_capitulated = no
+		completion_reward = { add_manpower = 25000 add_ideas = ANG_orc_breeding }
+	}
+
+	#Focus for More Orcs!
+	focus = {
+		id = ANG_more_orcs
+		icon = GFX_goal_lth_uruk_hai_orc
+		ai_will_do = { factor = 15 }
+		x = 0
+		y = 1
+		prerequisite = { focus = ANG_establish_orc_breeding_grounds }
+		relative_position_id = ANG_establish_orc_breeding_grounds
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		cost = 10
+		available_if_capitulated = no
+		completion_reward = { add_manpower = 25000 add_ideas = ANG_orc_breeding2 }
+	}
+
+	focus = {
+		id = ANG_strengthen_the_army
+		icon = GFX_goal_lth_cleanse_orcs_from_moria
+		x = -2
+		y = 1
+		relative_position_id = ANG_our_own_empire
+		ai_will_do = { factor = 25 }
+		cost = 10
+		prerequisite = { focus = ANG_unite_with_sauron focus = ANG_our_own_empire }
+		available = { has_completed_focus = ANG_more_orcs }
+		search_filters = { FOCUS_FILTER_MANPOWER }
+		available = { has_government = belligerent	}
+		completion_reward = {
+			add_timed_idea = { idea = ANG_orc_farming days = 365 }
+		}
+	}
+
+	focus = {
+		id = ANG_embrace_orchish_brutality
+		icon = GFX_goal_generic_political_pressure
+		ai_will_do = { factor = 15 }
+		x = -5
+		y = 1
+		mutually_exclusive = { }
+		prerequisite = { focus = ANG_strengthen_the_new_goverment }
+		relative_position_id = ANG_strengthen_the_new_goverment
+		cost = 10
+		available_if_capitulated = no
+		completion_reward = { add_ideas = ANG_orc_brutality }
+	}
+
+	focus = {
+		id = ANG_carn_dum_alchemy
+		icon = GFX_focus_research
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		ai_will_do = { factor = 5 }
+		relative_position_id = thefateofangmar
+		x = 10
+		y = 2
+		prerequisite = { focus = ANG_seek_former_glory focus = ANG_stay_true_to_the_people focus = ANG_the_path_of_balance }
+		cost = 4
+
+		bypass = {
+			has_tech = magic
+			152 = {
+				is_fully_controlled_by = ROOT
+				laboratory > 0
+			}
+			
+		}
+
+		completion_reward = { 
+			set_technology = {
+				magic = 1
+			} 
+			IF = {
+				limit = { 
+					152 = {
+						is_fully_controlled_by = ROOT
+						laboratory < 1
+					}
+				}
+
+				152 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = laboratory
+						level = 1
+						instant_build = yes
+						province = 306
+					}
+				}
+				
+			}
+			
+		}
+	}
+
+	focus = {
+		id = ANG_delve_into_magic
+		icon = GFX_goal_ANG_delve_into_magic
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		ai_will_do = { factor = 5 }
+		relative_position_id = ANG_carn_dum_alchemy
+		x = -1
+		y = 1
+		prerequisite = { focus = ANG_carn_dum_alchemy}
+		cost = 10
+		completion_reward = { 
+			add_tech_bonus = {
+				name = ANG_magic_bonus
+				bonus = 0.5
+				uses = 3
+				category = lotr_knowledge_alchemy
+				category = lotr_knowledge_magic
+			}
+			
+		}
+	}
+
+	focus = {
+		id = ANG_human_intellect
+		icon = GFX_goal_generic_fishermen
+		search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_COOPERATIVE }
+		ai_will_do = { factor = 5 }
+		relative_position_id = ANG_carn_dum_alchemy
+		available = {
+			is_men = yes
+			OR = {
+				has_government = cooperative
+				has_government = unaligned
+			}
+		}
+		x = -3
+		y = 1
+		prerequisite = { focus = ANG_carn_dum_alchemy }
+		cost = 5
+		completion_reward = { 
+			add_ideas = ANG_human_intellect
+			if = {
+				limit = {
+					has_government = cooperative
+				}
+				add_popularity = {
+					ideology = cooperative
+					popularity = 0.05
+				}
+			}
+			else_if = {
+				limit = {
+					has_government = unaligned
+				}
+				add_popularity = {
+					ideology = unaligned
+					popularity = 0.05
+				}
+			}
+
+		}
+	}
+
+	focus = {
+		id = ANG_goblin_researchers
+		icon = GFX_goal_ANG_goblin_research
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		ai_will_do = { factor = 5 }
+		relative_position_id = ANG_carn_dum_alchemy
+		available = {
+			is_orcs = yes
+			has_government = belligerent
+		}
+		x = 3
+		y = 1
+		prerequisite = { focus = ANG_carn_dum_alchemy }
+		cost = 5
+		completion_reward = { 
+			add_ideas = ANG_goblin_researchers
+		}
+	}
+
+	focus = {
+		id = ANG_haste
+		icon = GFX_focus_research
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		ai_will_do = { factor = 5 }
+		relative_position_id = ANG_carn_dum_alchemy
+		x = 1
+		y = 1
+		prerequisite = { focus = ANG_carn_dum_alchemy}
+		cost = 5
+
+		bypass = {
+			always = no
+		}
+
+		completion_reward = { 
+			add_breakthrough_progress = {
+				specialization = specialization_laboratory
+				value = 1.0
+			}
+			if = {
+				limit = {
+					is_special_project_completed = sp:sp_haste_spell
+				}
+			}
+			else = {
+				sp:sp_haste_spell = {
+					add_project_progress_ratio = 0.5
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ANG_research_at_any_hour
+		icon = GFX_goal_lth_research_cooperation
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		ai_will_do = { factor = 5 }
+		relative_position_id = ANG_delve_into_magic
+		x = 0
+		y = 1
+		prerequisite = { focus = ANG_delve_into_magic}
+		prerequisite = { focus = ANG_haste}
+		mutually_exclusive = {
+			focus = ANG_approve_magic_in_factories
+		}
+		cost = 10
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = ANG_approve_magic_in_factories
+		icon = GFX_goal_ANG_delve_into_magic
+		search_filters = { FOCUS_FILTER_INDUSTRY }
+		ai_will_do = { factor = 5 }
+		relative_position_id = ANG_haste
+		prerequisite = { focus = ANG_haste }
+		prerequisite = { focus = ANG_delve_into_magic }
+		mutually_exclusive = {
+			focus = ANG_research_at_any_hour
+		}
+		x = 0
+		y = 1
+		cost = 10
+		completion_reward = {
+			add_ideas = ANG_approve_magic_in_factories
+		}
+	}
+
+	focus = {
+		id = ANG_heavy_experimenting
+		icon = GFX_focus_research
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		ai_will_do = { factor = 5 }
+		relative_position_id = ANG_approve_magic_in_factories
+		x = -1
+		y = 1
+		prerequisite = { focus = ANG_approve_magic_in_factories focus = ANG_research_at_any_hour }
+		cost = 10
+
+		bypass = {
+			always = no
+		}
+
+		completion_reward = { 
+			add_breakthrough_progress = {
+				specialization = specialization_laboratory
+				value = 1.0
+			}
+		}
+	}
+
+	####### hidden part if mordor goes A Realm of Orcs #######
 	focus = {
 		id = ANG_the_return_of_sauron
 		icon = GFX_goal_sauron_eye
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_MANPOWER FOCUS_FILTER_STABILITY FOCUS_FILTER_INDUSTRY }
-		ai_will_do = { factor = 25 }
+		ai_will_do = { factor = 80 }
 		allow_branch = {
 			has_country_flag = ANG_necromancer_path_unlocked
 		}
@@ -2286,8 +3961,8 @@ focus_tree = {
 				add_idea = ANG_the_necromancer_1
 			}
 			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = { type = arms_factory level = 4 instant_build = yes }
 			}
 		}
 	} 
@@ -2604,634 +4279,5 @@ focus_tree = {
 
 	#End of focuses
 
-	#Beginning of Expanded focuses
-
-	focus = {
-		id = ANG_the_path_of_balance
-		icon = GFX_goal_support_unaligned
-		ai_will_do = { 
-			base = 0
-			modifier = {
-				add = 15
-				has_country_flag = gameplan_going_unaligned
-			}
-		}
-		available = {
-		}
-		prerequisite = {
-			focus = thefateofangmar
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_UNALIGNED }
-		mutually_exclusive = { focus = ANG_stay_true_to_the_people focus = ANG_seek_former_glory }
-		x = -17
-		y = 1
-		relative_position_id = thefateofangmar
-		cost = 5
-		completion_reward = { 
-			add_timed_idea = { idea = generic_unaligned days = 365 }
-		}
-	}
-	focus = {
-		id = ANG_denounce_the_witch_king_neutral_path
-		icon = GFX_goal_ANG_denounce_witch_king
-		ai_will_do = { factor = 4 }
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT }
-		relative_position_id = ANG_the_path_of_balance
-		x = 0
-		y = 1
-		prerequisite = { focus = ANG_the_path_of_balance}
-		cost = 10
-		completion_reward = {
-			news_event = { hours = 48 id = news.352 }
-			MOR = { add_opinion_modifier = { target = ANG modifier = ang_witch_king_denounced } }
-			set_global_flag = witch_king_denounced
-			remove_ideas = ANG_legacy_of_the_witch_king_0
-		}
-	}
-	focus = {
-		id = ANG_its_in_the_past
-		icon = GFX_goal_lth_elves_shaking_hands
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		prerequisite = { focus = ANG_denounce_the_witch_king_neutral_path }
-		relative_position_id = ANG_denounce_the_witch_king_neutral_path
-		x = 4
-		y = 1
-		cost = 10
-		completion_reward = {
-			CAR = { 
-				remove_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past_trade } 
-				remove_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past }
-			}
-			ART = { 
-				remove_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past_trade } 
-				remove_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past }
-			}
-			RHD = { 
-				remove_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past_trade }
-				remove_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past }
-			}
-		}
-	}
-
-	focus = {
-		id = ANG_neutral_foreign_policy
-		icon = GFX_goal_goal_generic_neutrality_focus
-		ai_will_do = {
-			factor = 15
-		}
-		prerequisite = {
-			focus = ANG_its_in_the_past
-		}
-		available = {
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		relative_position_id = ANG_its_in_the_past
-		x = 0
-		y = 1
-		cost = 10
-		completion_reward = {
-			add_ideas = unaligned_idea
-		}
-		mutually_exclusive = {
-			focus = ANG_align_with_erebor
-			focus = ANG_create_faction
-		}
-	}
-
-	focus = {
-		id = ANG_deterrence
-		icon = GFX_goal_generic_defensive_fort
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		prerequisite = { focus = ANG_neutral_foreign_policy }
-		relative_position_id = ANG_neutral_foreign_policy
-		x = 1
-		y = 1
-		cost = 10
-		completion_reward = {
-			add_ideas = deterrence
-		}
-	}
-
-
-
-
-	focus = {
-		id = ANG_non_agression
-		icon = GFX_goal_generic_peace_dove
-		prerequisite = { focus = ANG_neutral_foreign_policy }
-		search_filters = { FOCUS_FILTER_POLITICAL }
-		relative_position_id = ANG_neutral_foreign_policy
-		x = -1
-		y = 1
-		cost = 10
-		completion_reward = {
-			every_neighbor_country  = {
-				limit = {
-					NOT = {
-						original_tag = ANG
-						original_tag = NEP
-					}
-				}
-				country_event = { id = angmar.9 }
-			}
-		}
-	}
-
-	focus = {
-		id = ANG_align_with_erebor
-		icon = GFX_goal_mor_erebor_flag
-		x = 6
-		y = 1
-		relative_position_id = ANG_its_in_the_past
-		cost = 5
-		prerequisite = {
-			focus = ANG_its_in_the_past
-		}
-		available = {
-		}
-		mutually_exclusive = {
-			focus = ANG_neutral_foreign_policy
-			focus = ANG_create_faction
-		}
-		completion_reward = {
-			add_political_power = 25
-			add_opinion_modifier = {
-				target = ERE
-				modifier = large_increase
-			}
-		}
-	}
-	focus = {
-		id = ANG_import_dwarven_steel
-		icon = GFX_goal_goal_generic_trade
-		x = -2
-		y = 1
-		relative_position_id = ANG_align_with_erebor
-		cost = 5
-		prerequisite = {
-			focus = ANG_align_with_erebor
-		}
-		available = {
-		}
-		completion_reward = {
-			add_opinion_modifier = {
-				target = ERE
-				modifier = small_increase
-			}
-			add_resource = {
-				type = steel
-				amount = 10
-				state = 152
-			}
-		}
-	}
-	focus = {
-		id = ANG_learn_from_the_dwarves
-		icon = GFX_goal_lth_dwarf_elf_handshake
-		x = 2
-		y = 1
-		relative_position_id = ANG_align_with_erebor
-		cost = 5
-		prerequisite = {
-			focus = ANG_align_with_erebor
-		}
-		available = {
-		}
-		completion_reward = { 
-			add_tech_bonus = {
-				name = special_bonus
-				bonus = 0.5
-				uses = 2
-				category = lotr_labour_metalworking
-			}
-			add_tech_bonus = {
-				name = special_bonus
-				bonus = 1
-				uses = 1
-				category = lotr_labour_construction_industry
-			}
-		}
-	}
-	focus = {
-		id = ANG_join_erebor
-		icon = GFX_goal_dwarves_soldiers_army
-		x = 0
-		y = 1
-		relative_position_id = ANG_align_with_erebor
-		cost = 10
-		prerequisite = {
-			focus = ANG_align_with_erebor
-		}
-		available = {
-			NOT = {
-				has_war_with = ERE
-			}
-			NOT = {
-				is_puppet = yes
-			}
-			NOT = {
-				has_war = yes
-			}
-			NOT = {
-				is_in_faction = yes
-			}
-		}
-		completion_reward = {
-			ERE = {
-				country_event = {
-					id = erebor.6
-				}
-			} 
-		}
-	}
-
-	focus = {
-		id = ANG_rally_the_people
-		icon = GFX_goal_ANG_rally_people_peasant_militia
-		relative_position_id = ANG_denounce_the_witch_king_neutral_path
-		x = -4
-		y = 1
-		prerequisite = {
-			focus = ANG_denounce_the_witch_king_neutral_path
-		}
-		cost = 10
-		completion_reward = {
-			add_timed_idea = {
-				idea = ANG_people_of_angmar
-				days = 365
-			}
-		}
-	}
-	focus = {
-		id = ANG_skirmishes_with_the_gundabad_orcs
-		icon = GFX_goal_ANG_orc_fight_skirmish
-		relative_position_id = ANG_rally_the_people
-		x = 0
-		y = 1
-		prerequisite = {
-			focus = ANG_rally_the_people
-		}
-		cost = 5
-		completion_reward = {
-			add_timed_idea = {
-				idea = ANG_skirmishes
-				days = 28
-			}
-		}
-	}
-	focus = {
-		id = ANG_put_the_squeeze_in
-		icon = GFX_goal_wargoal_gundabad
-		relative_position_id = ANG_skirmishes_with_the_gundabad_orcs
-		x = -1
-		y = 1
-		prerequisite = {
-			focus = ANG_skirmishes_with_the_gundabad_orcs
-		}
-		bypass = {
-			GUN = {
-				exists = no
-			}
-		}
-		ai_will_do = {
-			factor = 2
-		}
-		available = {
-			GUN = {
-				NOT = { has_government = cooperative }
-			}
-			GUN = {
-				NOT = { has_government = unaligned }
-			}
-		}
-		mutually_exclusive = {
-			focus = ANG_mend_the_conflict
-		}
-		cost = 10
-		will_lead_to_war_with = GUN
-		completion_reward = { 
-			create_wargoal = { target = GUN type = topple_government  }
-		}
-	}
-	focus = {
-		id = ANG_mend_the_conflict
-		icon = GFX_goal_gundabad_flag
-		relative_position_id = ANG_skirmishes_with_the_gundabad_orcs
-		x = 1
-		y = 1
-		prerequisite = {
-			focus = ANG_skirmishes_with_the_gundabad_orcs
-		}
-		cost = 10
-		ai_will_do = {
-			factor = 3
-		}
-		available = {
-			GUN = {
-				NOT = { has_government = belligerent }
-			}
-			GUN = {
-				NOT = { has_government = revolutionary }
-			}
-			GUN = {
-				exists = yes
-			}
-		}
-		mutually_exclusive = {
-			focus = ANG_put_the_squeeze_in
-		}
-		cost = 10
-		completion_reward = { 
-			add_opinion_modifier = {
-				target = GUN
-				modifier = large_increase
-			}
-		}
-	}
-	focus = {
-		id = ANG_sign_a_pact_with_gundabad
-		icon = GFX_goal_ELU_invite_durinvii_to_the_throne_treaty
-		relative_position_id = ANG_mend_the_conflict
-		x = 0
-		y = 1
-		prerequisite = {
-			focus = ANG_mend_the_conflict
-		}
-		available = {
-			GUN = {
-				exists = yes
-			}
-		}
-		cost = 5
-		completion_reward = {
-			diplomatic_relation = {
-				country = GUN
-				relation = non_aggression_pact
-				active = yes
-			}
-		}
-	}
-	focus = {
-		id = ANG_trade_deal_with_gundabad
-		icon = GFX_goal_goal_generic_positive_trade_relations
-		relative_position_id = ANG_sign_a_pact_with_gundabad
-		x = 0
-		y = 1
-		prerequisite = {
-			focus = ANG_sign_a_pact_with_gundabad
-		}
-		available = {
-			GUN = {
-				exists = yes
-			}
-		}
-		cost = 5
-		completion_reward = {
-			add_resource = {
-				type = steel
-				amount = 12
-				state = 152
-			}
-			add_resource = {
-				type = oil
-				amount = 8
-				state = 61
-			}
-		}
-	}
-	focus = {
-		id = ANG_sole_masters_of_gundabad
-		icon = GFX_goal_lth_orc_bound_by_chains
-		relative_position_id = ANG_put_the_squeeze_in
-		x = 0
-		y = 2
-		prerequisite = {
-			focus = ANG_put_the_squeeze_in
-		}
-		available = {
-			GUN = {
-				exists = no
-			}
-			ANG = {
-				controls_state = 61
-			}
-		}
-		cost = 10
-		completion_reward = {
-			every_state = {
-				limit = {
-					is_core_of = GUN
-				}
-				add_core_of = ROOT
-			}
-		}
-	}
-
-
-
-
-	focus = {
-		id = ANG_invite_forodwaith_settlers
-		icon = GFX_goal_ANG_forodwaithi_winter_settlers
-		relative_position_id = ANG_denounce_the_witch_king_neutral_path
-		x = 0
-		y = 1
-		prerequisite = {
-			focus = ANG_denounce_the_witch_king_neutral_path
-		}
-		cost = 10
-		completion_reward = {
-			add_stability = -0.1
-			add_ideas = ANG_forodwaith_settlers
-		}
-	}
-	focus = {
-		id = ANG_integrate_the_settlers
-		icon = GFX_goal_ROH_integrate_the_settlements
-		relative_position_id = ANG_invite_forodwaith_settlers
-		x = -2
-		y = 1
-		prerequisite = {
-			focus = ANG_rally_the_people
-		}
-		prerequisite = {
-			focus = ANG_invite_forodwaith_settlers
-		}
-		cost = 10
-		completion_reward = {
-			add_stability = 0.05
-			swap_ideas = {
-				remove_idea = ANG_forodwaith_settlers
-				add_idea = ANG_forodwaith_settlers_2
-			}
-		}
-	}
-	focus = {
-		id = ANG_better_roads
-		icon = GFX_goal_ROH_wold_improve_infrastructure
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		prerequisite = { focus = ANG_invite_forodwaith_settlers }
-		relative_position_id = ANG_invite_forodwaith_settlers
-		x = 0
-		y = 1
-		cost = 10
-		completion_reward = {
-			every_owned_state = {
-				limit = {
-
-				}
-				add_building_construction = { type = infrastructure level = 2 instant_build = yes }
-			}
-			build_railway = {
-				level = 1
-				start_province = 4426
-				target_province = 1918
-				build_only_on_allied = yes
-			}
-			build_railway = {
-				level = 1
-				start_province = 1918
-				target_province = 1236
-				build_only_on_allied = yes
-			}
-			build_railway = {
-				level = 1
-				start_province = 1236
-				target_province = 5769
-				build_only_on_allied = yes
-			}
-		}
-	}
-	focus = {
-		id = ANG_learn_from_their_methods
-		icon = GFX_goal_ANG_fishery_food_forodwaith
-		relative_position_id = ANG_invite_forodwaith_settlers
-		x = 2
-		y = 1
-		prerequisite = {
-			focus = ANG_invite_forodwaith_settlers
-		}
-		cost = 10
-		completion_reward = {
-			57 = {
-				add_building_construction = {
-					type = fishery
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {
-		id = ANG_give_the_settlers_jobs
-		icon = GFX_goal_generic_peasantry_welfare
-		relative_position_id = ANG_invite_forodwaith_settlers
-		x = 0
-		y = 2
-		prerequisite = {
-			focus = ANG_integrate_the_settlers
-		}
-		prerequisite = {
-			focus = ANG_better_roads
-		}
-		prerequisite = {
-			focus = ANG_learn_from_their_methods
-		}
-		cost = 10
-		completion_reward = {
-			add_stability = 0.05
-			swap_ideas = {
-				remove_idea = ANG_forodwaith_settlers_2
-				add_idea = ANG_forodwaith_settlers_3
-			}
-		}
-	}
-
-	focus = {
-		id = ANG_request_investment_neighbours
-		icon = GFX_goal_generic_monetary_union_deal
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		relative_position_id = ANG_give_the_settlers_jobs
-		x = 0
-		y = 1
-		cost = 10
-		prerequisite = {
-			focus = ANG_give_the_settlers_jobs
-		}
-		completion_reward = {
-			add_political_power = 150
-			custom_effect_tooltip = ANG_tooltip_request_investment
-		}
-	}
-	focus = {
-		id = ANG_focus_on_industry_1
-		icon = GFX_goal_generic_windmill
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		relative_position_id = ANG_request_investment_neighbours
-		x = -1
-		y = 1
-		prerequisite = { focus = ANG_request_investment_neighbours }
-		cost = 10
-		completion_reward = {
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
-			}
-		}
-	}
-
-	focus = {
-		id = ANG_focus_on_industry_2
-		icon = GFX_goal_generic_windmill
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		prerequisite = { focus = ANG_request_investment_neighbours }
-		relative_position_id = ANG_request_investment_neighbours
-		x = 1
-		y = 1
-		cost = 10
-		completion_reward = {
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
-			}
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = { type = arms_factory level = 1 instant_build = yes }
-			}
-		}
-	}
-
-	focus = {
-		id = ANG_a_new_age_for_angmar
-		icon = GFX_goal_ANG_a_new_age_for_angmar
-		search_filters = { FOCUS_FILTER_INDUSTRY }
-		relative_position_id = ANG_request_investment_neighbours
-		x = 0
-		y = 2
-		cost = 10
-		available = {
-			num_of_civilian_factories > 25
-		}
-		prerequisite = {
-			focus = ANG_sole_masters_of_gundabad
-			focus = ANG_trade_deal_with_gundabad
-		}
-		prerequisite = {
-			focus = ANG_focus_on_industry_1
-		}
-		prerequisite = {
-			focus = ANG_focus_on_industry_2
-		}
-		prerequisite = {
-			focus = ANG_create_a_university
-		}
-		completion_reward = {
-			remove_ideas = ANG_shell_of_a_formor_power
-		}
-	}
 }
 

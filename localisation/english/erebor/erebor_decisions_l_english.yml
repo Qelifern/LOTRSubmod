@@ -1,0 +1,17 @@
+﻿l_english:
+
+MIR_dealing_with_dol_guldur_cat:0 "Dealing with Dol Guldur"
+MIR_dealing_with_dol_guldur_cat_desc:0 "Mordor's meddling in our own territory must no longer be tolerated!"
+MIR_dol_guldur_rises:0 "Orcs are gathering in Dol Guldur"
+MIR_dol_guldur_rises_desc:0 ""
+MIR_dol_guldur_expedition:0 "Launch an expedition"
+MIR_dol_guldur_expedition_desc:0 ""
+MIR_dol_guldur_attack:0 "Launch an Attack against Dol Guldur"
+MIR_dol_guldur_attack_desc:0 ""
+MIR_dol_guldur_ignite:0 "Warning! When this mission fails you will lose the state of Dol Guldur!"
+
+
+ERE_move_industry_deeper_cat:0 "Industry Relocation"
+
+ERE_move_industry_deeper_industrial_complex:0 "Move Civilian Industry Deep Underground"
+ERE_move_industry_deeper_arms_factory:0 "Move Arms Industry Deep Underground"

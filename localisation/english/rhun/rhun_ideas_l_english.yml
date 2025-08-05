@@ -37,3 +37,9 @@ RHU_militair_supply_system_desc:0 ""
 
 RHU_hidden_supplies:0 "Hidden supplies"
 RHU_hidden_supplies_desc:0 ""
+
+RHU_servant_morgoth:0 "Servant of Morgoth"
+RHU_servant_morgoth_desc:0 "Servant of Morgoth"
+
+RHU_crush_the_dwarves:0 "Crush the Dwarves"
+RHU_crush_the_dwarves:0 "The Dark Lord Sauron has decreed the dwarves must be crushed."

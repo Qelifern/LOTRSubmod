@@ -32,122 +32,88 @@ division_template = {
 	}
 }
 
-division_template = {
-	name = "Light Tank Division"
-
-	regiments = {
-		light_cavalry = { x = 0 y = 0 }
-		light_cavalry = { x = 0 y = 1 }
-        	light_cavalry = { x = 1 y = 0 }
-		light_cavalry = { x = 1 y = 1 }
-		motorized = { x = 2 y = 0 }
-       		motorized = { x = 2 y = 1 }
-	}
-	support = {
-        	engineer = { x = 0 y = 0 }
-	}
-}
 
 ##### OOB #####
 units = {
 	##### LAND UNITS #####
 	division = {
-		name = "Son's of Durin Regiment"
-		location = 3164
-		division_template = "Dwarf Infantry"
-		start_experience_factor = 1.0
-		start_equipment_factor = 0.8
-	}
-	division = {
-		name = "Erebor Guard"
-		location = 3164
-		division_template = "Mountain Dwarf Divison"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.7
-	}
-	division = {
 		name = "1st Eastern Vanguard"
-		location = 5824
+		location = 2722
 		division_template = "Dwarf Infantry"
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.3
 	}
 	division = {
 		name = "2nd Eastern Vanguard"
-		location = 5200
+		location = 2722
 		division_template = "Dwarf Infantry"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.4
 	}
 	division = {
 		name = "3rd Eastern Vanguard"
-		location = 1463
+		location = 2722
 		division_template = "Dwarf Infantry"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.2
 	}
 	division = {
 		name = "1st Southern Vanguard"
-		location = 2722
+		location = 2768
 		division_template = "Dwarf Infantry"
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.3
 	}
 	division = {
 		name = "3rd Southern Vanguard"
-		location = 2722
+		location = 2768
 		division_template = "Dwarf Infantry"
 		start_experience_factor = 0.3
 		start_equipment_factor = 0.3
 	}
 	division = {
 		name = "Grey Mountain Scout"
-		location = 2940
+		location = 1725
+		division_template = "Mountain Dwarf Divison"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+		start_manpower_factor = 1.0
+	}
+	division = {
+		name = "Grey Mountain Scout"
+		location = 1725
+		division_template = "Mountain Dwarf Divison"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.2
+		start_manpower_factor = 1.0
+	}
+	division = {
+		name = "Grey Mountain Scout"
+		location = 1725
+		division_template = "Mountain Dwarf Divison"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "Grey Mountain Scout"
+		location = 1725
 		division_template = "Mountain Dwarf Divison"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
 	division = {
 		name = "Grey Mountain Scout"
-		location = 2127
+		location = 1725
 		division_template = "Mountain Dwarf Divison"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.2
 	}
 	division = {
 		name = "Grey Mountain Scout"
-		location = 5655
+		location = 1725
 		division_template = "Mountain Dwarf Divison"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.7
-	}
-	division = {
-		name = "Emergency Response Regiment"
-		location = 2570
-		division_template = "Light Tank Division"
-		start_experience_factor = 0.0
-		start_equipment_factor = 0.8
-	}
-	division = {
-		name = "Emergency Response Regiment"
-		location = 2737
-		division_template = "Light Tank Division"
-		start_experience_factor = 0.0
-		start_equipment_factor = 0.5
-	}
-	division = {
-		name = "Emergency Response Regiment"
-		location = 5359
-		division_template = "Light Tank Division"
-		start_experience_factor = 0.0
-		start_equipment_factor = 1.0
-	}
-	division = {
-		name = "Emergency Response Regiment"
-		location = 5727
-		division_template = "Light Tank Division"
-		start_experience_factor = 0.0
-		start_equipment_factor = 1.0
 	}
 }
 

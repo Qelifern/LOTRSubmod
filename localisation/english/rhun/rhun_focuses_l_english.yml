@@ -83,6 +83,8 @@ RHU_take_middle_earth_desc:0 ""
 
 RHU_take_swamp:0 "Westward Expansion"
 RHU_take_swamp_desc:0 ""
+RHU_take_west:0 "Secure the West"
+RHU_take_west_desc:0 ""
 RHU_swamp_invest_in_infrastructure:0 "Build a infrastructure"
 RHU_swamp_invest_in_infrastructure_desc:0 ""
 RHU_swamp_invest_in_infra:0 "Lay down roads"
@@ -113,6 +115,10 @@ RHU_ask_mordor_for_trolls_desc:0 "We have seen what the trolls can do. Let us as
 
 RHU_honor_morgoth:0 "Honor Morgoth"
 RHU_honor_morgoth_desc:0 ""
+RHU_petition_sauron:0 "Petetion for Dominion over Rhûn"
+RHU_petition_sauron_desc:0 ""
+
+RHU_dark_realm:0 "Dark Realm of Rhûn"
 
 #################################
 #Democratic

@@ -1,0 +1,16 @@
+spriteTypes = {
+
+    spriteType = {
+        name = "GFX_goal_ANG_clear_mountain_pass"
+        texturefile = "gfx/interface/goals/ang/focus_ANG_clear_mountain_pass.dds"
+    }
+	spriteType = {
+        name = "GFX_goal_ANG_delve_into_magic"
+        texturefile = "gfx/interface/goals/ang/focus_ANG_delve_into_magic.dds"
+    }
+	spriteType = {
+        name = "GFX_goal_ANG_goblin_research"
+        texturefile = "gfx/interface/goals/ang/focus_ANG_goblin_research.dds"
+    }
+	
+}

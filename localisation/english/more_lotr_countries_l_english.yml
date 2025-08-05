@@ -1,0 +1,15 @@
+﻿l_english:
+ IRH: "Iron Hills"
+ IRH_DEF: "Iron Hills" 
+ IRH_ADJ: "Dwarven"
+ IRH_belligerent: "Iron Hills"
+ IRH_belligerent_DEF: "Iron Hills"
+ IRH_cooperative: "Iron Hills"
+ IRH_cooperative_DEF: "the Iron Hills"
+ IRH_unaligned: "Iron Hills"
+ IRH_unaligned_DEF: "the Iron Hills"
+ IRH_revolutionary: "Durin's Folk of Iron Hills"
+ IRH_revolutionary_DEF: "Durin's Folk of Iron Hills"
+
+ DGU_shadow_of_anduin_name:0 "Shadow of Anduin"
+ DGU_shadow_of_anduin_name_DEF:0 "Shadow of Anduin"

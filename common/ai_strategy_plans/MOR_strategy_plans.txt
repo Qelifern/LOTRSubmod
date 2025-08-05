@@ -68,10 +68,10 @@ MOR_historical_plan = {
 		globalrailnetwork
 		railnetwork_to_the_east
 		MOR_war_preparations
+		enslavetheeast
 		honor_morgoth
 		unleashsauron
 		infrastructure_to_the_east
-		enslavetheeast
 		establishcontrolovertheeast
 		wrathofthefellbeasts
 		research_rural_industry

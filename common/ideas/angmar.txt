@@ -297,7 +297,8 @@ ideas = {
 			picture = generic_goods_red_bonus
 
 			modifier = {
-				consumer_goods_factor = -0.1
+				consumer_goods_factor = -0.3
+				stability_weekly = 0.001
 			}
 		}
 
@@ -581,11 +582,229 @@ ideas = {
 
 			modifier = {
 				war_support_factor = 0.1
-				army_defence_factor = 0.05
-				army_attack_factor = 0.05
+				army_defence_factor = 0.15
+				army_attack_factor = 0.15
 				land_reinforce_rate = 0.15
 				army_org_factor = 0.15
 			}
 		}
+
+		ANG_new_age_of_angmar = {
+			allowed = { always = yes }
+        	visible = { always = yes }
+
+			picture = ang_new_age_of_angmar
+
+			modifier = {
+            	army_org_factor = 0.1
+        	}
+		}
+
+		ANG_frozen_fleet = {
+			allowed = { always = yes }
+        	visible = { always = yes }
+
+			picture = ang_frozen_fleet
+
+			modifier = {
+            	navy_max_range_factor = 0.1
+				naval_speed_factor = 0.1
+				positioning = 0.05
+        	}
+		}
+
+		ANG_sea_based_trade_idea = {
+			allowed = { always = yes }
+        	visible = { always = yes }
+
+			picture = ang_sea_based_trade
+
+			modifier = {
+            	resource_trade_cost_bonus_per_factory = 2
+        	}
+		}
+
+		ANG_economic_prosperity_idea = {
+			allowed = { always = yes }
+        	visible = { always = yes }
+
+			picture = ang_economic_prosperity
+
+			modifier = {
+            	consumer_goods_factor = -0.20
+        	}
+		}
+
+		ANG_interventionism = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_flexible_foreign_policy
+			
+			removal_cost = -1
+	
+			modifier = {
+				lend_lease_tension = -1.0
+				send_volunteers_tension = -1.0
+				send_volunteer_size = 6
+				justify_war_goal_time = -0.5
+				generate_wargoal_tension = -1.0
+			}
+		}
+
+		ANG_orc_breeding = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_manpower_bonus
+
+			modifier = {
+				conscription = 0.05
+				mobilization_speed = 0.25
+				army_attack_factor = -0.05
+				army_org_factor = -0.05
+			}
+		}
+
+		ANG_orc_breeding2 = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_manpower_bonus
+
+			modifier = {
+				conscription = 0.10
+				mobilization_speed = 0.5
+				army_attack_factor = -0.05
+				army_org_factor = -0.05
+			}
+		}
+
+		ANG_orc_brutality = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_manpower_bonus
+
+			modifier = {
+				army_attack_factor = 0.15
+				army_org_factor = -0.1
+				breakthrough_factor = 0.05
+				stability_factor = -0.2
+			}
+		}
+
+		ANG_witch_king_force = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_peasant_milita2
+
+			modifier = {
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
+				army_org_factor = 0.10
+			}
+		}
+
+		ANG_human_intellect = {
+			
+			allowed = {
+				is_men = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_peasant_milita2
+
+			modifier = {
+				research_speed_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+		
+		ANG_goblin_researchers = {
+			
+			allowed = {
+				is_men = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_peasant_milita2
+
+			modifier = {
+				research_speed_factor = 0.10
+				stability_factor = -0.08
+			}
+		}
+
+		ANG_approve_magic_in_factories = {
+			
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			picture = generic_peasant_milita2
+
+			modifier = {
+				production_factory_max_efficiency_factor = 0.10
+				production_factory_efficiency_gain_factor = 0.10
+				production_factory_start_efficiency_factor = 0.05
+			}
+		}
+
 	}
 }

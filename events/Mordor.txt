@@ -224,7 +224,7 @@ country_event = {
 				}
 			}
 		}
-		FROM = {
+		MOR = {
 			country_event = { hours = 2 id = mordor.5 }
 		}
 	}
@@ -259,14 +259,26 @@ country_event = {
 				is_historical_focus_on = yes
 			}
 		}
-		FROM = {
-			hidden_effect = {
+		if = {
+			limit = {
 				RHU = {
-					set_country_flag = not_joining_mordor
+					is_in_faction_with = MOR
 				}
 			}
-			create_wargoal = { type = annex_everything target = RHU }
+			MOR = { add_opinion_modifier = { target = RHU modifier = medium_decrease } }
+			add_opinion_modifier = { target = MOR modifier = medium_decrease }
 		}
+		else = {
+			MOR = {
+				hidden_effect = {
+					RHU = {
+						set_country_flag = not_joining_mordor
+					}
+				}
+				create_wargoal = { type = annex_everything target = RHU }
+			}
+		}
+		
 	}
 }
 
@@ -282,16 +294,11 @@ country_event = {
 	option = {
 		name = mordor.5.a
 
-		every_country = {
-			limit = {
-				original_tag = RHU
-			}
-			MOR = {
-				puppet = FROM
-			}
-			FROM = {
-				set_country_flag = RHU_puppeted
-			}
+		MOR = {
+			puppet = RHU
+		}
+		RHU = {
+			set_country_flag = RHU_puppeted
 		}
 		add_named_threat = { threat = 5 name = mordor.5.t }
 		news_event = { hours = 6 id = news.346 }
@@ -709,6 +716,7 @@ country_event = {
 					has_completed_focus = RHU_create_faction
 				}
 			}
+			
 		}
 
 	}
@@ -726,6 +734,16 @@ country_event = {
 			modifier = {
 				add = 25
 				is_historical_focus_on = yes
+			}
+			modifier = {
+				original_tag = GUN
+				is_historical_focus_on = yes
+				factor = 0
+			}
+			modifier = {
+				original_tag = ISE
+				is_historical_focus_on = yes
+				factor = 0
 			}
 		}
 	}

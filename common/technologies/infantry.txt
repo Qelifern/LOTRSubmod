@@ -933,12 +933,19 @@ technologies = {
 
 	paratroopers3 = {
 
+
+		
+
 		heavy_infantry = {
 			max_organisation = 5
 			armor_value = 0.1
 			hardness = 0.05
 		}
 
+		path = {
+			leads_to_tech = paratroopers4
+			research_cost_coeff = 1
+		}
 
 		research_cost = 2.0
 		start_year = 3023
@@ -970,6 +977,50 @@ technologies = {
 				amount_research_slots > 2
 				num_of_military_factories > 5
 				date > "3024.1.1"
+
+				factor = 3
+			}
+		}
+	}
+
+	paratroopers4 = {
+
+
+		enable_equipments = {
+			heavy_infantry_equipment_1
+		} 
+			
+
+		research_cost = 1.0
+		start_year = 3024
+		folder = {
+			name = infantry_folder
+			position = { x = 1 y = 18 }
+		}
+
+		categories = {
+			lotr_infantry
+			lotr_infantry_specialforces
+			lotr_infantry_specialforces_heavy_infantry
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				target_heavy_infantry_strat = yes
+				date > "3023.6.1"
+				factor = 20
+			}
+			modifier = {
+				target_heavy_infantry_strat = yes
+				is_major = yes
+				factor = 2
+			}
+			modifier = {
+				target_heavy_infantry_strat = yes
+				amount_research_slots > 2
+				num_of_military_factories > 5
+				date > "3025.1.1"
 
 				factor = 3
 			}

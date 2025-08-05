@@ -1,0 +1,33 @@
+DGU_default_strategy = {
+    enable = {
+        always = yes
+        original_tag = DGU
+    }
+    allowed = {
+        original_tag = DGU
+    }
+
+    abort = {
+        always = no
+    }
+
+
+    ai_strategy = {
+        type = prepare_for_war
+        id = LTH
+        value = 50
+    }
+
+    ai_strategy = {
+        type = front_armor_score
+        id = LTH
+        value = 75
+    }
+
+    ai_strategy = {
+        type = conquer
+        id = LTH
+        value = 75
+    }
+
+}

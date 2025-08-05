@@ -1,0 +1,17 @@
+MIR_dealing_with_dol_guldur_cat = {
+	icon = GFX_decision_category_FIN_motti_tactics
+
+	allowed = {
+		original_tag = MIR
+	}
+	
+	visible = {
+		NOT = {
+			87 = {
+				is_core_of = MIR
+			}
+		}
+	}
+
+}
+

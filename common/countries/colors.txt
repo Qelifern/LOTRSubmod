@@ -40,6 +40,10 @@ ERE = {
 	color = rgb { 186 135 186 }
 	color_ui = rgb { 255 190 127 }
 }
+IRH = {
+	color = rgb { 186 135 186 }
+	color_ui = rgb { 255 190 127 }
+}
 NEP = {
 	color = rgb { 193 204 184 }
 	color_ui = rgb { 193 204 184 }

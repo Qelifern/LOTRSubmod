@@ -1,72 +1,171 @@
 ################
 ##### MIR ######
 ################
-MIR_dealing_with_dol_guldur = {
-	MIR_hunt_down_orcs = {
-        icon = GFX_decision_revolt
-		cost = 100
+MIR_dealing_with_dol_guldur_cat = {
 
-        available = {
-            divisions_in_state = {
-                type = infantry
-                state = 87
-                size > 3
-            }
-            87 = {
-                compliance < 80
-            }
-        }
-        days_remove = 25
-        days_re_enable = 50
-		fire_only_once = no
-        fixed_random_seed = no
-		remove_effect = {
-            if = {
-                limit = {
-                    divisions_in_state = {
-                        type = infantry
-                        state = 87
-                        size > 6
-                    }
-                }
-                add_stability = -0.03
-                add_manpower = -500
-                87 = {
-                    add_compliance = 5
-                }
-            } else = {
-                add_manpower = -100
-                87 = {
-                    add_compliance = 2.5
-                }
-            }
-            army_experience = 1
+
+	MIR_dol_guldur_rises = {
+
+		priority = 100
+
+		allowed = { always = no }
+
+		icon = GFX_decision_generic_ignite_civil_war
+
+		available = {
+			hidden_trigger = { always = no }
 		}
+
+        
+
+		days_mission_timeout = 450
+		is_good = no
+		fire_only_once = yes
+
+		cancel_trigger = {
+			
+            DGU = {
+                controls_state = 87
+            }
+			MIR = {
+				has_completed_focus = ironfistrule
+			}
+			
+		}
+
+		remove_effect = {
+		}
+
+		complete_effect = {
+		}
+
+		timeout_effect = {
+
+			add_stability = -0.05
+
+			custom_effect_tooltip = MIR_dol_guldur_ignite
+
+			
+			country_event = { 
+				id = mirkwood.15
+			}
+			
+			news_event = {
+				hours = 24
+				id = more_news.1
+			}
+			
+
+		}
+
 		ai_will_do = {
-			factor = 5
+			base = 250
+		}
+
+	}
+
+    MIR_dol_guldur_expedition = {
+
+
+
+		icon = GFX_decision_generic_army_support
+
+		ai_will_do = {
+			base = 200
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
+            }
+		}
+
+		visible = {
+			has_active_mission = MIR_dol_guldur_rises
+		}
+
+		available = {
+			DGU = {
+				any_core_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		days_remove = 70
+
+		cost = 25
+
+		fire_only_once = yes
+
+		complete_effect = {
+			
+			add_stability = -0.04
+
+		}
+
+		remove_effect = {
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_days_mission_timeout = {
+				mission = MIR_dol_guldur_rises
+				days = 30
+			}
+
+			set_country_flag = MIR_launched_expedition_dgu
+
 		}
 	}
-	MIR_setup_militair_camps_nearby = {
-        icon = GFX_decision_revolt
-		cost = 125
 
-        available = {
-            87 = {
-                compliance < 80
-            }
-        }
-		fire_only_once = yes
-        fixed_random_seed = no
-		complete_effect = {
-            add_war_support = 0.01
-            add_stability = -0.01
-            army_experience = 5
-            87 = {
-                add_compliance = 5
+    MIR_dol_guldur_attack = {
+
+
+
+		icon = GFX_decision_generic_army_support
+
+		ai_will_do = {
+			base = 200
+            modifier = {
+                factor = 0
+                is_historical_focus_on = yes
             }
 		}
-		ai_will_do = {
-			factor = 5
+
+		visible = {
+			has_country_flag = MIR_launched_expedition_dgu
+		}
+
+		available = {
+			DGU = {
+				any_core_state = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		days_remove = 14
+
+		cost = 50
+
+		fire_only_once = yes
+
+		complete_effect = {
+			
+            add_manpower = -5000
+            add_stability = 0.2
+            add_war_support = 0.2
+            add_political_power = 150
+
+		}
+
+		remove_effect = {
+
+			custom_effect_tooltip = generic_skip_one_line_tt
+
+			add_days_mission_timeout = {
+				mission = MIR_dol_guldur_rises
+				days = 120
+			}
+
 		}
 	}
 }

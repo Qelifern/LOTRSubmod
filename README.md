@@ -1,35 +1,52 @@
-Github repository for the [*Lord of the Rings Mod*](https://steamcommunity.com/sharedfiles/filedetails/?id=1314446921) for *Hearts of Iron IV*.
+# LOTRSubmod
 
-![img](https://steamuserimages-a.akamaihd.net/ugc/2014835196556028806/C9F439399E0C57D2F15CBF9E0196E657EB6D2DEC/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true)
 
-## Links
 
-Steam Page: https://steamcommunity.com/sharedfiles/filedetails/?id=1314446921
+!\[img](https://steamuserimages-a.akamaihd.net/ugc/2014835196556028806/C9F439399E0C57D2F15CBF9E0196E657EB6D2DEC/?imw=637\&imh=358\&ima=fit\&impolicy=Letterbox\&imcolor=%23000000\&letterbox=true)
 
-Discord Server: https://discord.gg/XdQ3GbACPW
 
-## Download
 
-The easiest way to download the mod is through the [Steam Workshop page](https://steamcommunity.com/sharedfiles/filedetails/?id=1314446921).
+--- Additions designed to more accurately mirror the historical events of the War of the Ring.
 
-If you don't have the steam version of HoI4 or want to use an older version of the mod, you can download it from our [Github Releases Page](https://github.com/HoI4-LOTRMod-Team/HoI4-LotrMod/releases). If you want to develop/contribute or access WIP content, you can simply clone this repository.
+\- The region known as the Grey Mountains is now a part of the Northern Wastes (alt history. -> with Erebor having focuses to reclaim the Grey Mountains)
 
-Note that downloading the mod from sources other than the Steam workwhop will require it to be manually installed. You can do so by placing it into `.../Documents/Paradox Interactive/Hearts of Iron IV/mod/lotr`, then copy-pase the `descriptor.mod` file from within into the folder outside, rename it to `lotr.mod` and add the line `path=".../Documents/Paradox Interactive/Hearts of Iron IV/mod/lotr"` to the bottom of it. (Change the three dots to your corresponding user directory and do *not* use back-slashes).
+\- The state of Dol Guldur will now slip out of the grasp of the Elves of Mirkwood and launch an attack on Lothlorien
 
-## Contributing
+\- The Easterlings (Rhun) and or Mordor will now attack Erebor/Iron Hills on historical
 
-If you want to contribute to this project, feel free to get in touch through discord or open a pull request!
+\- The regions of Erebor, Iron Hills, Grey Mountains, Blue Mountains and Ered Luin have had their manpower in their respective states lowered to mirror the lower Dwarf population during the war of the ring
 
-Note that by opening a pull-request you grant us a perpetual permission to use the contents therein for this mod (unless explicitly agreed otherwise). Please stick with CC/public domain resources, give credit where necessary, or make sure you have an appropriate license for external assets.
+\- The Kingdom of Rohan will now accept Isengard demanding the Westmarch (on historical) to more accurately depict Rohans stand at Helm's deep
 
-Note: The `dev` branch and the derivatives thereof are our working branches. The `master` branch reflects what is live on the workshop and is only commited to when a new patch is released.
+\- The Entwood now always go to war with Isengard on historical
 
-We recommend looking through our [Wiki pages](https://github.com/HoI4-LOTRMod-Team/HoI4-LotrMod/wiki) for information on the codebase and familiatizing yourself with our custom GFX scripts.
 
-We also recommend using our custom [GFX Search Tool](https://hoi4-lotrmod-team.github.io/HoI4-LotrMod) to find appropriate images/icons for your focuses, events etc.
 
-**NOTE:** Several parts of this mod are licensed *exclusively* to this project. Do not re-use or re-upload any assets from this repository in or to any other projects without express permission from the authors.
+--- Modifications
 
-## Disclaimer
+\- Adds around 150 supply hubs around the map to improve supply
 
-This mod utilizes characters and events from "The Lord of the Rings" (LOTR) books and movies. It is a non-commercial, volunteer-based project and does not accept any form of donations. This mods contents are heavily transformative, constitute a parody and do not negatively impact the potential market for the original works, nor can they serve as a substitute for them. Accordingly, any references made within this mod to the LOTR intellectual property are protected under the fair use doctrine (U.S. Code 17 107).
+\- Several AI actions have been modified
+
+\- Several events have been altered
+
+\- The region known as the Iron Hills is now a puppet of Erebor, with Erebor having focuses to annex or release them as independent with Dwalin as their leader
+
+\- The Kingdom of Angmar's focus tree has been modified
+
+\- The Kingdom of Erebor's focus tree has been modified
+
+\- Mordor's focus tree has been modified slightly
+
+\- Rhun's focus tree has been modified slightly
+
+\- Dol Guldur now has a dedicated focus tree
+
+\- Starting as Mirkwood you can choose to swap to Dol Guldur
+
+\- Rhun's focus tree has been modified slightly
+
+\- Some states have had their resources reduced and or increased, example: less wood in Iron Hills and Erebor, more wood in Isengard
+
+\- Heavy Infantry special forces now requires its own equipment and tech for upgraded version requiring Mithril, AI using this special forces is not uncommon therefore making hard attack and piercing more valuable
+

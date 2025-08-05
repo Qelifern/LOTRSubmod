@@ -703,7 +703,7 @@ focus_tree = {
 			add_offsite_building = { type = arms_factory level = 1 }
 			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 15000 producer = ISE }
 			ENT = { country_event = { days = 1 id = entwood.7 } }
-			add_resource = { type = chromium amount = 45 state = 31 }
+			add_resource = { type = chromium amount = 60 state = 31 }
 		}
 	}
 
@@ -722,7 +722,7 @@ focus_tree = {
 			ENT = { add_opinion_modifier = { target = ISE modifier = isr_entwood_protected } }
 			add_threat = -3
 			give_guarantee = ENT
-			add_resource = { type = oil amount = 30 state = 31 }
+			add_resource = { type = oil amount = 40 state = 31 }
 		}
 	}
 

@@ -1,0 +1,13 @@
+GUN_white_peace_cat = {
+	icon = GFX_decision_category_FIN_motti_tactics
+
+	allowed = {
+		original_tag = GUN
+	}
+	
+	visible = {
+		always = yes
+	}
+
+}
+

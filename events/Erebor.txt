@@ -178,13 +178,14 @@ country_event = {
 				add = 25
 			}
 			modifier = {
-				add = -100
-				is_historical_focus_on = yes
-			}
-			modifier = {
 				factor = 25
 				has_war = yes
 			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+
 		}
 		add_stability = -0.05
 		add_political_power = -50
@@ -214,13 +215,19 @@ country_event = {
 		}
 		add_stability = 0.05
 		add_war_support = 0.10
-		RHU = {
-			country_event = { id = rhun.3 }
-			create_wargoal = {
-				type = take_state_focus
-				target = ERE
-				generator = { 93 }
+
+		if = {
+			limit = {
+				RHU = {
+					is_puppet_of = MOR
+				}
 			}
+			MOR = {
+				declare_war_on = { target = ERE type = annex_everything }
+			}
+		}
+		RHU = {
+			declare_war_on = { target = ERE type = annex_everything }
 		}
 	}
 }

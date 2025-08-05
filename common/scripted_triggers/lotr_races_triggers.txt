@@ -38,6 +38,7 @@ is_dwarves = {
 			original_tag = ELI
 			original_tag = ERE
 			original_tag = MOA
+			original_tag = IRH
 		}
 	}
 }
@@ -49,6 +50,7 @@ is_dwarves_init = {
 		original_tag = ELI
 		original_tag = ERE
 		original_tag = MOA
+		original_tag = IRH
 	}
 }
 

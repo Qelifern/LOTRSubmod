@@ -1,0 +1,119 @@
+################
+##### MIR ######
+################
+GUN_white_peace_cat = {
+	GUN_white_peace_dec = {
+        icon = GFX_decision_generic_cooperation
+
+        fire_only_once = no
+
+        allowed = {
+            original_tag = GUN
+        }
+
+        visible = {
+            is_subject = no
+            original_tag = GUN
+            is_ai = yes
+        }
+
+        
+
+
+        days_remove = 14
+        days_re_enable = 15
+
+        available = {
+            surrender_progress < 0.01
+            has_war = yes
+
+            
+            all_neighbor_country = {
+                NOT = { has_war_with = GUN }
+            }
+
+            all_allied_country = {
+                if = {
+                    limit = {
+                        NOT = { is_subject_of = GUN }
+                    }
+                    NOT = { has_war_together_with = GUN }
+                }
+            }
+
+            all_subject_countries = {
+                OR = {
+                    has_war = no
+                    AND = {
+                        has_war_together_with = GUN
+                        all_neighbor_country = {
+                            NOT = {
+                                has_war_with = GUN
+                            }
+                        }
+                    }
+                }
+                
+            }
+
+        }
+
+        fixed_random_seed = no
+
+        complete_effect = {
+
+        }
+
+		remove_effect = {
+            every_country = {
+                limit = {
+                    has_war_with = GUN
+                }
+                white_peace = GUN
+            }
+           
+		}
+		ai_will_do = {
+			base = 0
+            modifier = {
+                add = 15
+
+
+
+                surrender_progress < 0.01
+                has_war = yes
+
+                
+                all_neighbor_country = {
+                    NOT = { has_war_with = GUN }
+                }
+
+                all_allied_country = {
+                    if = {
+                        limit = {
+                            NOT = { is_subject_of = GUN }
+                        }
+                        NOT = { has_war_together_with = GUN }
+                    }
+                }
+
+                all_subject_countries = {
+                    OR = {
+                        has_war = no
+                        AND = {
+                            has_war_together_with = GUN
+                            all_neighbor_country = {
+                                NOT = {
+                                    has_war_with = GUN
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+
+            }
+		}
+	}
+    
+}

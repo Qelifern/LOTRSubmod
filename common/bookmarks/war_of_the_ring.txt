@@ -79,7 +79,7 @@ bookmarks = {
 				ERE_select_image
 			}
 			focuses = {
-				homeofthedwarves
+				ERE_homeofthedwarves
 				powertothemonarchs
 				powertotheminers
 			}

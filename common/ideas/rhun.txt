@@ -349,5 +349,51 @@ ideas = {
 				production_speed_industrial_complex_factor = 0.15
 			}
 		}
+
+		RHU_servant_morgoth = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			cancel = { NOT = { has_government = belligerent } }
+
+			picture = honor_morgoth
+
+			modifier = {
+				stability_factor = 0.10
+				political_power_gain = 0.10
+				land_reinforce_rate = 0.1
+				army_attack_factor = 0.10
+				war_support_factor = 0.1
+				annex_cost_factor = -0.2
+			}
+		}
+
+		RHU_crush_the_dwarves = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = honor_morgoth
+
+			targeted_modifier = {
+				tag = ERE
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+
+			targeted_modifier = {
+				tag = IRH
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+
+		}
+
     }
 }

@@ -1,0 +1,57 @@
+ERE_historical_plan = {
+    name = "Erebor historical plan"
+    desc = "Historical behavior for Angmar"
+    
+    allowed = {
+        original_tag = ERE
+    }
+
+    enable = {
+        original_tag = ERE
+        is_historical_focus_on = yes
+    }
+    abort = {
+        always = no
+    }
+
+    ai_national_focuses = {
+        thefateoferebor
+        ERE_homeofthedwarves
+        ERE_dwarf_women
+        ERE_politicaleffort
+        powertothemonarchs
+        hewhowieldsthekingsjewel
+        seekanalliance
+        standwithdale
+        ERE_a_fighting_king
+        thefateofdale
+        reconciledale
+        shareereborswealthwithdale
+        growlaketownsmarket
+        prepareforwarwithrhun
+        buildupdefenses
+        weaponmanufacturing
+        improvedproductionline
+        industrialeffort
+        expandtheeasternindustry
+        dwavendiscoveries
+        raremineralresearch
+        ERE_iron_hills_governship
+        ERE_iron_hills_control_path
+        ERE_iron_hills_unite
+        ERE_iron_hills_annex
+        railnetwork
+        roadtothenorth
+        roadtotheeast
+        ERE_focus_on_our_strengths
+        ERE_miners_of_erebor
+        ERE_dwarven_smith
+        repoentheminesoferebor
+        advancedmacerationtechniques
+        prioritizeironore
+        inductionfurnaces
+        damagerepair
+        digdeeper
+        
+    }
+}

@@ -1,3 +1,6 @@
+
+
+
 ERE_dont_get_involved_in_roh_ise_early = {
     enable = {
         NOT = { is_neighbor_of = ROH }
@@ -44,3 +47,67 @@ ERE_dont_get_involved_in_roh_ise_early = {
         target = join_faction
     }
 }
+
+
+ERE_why_push_into_rhun_their_food_is_horrible = {
+	allowed = {
+		original_tag = ERE
+	}
+	enable = {
+		surrender_progress < 0.01 # We haven't lost territories 
+
+
+		95 = { 
+			is_fully_controlled_by = ROOT
+		}
+
+        91 = { 
+			is_fully_controlled_by = ROOT
+		}
+
+        93 = { 
+			is_fully_controlled_by = ROOT
+		}
+
+        92 = { 
+			is_fully_controlled_by = ROOT
+		}
+
+		127 = {
+			is_controlled_by = RHU
+		}
+		207 = {
+			is_controlled_by = RHU
+		}
+        102 = {
+			is_controlled_by = RHU
+		}
+		125 = {
+			is_controlled_by = RHU
+		}
+        96 = {
+			is_controlled_by = RHU
+		}
+	}
+	abort_when_not_enabled = yes
+
+
+	ai_strategy = {
+		type = front_control
+
+		state = 127 
+		state = 207 
+        state = 102 
+		state = 125 
+        state = 96
+
+		ratio = 0.8
+
+		priority = 100
+		ordertype = front
+		execution_type = careful
+		execute_order = no  # This should block France from attacking, It's a bit digital, but as the strategy should cancel if they do something weird, it should be fine
+		manual_attack = no
+	}
+}
+

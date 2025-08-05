@@ -4,8 +4,8 @@ state={
 	name="STATE_194"
 
 	history={
-		owner = ERE
-		add_core_of = ERE
+		owner = IRH
+		add_core_of = IRH
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1
@@ -16,7 +16,7 @@ state={
 	provinces={
 		936 2005 2645 3254 3924 5307 5374 5545 5714 5727 5758 
 	}
-	manpower=100000
+	manpower=50000
 	buildings_max_level_factor=1.000
 	state_category=large_city
 	local_supplies=1.000

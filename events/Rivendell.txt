@@ -256,6 +256,10 @@ country_event = {
 				add = 50
 				LTH = { has_government = revolutionary }
 			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
 		}
 	}
 }
@@ -298,6 +302,10 @@ country_event = {
 			modifier = {
 				add = 50
 				MIR = { has_government = revolutionary }
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
 			}
 		}
 	}
@@ -488,6 +496,22 @@ country_event = {
 			modifier = {
 				add = 200
 				is_in_faction = yes
+			}
+			modifier = {
+				factor = 0
+				original_tag = MIR
+				NOT = {
+					has_government = belligerent
+				}
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 0
+				original_tag = LTH
+				NOT = {
+					has_government = belligerent
+				}
+				is_historical_focus_on = yes
 			}
 		}
 	}
@@ -966,5 +990,84 @@ country_event = {
 	}
 }
 
+# Strike at Mordor
 
+#country_event = {
+#	id = rivendell.21
+#	title = rivendell.21.t
+#	desc = rivendell.21.d
+#	picture = GFX_report_event_elrond_council
+#
+#	fire_only_once = yes
+#
+#	trigger = {
+#		tag = RIV
+#		
+#			GON = {
+#				surrender_progress > 0.5
+#				has_war_with = MOR
+#				OR = {
+#					has_government = cooperative
+#					has_government = unaligned
+#				}
+#				is_faction_leader = yes
+#				
+#			}
+#		
+#		
+#		
+#	}
+#
+#	mean_time_to_happen = {
+#		days = 3
+#	}
+#
+#	option = { #declare war on mordor
+##		name = rivendell.21.a
+#		ai_chance = {
+#			base = 0
+#			modifier = {
+#				OR = {
+#					has_government = cooperative
+#					has_government = unaligned
+#				}
+#				add = 50
+#			}
+#			
+#		}
+#		
+#		every_country = {
+#			limit = {
+#				is_in_faction_with = RIV
+#				NOT = {
+#					tag = RIV
+##				}
+#			}
+#			declare_war_on = { target = MOR type = topple_government }
+#			GON = {
+#				add_to_faction = PREV
+#			}
+#			
+#		}
+#
+#		GON = {
+#			add_to_faction = RIV
+#		}
+#
+#
+#		#declare_war_on = { target = MOR type = topple_government }
+#		
+#	}
+#	option = { #dont intervene
+#		name = rivendell.21.b
+#		ai_chance = {
+#			base = 30
+#			modifier = {
+#				is_historical_focus_on = yes
+#				factor = 0
+#			}
+#		}
+#		
+#	}
+#}
 

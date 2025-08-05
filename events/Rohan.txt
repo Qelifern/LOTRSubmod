@@ -4,7 +4,6 @@
 
 add_namespace = rohan
 
-# NOT USED AT THE MOMENT
 # Saruman Demands the Westmarch
 country_event = {
 	id = rohan.5
@@ -30,6 +29,11 @@ country_event = {
 				add = 30
 				ISE = { has_army_size = { size > 45 } }
 			}
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+			
 		}
  		ISE = {country_event = { hours = 2 id = isengard.2 } }
 	}
@@ -38,9 +42,14 @@ country_event = {
 		ai_chance = {
 			base = 50
 			modifier = {
-				factor = 0.1
+				factor = 0
 				has_country_flag = gameplan_rush_westmarch_abandon
 			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			
 		}
 		ISE = {country_event = { hours = 2 id = isengard.3 } }
 	}
@@ -217,11 +226,11 @@ country_event = {
 
 	trigger = {
 		tag = ROH
-		date > 3018.7.15
+		date > 3018.8.5
 	}
 
 	mean_time_to_happen = {
-		days = 65
+		days = 7
 	}
 
 	option = {
@@ -334,7 +343,7 @@ country_event = {
 		add_manpower = 1000
 		add_equipment_to_stockpile = {
 			type = infantry_equipment_0
-			amount = 1000
+			amount = 10000
 		}
 		add_opinion_modifier = { target = GON modifier = medium_increase }
 	}
@@ -2269,6 +2278,8 @@ country_event = {
 		name = rohan.102.a
 
 		load_oob = ROH_EomerReinforcements
+		
+		add_ideas = ROH_forth_eorlingas
 
 		ROH_eomer = {
 			add_corps_commander_role = {

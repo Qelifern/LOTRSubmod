@@ -203,6 +203,10 @@ country_event = {
 
 	is_triggered_only = yes
 
+	mean_time_to_happen = {
+		days = 1
+	}
+
 	option = {
 		name = angmar.7.a
 		ai_chance = {
@@ -235,9 +239,26 @@ country_event = {
 				NOT = { has_government = cooperative }
 			}
 		}
-		ANG = {
-			add_to_faction = ROOT
-			add_opinion_modifier = { target = ROOT modifier = medium_increase }
+		if = {
+			limit = {
+				tag = ART
+			}
+			
+			ANG = { 
+				add_to_faction = ROOT
+				add_opinion_modifier = { target = ROOT modifier = small_decrease }
+				country_event = { id = angmar.18 hours = 3 }
+			}
+		}
+		if = {
+			limit = {
+				tag = CAR
+			}
+			ANG = { 
+				add_to_faction = ROOT
+				add_opinion_modifier = { target = ROOT modifier = small_decrease }
+				country_event = { id = angmar.20 hours = 3 }
+			}
 		}
 		add_opinion_modifier = { target = ANG modifier = medium_increase }
 	}
@@ -258,8 +279,24 @@ country_event = {
 				is_in_faction = yes
 			}
 		}
-		ANG = {
-			add_opinion_modifier = { target = ROOT modifier = small_decrease }
+		if = {
+			limit = {
+				tag = ART
+			}
+			
+			ANG = { 
+				add_opinion_modifier = { target = ROOT modifier = small_decrease }
+				country_event = { id = angmar.19 hours = 3 }
+			}
+		}
+		if = {
+			limit = {
+				tag = CAR
+			}
+			ANG = { 
+				add_opinion_modifier = { target = ROOT modifier = small_decrease }
+				country_event = { id = angmar.21 hours = 3 }
+			}
 		}
 		add_political_power = -50
 	}
@@ -286,7 +323,7 @@ country_event = {
 				}
 			}
 			modifier = {
-				add = 15
+				add = 25
 				is_in_faction_with = ANG
 			}
 			modifier = {
@@ -295,7 +332,7 @@ country_event = {
 			}
 		}
 		ANG = {
-			add_opinion_modifier = { target = RHD modifier = medium_increase }
+			add_opinion_modifier = { target = ART modifier = medium_increase }
 			transfer_state = 41
 			transfer_state = 147
 			transfer_state = 148
@@ -431,12 +468,18 @@ country_event = {
 	option = { #yes
 		name = angmar.11.a
 		ai_chance = {
-			base = 40
+			base = 50
 			modifier = {
 				add = 20
 				has_opinion = {
 					target = ANG
 					value > 75
+				}
+			}
+			modifier = {
+				add = 20
+				ROOT = {
+					has_government = cooperative
 				}
 			}
 		}
@@ -630,3 +673,74 @@ news_event = {
 		mark_focus_tree_layout_dirty = yes
 	}
 }
+
+#Invited Arthedain accepted!
+country_event = {
+	id = angmar.18
+	title = angmar.18.t
+	desc = angmar.18.d
+	picture = GFX_report_event_ring
+
+	is_triggered_only = yes
+	option = { 
+		name = angmar.18.a
+		add_political_power = 50
+		
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#Invited Arthedain refused!
+country_event = {
+	id = angmar.19
+	title = angmar.19.t
+	desc = angmar.19.d
+	picture = GFX_report_event_ring
+
+	is_triggered_only = yes
+	option = { 
+		name = angmar.19.a
+		
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#Invited Cardolan accepted!
+country_event = {
+	id = angmar.20
+	title = angmar.20.t
+	desc = angmar.20.d
+	picture = GFX_report_event_ring
+
+	is_triggered_only = yes
+	option = { 
+		name = angmar.20.a
+		add_political_power = 50
+		
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#Invited Cardolan refused!
+country_event = {
+	id = angmar.21
+	title = angmar.21.t
+	desc = angmar.21.d
+	picture = GFX_report_event_ring
+
+	is_triggered_only = yes
+	option = { 
+		name = angmar.21.a
+		
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+

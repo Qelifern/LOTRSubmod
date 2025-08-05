@@ -4,6 +4,7 @@
 
 add_namespace = mirkwood
 
+
 # Interfere in Erebor
 country_event = {
 	id = mirkwood.1
@@ -254,116 +255,128 @@ country_event = {
 
 }
 
-# Dol Guldur attack (warningshot)
+
+# Dol Guldur DGU notify
 country_event = {
-	id = mirkwood.6
-	title = mirkwood.6.t
-	desc = mirkwood.6.d
+	id = mirkwood.14
+	title = mirkwood.14.t
+	desc = mirkwood.14.d
 	picture = GFX_report_event_paper
 
 	fire_only_once = yes
 
 	trigger = {
 		tag = MIR
-		date > 3020.5.1
-		NOT = { has_global_flag = mirkwood_dolguldur_purged }
-		NOT = { has_global_flag = mirkwood_dolguldur_attack }
-		NOT = { has_global_flag = mirkwood_dolguldur_warning }
-		MIR = {
-			controls_state = 87
-		}
-		has_capitulated = no
+		date > 3018.1.15
 	}
 
 	mean_time_to_happen = {
-		days = 350
-		modifier = {
-			add = 20
-			has_global_flag = mirkwood_stabilize_attempt
-		}
-		modifier = {
-			add = 70
-			has_global_flag = mirkwood_dealing_with_dolguldur
-		}
+		days = 14
 	}
 
-	option = {
-		name = mirkwood.6.a
-		set_global_flag = mirkwood_dolguldur_warning
-		add_manpower = -2000
-		87 = { remove_core_of = MIR }
+	option = { #Dol Guldur orcs are gathering
+		name = mirkwood.14.a
+		ai_chance = {
+			base = 100
+		}
+		activate_mission = MIR_dol_guldur_rises
+
+		
 	}
 
 }
 
-# Dol Guldur war
+# Dol Guldur DGU ignite
 country_event = {
-	id = mirkwood.7
-	title = mirkwood.7.t
-	desc = mirkwood.7.d
-	picture = GFX_report_event_paper
-
-	fire_only_once = yes
-
-	trigger = {
-		tag = MIR
-		date > 3020.12.1
-		has_global_flag = mirkwood_dolguldur_warning
-		NOT = { has_global_flag = mirkwood_dolguldur_purged }
-		NOT = { has_global_flag = mirkwood_dolguldur_attack }
-		MIR = {
-			controls_state = 87
-		}
-		has_capitulated = no
-	}
-
-	mean_time_to_happen = {
-		days = 90
-		modifier = {
-			add = 40
-			has_global_flag = mirkwood_stabilize_attempt
-		}
-		modifier = {
-			add = 120
-			has_global_flag = mirkwood_dealing_with_dolguldur
-		}
-	}
-
-	option = {
-		name = mirkwood.7.a
-		set_global_flag = mirkwood_dolguldur_attack
-		DGU = {
-			inherit_technology = MOR
-			set_state_controller = 87
-			set_state_owner = 87
-			load_oob = "DGU_Orcs"
-			set_politics = {
-				ruling_party = belligerent
-				elections_allowed = no
-			}
-		}
-		MOR = {
-			add_to_faction = DGU
-		}
-		hidden_effect = {news_event = { hours = 24 id = news.383 }}
-	}
-
-}
-
-# Send message about troops being sent to Dol Guldur by Mordor
-country_event = {
-	id = mirkwood.8
-	title = mirkwood.8.t
-	desc = mirkwood.8.d
-	picture = GFX_report_event_dolguldur
+	id = mirkwood.15
+	title = mirkwood.15.t
+	desc = mirkwood.15.d
+	picture = GFX_report_event_orcs_marching
 
 	is_triggered_only = yes
+	fire_only_once = yes
 
-	option = {
-		name = mirkwood.8.a
-		custom_effect_tooltip = MIR_defending_dol_guldur_tooltip
+
+	option = { #Deal with Dol Guldur orcs
+		name = mirkwood.15.a
+		ai_chance = {
+			base = 100
+		}
+		set_country_flag = MIR_dol_guldur_retreat
+		DGU = {
+			transfer_state = 87
+		}
+		hidden_effect = {
+			MOR = {
+				give_military_access = DGU
+			}
+			DGU = {
+				inherit_technology = MOR
+				set_rule = {
+					can_join_factions = no
+				}
+				give_military_access = MOR
+				diplomatic_relation = {
+					country = MOR
+					relation = non_aggression_pact
+					active = yes
+				}
+				load_oob = "DGU_Orcs"
+				load_focus_tree = dolguldur
+				add_named_threat = { threat = 3 name = "Dol Guldur seized by orcs" }
+			}
+
+			DGU = {
+				load_focus_tree = dolguldur
+			}
+		}
+		
+		
 	}
+	option = { #Switch country to Dol Guldur
+		name = mirkwood.15.b
+		set_country_flag = MIR_dol_guldur_retreat
+		DGU = {
+			transfer_state = 87
+		}
+		hidden_effect = {
+			MOR = {
+				give_military_access = DGU
+			}
+			DGU = {
+				inherit_technology = MOR
+				set_rule = {
+					can_join_factions = no
+				}
+				give_military_access = MOR
+				diplomatic_relation = {
+					country = MOR
+					relation = non_aggression_pact
+					active = yes
+				}
+				load_oob = "DGU_Orcs"
+				load_focus_tree = dolguldur
+				add_named_threat = { threat = 3 name = "Dol Guldur seized by orcs" }
+			}
+
+			
+		
+		}
+		
+		DGU = { change_tag_from = MIR }
+
+		hidden_effect = {
+			DGU = {
+				load_focus_tree = dolguldur
+			}
+		}
+
+	}
+
 }
+
+
+
 
 # Mordor requests Dol Guldur for alliance
 country_event = {
@@ -394,6 +407,9 @@ country_event = {
 		MOR = {
 			puppet = DGU
 			add_to_faction = MIR
+		}
+		ai_chance = {
+			base = 25
 		}
 
 	}
@@ -452,58 +468,6 @@ country_event = {
 	}
 }
 
-# Mordor has succesfully setup fortress
-country_event = {
-	id = mirkwood.11
-	title = mirkwood.11.t
-	desc = mirkwood.11.d
-	picture = GFX_report_event_orcs_marching
-
-	is_triggered_only = yes
-
-	option = {
-		name = mirkwood.11.a
-		add_stability = -0.10
-		add_war_support = 0.10
-		add_political_power = -50
-	}
-}
-
-### Core Dol Guldur
-country_event = {
-	id = mirkwood.12
-	title = mirkwood.12.t
-	desc = mirkwood.12.d
-	picture = GFX_report_event_orcs_marching
-
-	fire_only_once = yes
-
-	trigger = {
-		tag = MIR
-		date > 3021.1.1
-		NOT = {
-			87 = {
-				is_core_of = MIR
-			}
-		}
-		87 = {
-			compliance > 40
-		}
-		controls_state = 87
-		has_capitulated = no
-	}
-
-	option = {
-		name = mirkwood.12.a
-		add_state_core = 87
-		add_stability = 0.05
-		add_manpower = -150
-		add_equipment_to_stockpile = { 
-			type = infantry_equipment_1   
-			amount = -1000  
-		}
-	}
-}
 
 ### Angmar demands right to string in trade of peace
 country_event = {
@@ -572,4 +536,58 @@ country_event = {
 		}
 		add_opinion_modifier = { target = MIR modifier = small_decrease }
 	}
+}
+
+
+# Lothlorien has fallen t Dol Guldur!
+country_event = {
+	id = mirkwood.16
+	title = mirkwood.16.t
+	desc = mirkwood.16.d
+	picture = GFX_report_event_paper
+	
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = MIR
+
+		LTH = {
+			exists = no
+		}
+		DGU = {
+			exists = yes
+		}
+		
+	}
+
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	will_lead_to_war_with = DGU
+	
+	option = { #Accept
+		name = mirkwood.16.a
+		ai_chance = {
+			base = 30
+		}
+		MIR = {
+			declare_war_on = { target = DGU type = liberate_wargoal } 
+		}
+		
+	}	
+
+	option = { #Refuse
+		name = mirkwood.16.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				has_government = belligerent
+				add = 50
+			}
+		}
+		
+		
+	}	
 }

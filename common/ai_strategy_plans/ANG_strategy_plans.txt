@@ -28,33 +28,68 @@ ANG_historical_plan = {
     }
 
     ai_national_focuses = {
+        thefateofangmar
         ANG_the_path_of_balance
-		ANG_denounce_the_witch_king_neutral_path
-        ANG_invite_forodwaith_settlers
+        ANG_denounce_the_witch_king_neutral_path
         ANG_rally_the_people
-		ANG_its_in_the_past
+        
+
+        # ECONOMIC FOUNDATIONS
+        ANG_let_rebuilding_commence
+        ANG_refurbish_old_roads
+        ANG_clear_the_mountain_pass
+
+        # POLITICAL
+        ANG_invite_forodwaith_settlers
         ANG_integrate_the_settlers
         ANG_learn_from_their_methods
         ANG_better_roads
-        ANG_skirmishes_with_the_gundabad_orcs
         ANG_give_the_settlers_jobs
+
+        # ECONOMIC FOUNDATIONS
+        ANG_delve_northeast_mountains
+        ANG_boost_the_industry
+
+        # RESEARCH
+        ANG_carn_dum_alchemy
+        ANG_carn_dum_library
+        
+
+        # POLITICAL
+        ANG_a_human_lead_industry
         ANG_its_in_the_past
         ANG_neutral_foreign_policy
         ANG_non_agression
         ANG_deterrence
         ANG_request_investment_neighbours
-        ANG_create_a_university
+
+        # INDUSTRY
+        ANG_spin_up_the_factories
         ANG_focus_on_industry_1
         ANG_focus_on_industry_2
-        ANG_boost_the_industry
-        ANG_a_human_lead_industry
         ANG_boost_the_industry_civilian
-        ANG_long_term_plan
-        ANG_dig_out_the_mountains
         ANG_expand_the_farms
         ANG_boost_the_industry_civilian_2
-        ANG_put_the_squeeze_in
-        ANG_sole_masters_of_gundabad
+        ANG_long_term_plan
+
+        # POLITICAL
+        ANG_skirmishes_with_the_gundabad_orcs
+
+        # NAVY
+        ANG_restore_dockyards
+        ANG_spies_of_angmar
+        ANG_streamline_our_spy_methods
+        ANG_extend_dockyards
+        ANG_the_frozen_fleet
+        ANG_sea_based_trade
+        ANG_economic_prosperity
+
+        # ARMY 
+        ANG_army_of_angmar
+        ANG_legacy_of_long_past_wars
+        ANG_new_army_doctrine
+    
+        # POLITICAL
         ANG_a_new_age_for_angmar
     }
 }
@@ -68,39 +103,63 @@ ANG_belligerent_plan = {
     }
 
     enable = {
-        OR = {
-			ANG = {
-                is_historical_focus_on = no
-                has_country_flag = gameplan_going_belligerent
-			}
-		}
+        has_country_flag = gameplan_going_belligerent
     }
     abort = {
         always = no
     }
 
     ai_national_focuses = {
-        ##Political part 1
         thefateofangmar
         ANG_seek_former_glory
-        ##Industrial part 1
-        ANG_boost_the_industry
-        ANG_boost_the_industry_civilian
-        industrial_effort
-        ##Political part 2
         ANG_civil_unrest
         ANG_back_to_the_old_ways
-        ##Industrial part 2
-        ANG_dig_out_the_mountains
-        construction_effort
-        ANG_long_term_plan
-        construction_effort_2
-        ##Political part 3
         ANG_seek_help_from_mordor
+
+        # ECONOMIC FOUNDATIONS
+        ANG_let_rebuilding_commence
+        ANG_refurbish_old_roads
+        ANG_clear_the_mountain_pass
+
+        # ECONOMIC FOUNDATIONS
+        ANG_delve_northeast_mountains
+        ANG_boost_the_industry
+
+        # RESEARCH
+        ANG_carn_dum_alchemy
+        ANG_carn_dum_library
+        
+
+        # INDUSTRY
+        ANG_spin_up_the_factories
+        ANG_focus_on_industry_1
+        ANG_focus_on_industry_2
+        ANG_boost_the_industry_civilian
+        ANG_expand_the_farms
+        ANG_boost_the_industry_civilian_2
+        ANG_long_term_plan
+
+        # POLITICAL
         ANG_join_forces_with_orcs
         ANG_strengthen_the_new_goverment
-        ##Industrial part 2
-        ANG_a_orc_lead_industry
+        ANG_establish_orc_breeding_grounds
+        ANG_more_orcs
+        ANG_embrace_orchish_brutality
+
+        # NAVY
+        ANG_restore_dockyards
+        ANG_spies_of_angmar
+        ANG_streamline_our_spy_methods
+        ANG_extend_dockyards
+        ANG_the_frozen_fleet
+        ANG_sea_based_trade
+        ANG_economic_prosperity
+
+        # ARMY 
+        ANG_army_of_angmar
+        ANG_legacy_of_long_past_wars
+        ANG_new_army_doctrine
+
     }
 }
 
@@ -120,31 +179,82 @@ ANG_belligerent_witch_king_plan = {
     }
 
     ai_national_focuses = {
-        ##Political part 1
         thefateofangmar
         ANG_seek_former_glory
-        ##Industrial part 1
-        ANG_boost_the_industry
-        ANG_boost_the_industry_civilian
-        industrial_effort
-        ##Political part 2
         ANG_civil_unrest
         ANG_back_to_the_old_ways
-        ##Industrial part 2
-        ANG_dig_out_the_mountains
-        construction_effort
-        ANG_long_term_plan
-        construction_effort_2
-        ##Political part 3
         ANG_seek_help_from_mordor
+
+        # ECONOMIC FOUNDATIONS
+        ANG_let_rebuilding_commence
+        ANG_refurbish_old_roads
+        ANG_clear_the_mountain_pass
+
+        # ECONOMIC FOUNDATIONS
+        ANG_delve_northeast_mountains
+        ANG_boost_the_industry
+
+        # RESEARCH
+        ANG_carn_dum_alchemy
+        ANG_carn_dum_library
+
+        # INDUSTRY
+        ANG_spin_up_the_factories
+        ANG_focus_on_industry_1
+        ANG_focus_on_industry_2
+        ANG_boost_the_industry_civilian
+        ANG_expand_the_farms
+        ANG_boost_the_industry_civilian_2
+        ANG_long_term_plan
+
+        # POLITICAL
         ANG_join_forces_with_orcs
         ANG_strengthen_the_new_goverment
-        ##Industrial part 2
-        ANG_a_orc_lead_industry
-        ##Political part 4
+        ANG_establish_orc_breeding_grounds
+        ANG_more_orcs
+        ANG_embrace_orchish_brutality
         ANG_unite_with_sauron
         ANG_welcome_back_the_old_master
         ANG_cult_of_the_witch_king
+        ANG_goblin_researchers
+        ANG_a_orc_lead_industry
+
+       
+
+        # ARMY 
+        ANG_army_of_angmar
+        ANG_legacy_of_long_past_wars
+        ANG_new_army_doctrine
+        ANG_traditonal_warfare
+
+        # POLITICAL
+        ANG_reclaim_rhudaur
+        ANG_ruler_of_the_west_coast
+        ANG_reclaim_the_arthedain
+        ANG_reclaim_cardolan
+        ANG_ruler_by_force
+
+        # INDUSTRY
+        ANG_leather_trade_forochel
+        ANG_invite_dwarves_to_mines
+        ANG_carn_dum_library
+        ANG_economic_prosperity
+        ANG_expand_the_farms
+        ANG_boost_the_industry_civilian_2
+        ANG_long_term_plan
+
+
+        # NAVY
+        ANG_restore_dockyards
+        ANG_spies_of_angmar
+        ANG_streamline_our_spy_methods
+        ANG_extend_dockyards
+        ANG_the_frozen_fleet
+        ANG_sea_based_trade
+    
+        
+
+        
     }
 }
 
@@ -175,31 +285,78 @@ ANG_belligerent_plan = {
     }
 
     ai_national_focuses = {
-        ##Political part 1
         thefateofangmar
         ANG_seek_former_glory
-        ##Industrial part 1
-        ANG_boost_the_industry
-        ANG_boost_the_industry_civilian
-        industrial_effort
-        ##Political part 2
         ANG_civil_unrest
         ANG_back_to_the_old_ways
-        ##Industrial part 2
-        ANG_dig_out_the_mountains
-        construction_effort
-        ANG_long_term_plan
-        construction_effort_2
-        ##Political part 3
         ANG_seek_help_from_mordor
+
+        # ECONOMIC FOUNDATIONS
+        ANG_let_rebuilding_commence
+        ANG_refurbish_old_roads
+        ANG_clear_the_mountain_pass
+
+        # ECONOMIC FOUNDATIONS
+        ANG_delve_northeast_mountains
+        ANG_boost_the_industry
+
+        # RESEARCH
+        ANG_carn_dum_alchemy
+        ANG_carn_dum_library
+
+        # INDUSTRY
+        ANG_spin_up_the_factories
+        ANG_focus_on_industry_1
+        ANG_focus_on_industry_2
+        ANG_boost_the_industry_civilian
+        ANG_expand_the_farms
+        ANG_boost_the_industry_civilian_2
+        ANG_long_term_plan
+
+        # POLITICAL
         ANG_join_forces_with_orcs
         ANG_strengthen_the_new_goverment
-        ##Industrial part 2
-        ANG_a_orc_lead_industry
-        ##Political part 4
+        ANG_establish_orc_breeding_grounds
+        ANG_more_orcs
+        ANG_embrace_orchish_brutality
         ANG_our_own_empire
         ANG_find_a_new_leader
+        ANG_honor_morgoth
+        ANG_goblin_researchers
+        ANG_a_orc_lead_industry
         ANG_demand_submission_rhudaur
+
+       
+
+        # ARMY 
+        ANG_army_of_angmar
+        ANG_legacy_of_long_past_wars
+        ANG_new_army_doctrine
+        ANG_traditional_warfare
+
+        # POLITICAL
+        ANG_invite_gundabad
+        ANG_strengthen_our_bonds
+        ANG_legacy_of_a_new_king
+
+        # INDUSTRY
+        ANG_leather_trade_forochel
+        ANG_invite_dwarves_to_mines
+        ANG_carn_dum_library
+        ANG_economic_prosperity
+        ANG_expand_the_farms
+        ANG_boost_the_industry_civilian_2
+        ANG_long_term_plan
+
+
+        # NAVY
+        ANG_restore_dockyards
+        ANG_spies_of_angmar
+        ANG_streamline_our_spy_methods
+        ANG_extend_dockyards
+        ANG_the_frozen_fleet
+        ANG_sea_based_trade
+
     }
 }
 
@@ -212,40 +369,85 @@ ANG_cooperative_new_arnor_plan = {
     }
 
     enable = {
-        OR = {
-			ANG = {
-                is_historical_focus_on = no
-                has_country_flag = gameplan_going_cooperative_new_arnor
-			}
-		}
+        has_country_flag = gameplan_going_cooperative_new_arnor
     }
     abort = {
         always = no
     }
 
     ai_national_focuses = {
-        ##Political part 1
         thefateofangmar
         ANG_stay_true_to_the_people
-        ##Industrial part 1
-        industrial_effort
-        construction_effort
-        ANG_boost_the_industry
-        ANG_grow_a_forest
-        ANG_boost_the_industry_civilian
         ANG_invest_in_the_people
+        ANG_grow_a_forest
         ANG_change_in_governing
-        ##Political part 2
+
+        # ECONOMIC FOUNDATIONS
+        ANG_let_rebuilding_commence
+        ANG_refurbish_old_roads
+        ANG_clear_the_mountain_pass
+
+        # ECONOMIC FOUNDATIONS
+        ANG_delve_northeast_mountains
+        ANG_boost_the_industry
+
+        # RESEARCH
+        ANG_carn_dum_alchemy
+        ANG_carn_dum_library
+
+        # INDUSTRY
+        ANG_spin_up_the_factories
+        ANG_focus_on_industry_1
+        ANG_focus_on_industry_2
+        ANG_boost_the_industry_civilian
+        ANG_expand_the_farms
+        ANG_boost_the_industry_civilian_2
+        ANG_long_term_plan
+
+        # POLITICAL
         ANG_establish_democratic_goverment
         ANG_denounce_the_witch_king
+        ANG_send_out_a_warning
+        ANG_create_faction
+        ANG_protector_of_the_north
         ANG_reconcile_with_arnor
-        ##Industrial part 2
-        ANG_a_human_lead_industry
-        ANG_long_term_plan
-        ANG_boost_the_industry_civilian_2
-
+        ANG_reunification_with_rhudaur
+        ANG_invite_arthedain
+        ANG_invite_cardolan
+        ANG_request_control_north_arthedain
         ANG_establish_new_arnor
-        ANG_invest_in_our_country
+
+       
+
+        # ARMY 
+        ANG_army_of_angmar
+        ANG_legacy_of_long_past_wars
+        ANG_new_army_doctrine
+        ANG_traditional_warfare
+
+        # POLITICAL
+        ANG_invite_gundabad
+        ANG_strengthen_our_bonds
+        ANG_legacy_of_a_new_king
+
+        # INDUSTRY
+        ANG_leather_trade_forochel
+        ANG_invite_dwarves_to_mines
+        ANG_carn_dum_library
+        ANG_economic_prosperity
+        ANG_expand_the_farms
+        ANG_boost_the_industry_civilian_2
+        ANG_long_term_plan
+
+
+        # NAVY
+        ANG_restore_dockyards
+        ANG_spies_of_angmar
+        ANG_streamline_our_spy_methods
+        ANG_extend_dockyards
+        ANG_the_frozen_fleet
+        ANG_sea_based_trade
+
     }
 }
 
@@ -258,40 +460,85 @@ ANG_cooperative_republic_plan = {
     }
 
     enable = {
-        OR = {
-			ANG = {
-                is_historical_focus_on = no
-                has_country_flag = gameplan_going_cooperative_republic
-			}
-		}
+        has_country_flag = gameplan_going_cooperative_republic
     }
     abort = {
         always = no
     }
 
     ai_national_focuses = {
-        ##Political part 1
         thefateofangmar
         ANG_stay_true_to_the_people
-        ##Industrial part 1
-        industrial_effort
-        construction_effort
-        ANG_boost_the_industry
-        ANG_grow_a_forest
-        ANG_boost_the_industry_civilian
         ANG_invest_in_the_people
+        ANG_grow_a_forest
         ANG_change_in_governing
-        ##Political part 2
+
+        # ECONOMIC FOUNDATIONS
+        ANG_let_rebuilding_commence
+        ANG_refurbish_old_roads
+        ANG_clear_the_mountain_pass
+
+        # ECONOMIC FOUNDATIONS
+        ANG_delve_northeast_mountains
+        ANG_boost_the_industry
+
+        # RESEARCH
+        ANG_carn_dum_alchemy
+        ANG_carn_dum_library
+
+        # INDUSTRY
+        ANG_spin_up_the_factories
+        ANG_focus_on_industry_1
+        ANG_focus_on_industry_2
+        ANG_boost_the_industry_civilian
+        ANG_expand_the_farms
+        ANG_boost_the_industry_civilian_2
+        ANG_long_term_plan
+
+        # POLITICAL
         ANG_establish_democratic_goverment
         ANG_denounce_the_witch_king
+        ANG_send_out_a_warning
+        ANG_create_faction
+        ANG_protector_of_the_north
+        ANG_defeat_our_neighbours_evil
+        ANG_invite_gundabad_coop
         ANG_reconcile_with_arnor
-        ##Industrial part 2
-        ANG_a_human_lead_industry
-        ANG_long_term_plan
-        ANG_boost_the_industry_civilian_2
-
+        ANG_reunification_with_rhudaur
+        ANG_invite_arthedain
+        ANG_invite_cardolan
+        ANG_request_control_north_arthedain
         ANG_republic_of_angmar
-        ANG_nation_of_the_people
-        ANG_invest_in_our_country
+
+       
+
+        # ARMY 
+        ANG_army_of_angmar
+        ANG_legacy_of_long_past_wars
+        ANG_new_army_doctrine
+        ANG_traditional_warfare
+
+        # POLITICAL
+        ANG_invite_gundabad
+        ANG_strengthen_our_bonds
+        ANG_legacy_of_a_new_king
+
+        # INDUSTRY
+        ANG_leather_trade_forochel
+        ANG_invite_dwarves_to_mines
+        ANG_carn_dum_library
+        ANG_economic_prosperity
+        ANG_expand_the_farms
+        ANG_boost_the_industry_civilian_2
+        ANG_long_term_plan
+
+
+        # NAVY
+        ANG_restore_dockyards
+        ANG_spies_of_angmar
+        ANG_streamline_our_spy_methods
+        ANG_extend_dockyards
+        ANG_the_frozen_fleet
+        ANG_sea_based_trade
     }
 }

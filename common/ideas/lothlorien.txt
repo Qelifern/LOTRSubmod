@@ -716,7 +716,7 @@ ideas = {
 				political_power_factor = -0.1
 				generate_wargoal_tension = 0.15
 				guarantee_tension = 0.15
-				join_faction_tension = 0.15
+				join_faction_tension = 0.80
 			}
 		}
 

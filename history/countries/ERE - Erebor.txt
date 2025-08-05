@@ -30,9 +30,14 @@ set_technology = {
 	basic_cav = 1
 	light_cav2 = 1
 	trade_caravan = 1
+	metalworking = 1
+	foundry_tech = 1
 
 	boar_horses_module = 1
 }
+
+
+add_manpower = 7000
 
 
 add_opinion_modifier = { target = MIR modifier = past_quarrels }

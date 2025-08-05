@@ -38,19 +38,7 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 15
-			modifier = {
-				factor = 2
-				GON = { is_ai = no }
-			}
-			modifier = {
-				factor = 0.6
-				is_going_cooperative = no
-			}
-			modifier = {
-				add = 25
-				has_country_flag = gameplan_oath_of_eorl
-				NOT = { has_completed_focus = ROH_scout_out_mountain_passes }
-			}
+			
 		}
 		x =2
 		y =1
@@ -79,19 +67,7 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 15
-			modifier = {
-				factor = 2
-				GON = { is_ai = no }
-			}
-			modifier = {
-				factor = 0.6
-				is_going_cooperative = no
-			}
-			modifier = {
-				add = 25
-				has_country_flag = gameplan_oath_of_eorl
-				NOT = { has_completed_focus = ROH_southern_iron_mines }
-			}
+			
 		}
 		x =4
 		y =1
@@ -117,18 +93,7 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 5
-			modifier = {
-				factor = 2
-				GON = { is_ai = no }
-			}
-			modifier = {
-				factor = 0.2
-				is_going_cooperative = no
-			}
-			modifier = {
-				add = 25
-				has_country_flag = gameplan_oath_of_eorl
-			}
+			
 		}
 		x =3
 		y =2
@@ -565,17 +530,7 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 15
-			modifier = {
-				factor = 3
-				is_going_cooperative = yes
-			}
-			modifier = {
-				factor = 2
-				OR = { 
-					ISE = { is_going_belligerent = yes }
-					ISE = { has_government = belligerent }
-				}
-			}
+			
 		}
 		x =5
 		y =2
@@ -616,10 +571,7 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 15
-			modifier = {
-				factor = 2
-				threat > 0.1
-			}
+			
 		}
 		x =5
 		y =4
@@ -662,6 +614,11 @@ focus_tree = {
 			effect_tooltip = {
 				event_option_tooltip = rohan.1.a
 			}
+
+			set_rule = {
+				can_join_factions = no
+			}
+
 		}
 	}
 
@@ -2183,6 +2140,7 @@ focus_tree = {
 				}
 				remove_unit_leader_role = yes
 			}
+			add_political_power = 200
 		}
 	}
 
@@ -2392,8 +2350,12 @@ focus_tree = {
 		prerequisite = { focus = ROH_eorlingas_united }
 		available = {
 			is_subject = no
-			ISE = { has_capitulated = yes }
-			MOR = { has_capitulated = yes }
+			OR = {
+				ISE = { has_capitulated = yes }
+				ISE = { is_puppet = yes }
+				ISE = { exists = no } 
+			}
+			
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_COOPERATIVE }
 		ai_will_do = { factor = 100 }
@@ -2556,6 +2518,9 @@ focus_tree = {
 		cost = 10
 		completion_reward = {
 			# ask to join GON
+			set_rule = {
+				can_join_factions = yes
+			}
 			GON = { ask_to_join_faction = yes }
 		}
 	}
@@ -2664,6 +2629,9 @@ focus_tree = {
 		mutually_exclusive = { focus = ROH_towards_gondor }
 		cost = 10
 		completion_reward = {
+			set_rule = {
+				can_join_factions = yes
+			}
 			create_faction = ROH_loth_ise_alliance
 		}
 	}
@@ -3527,6 +3495,9 @@ focus_tree = {
 		cost = 10
 		completion_reward = {
 			# create own faction
+			set_rule = {
+				can_join_factions = yes
+			}
 			create_faction = "Rohan Alliance"
 		}
 	}
@@ -3648,6 +3619,9 @@ focus_tree = {
 		cost = 10
 		completion_reward = {
 			# ask to join dark pact
+			set_rule = {
+				can_join_factions = yes
+			}
 			MOR = { ask_to_join_faction = yes }
 		}
 	}

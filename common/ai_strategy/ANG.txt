@@ -1,0 +1,203 @@
+ANG_default_strategy = {
+    enable = {
+        is_historical_focus_on = yes
+    }
+    allowed = {
+        original_tag = ANG
+    }
+
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = prepare_for_war
+        id = GUN
+        value = 50
+    }
+
+    ai_strategy = {
+		type = contain
+		id = GUN
+		value = 50
+	}
+
+    ai_strategy = {
+        type = front_armor_score
+        id = GUN
+        value = 25
+    }
+
+    ai_strategy = {
+        type = diplo_action_acceptance
+        id = GON
+        value = -1000
+        target = offer_join_faction
+    }
+
+    ai_strategy = {
+        type = diplo_action_acceptance
+        id = GON
+        value = -1000
+        target = join_faction
+    }
+
+    ai_strategy = {
+        type = diplo_action_desire
+        id = GON
+        value = -1000
+        target = offer_join_faction
+    }
+
+    ai_strategy = {
+        type = diplo_action_desire
+        id = GON
+        value = -1000
+        target = join_faction
+    }
+
+    ai_strategy = {
+        type = diplo_action_acceptance
+        id = MOR
+        value = -1000
+        target = offer_join_faction
+    }
+
+    ai_strategy = {
+        type = diplo_action_acceptance
+        id = MOR
+        value = -1000
+        target = join_faction
+    }
+
+    ai_strategy = {
+        type = diplo_action_desire
+        id = MOR
+        value = -1000
+        target = offer_join_faction
+    }
+
+    ai_strategy = {
+        type = diplo_action_desire
+        id = MOR
+        value = -1000
+        target = join_faction
+    }
+}
+
+ANG_belligerent_strategy = {
+    enable = {
+        has_government = belligerent
+    }
+    abort_when_not_enabled = yes
+
+    allowed = {
+        original_tag = ANG
+    }
+
+    ai_strategy = {
+		type = ai_wanted_divisions_factor
+		value = 2.0
+	}
+
+    ai_strategy = {
+        type = front_armor_score
+        id = RHD 
+        value = 50
+    }
+
+    ai_strategy = {
+        type = prepare_for_war
+        id = RHD
+        value = 50
+    }
+
+    ai_strategy = {
+        type = prepare_for_war
+        id = RIV
+        value = 25
+    }
+
+    ai_strategy = {
+        type = prepare_for_war
+        id = ART
+        value = 25
+    }
+
+    ai_strategy = {
+        type = prepare_for_war
+        id = LIN
+        value = 25
+    }
+
+    ai_strategy = {
+        type = front_armor_score
+        id = ART 
+        value = 25
+    }
+
+    ai_strategy = {
+        type = front_armor_score
+        id = RIV 
+        value = 25
+    }
+
+    ai_strategy = {
+        type = front_armor_score
+        id = LIN 
+        value = 25
+    }
+
+    ai_strategy = {
+		type = antagonize
+		id = RHD
+		value = 25
+	}
+
+    ai_strategy = {
+		type = antagonize
+		id = ART
+		value = 25
+	}
+
+    ai_strategy = {
+        type = building_target
+        id = industrial_complex
+        value = 10  # Prioritize civilian factories until we have at least 10
+    }
+
+    ai_strategy = {
+        type = building_target
+        id = arms_factory
+        value = 100  # Prioritize arms factories until we have at least 100
+    }
+
+    ai_strategy = {
+        type = equipment_production_factor
+        id = infantry  # equipment categories
+        value = 100  # Increase the perceived needed factories by 50 % (10 needed factories would become 15)
+    }
+
+    ai_strategy = {
+        type = land_xp_spend_priority
+        id = division_template
+        value = 100
+    }
+
+    
+
+}
+
+ANG_dont_declare_wars_when_already_fighting_one = {
+    enable = {
+        has_government = belligerent
+        has_war = yes
+    }
+    allowed = {
+        original_tag = ANG
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = avoid_starting_wars
+        value = -100
+    }
+}

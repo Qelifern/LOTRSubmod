@@ -1,66 +1,66 @@
 ﻿l_english:
 thefateofangmar:0 "The Fate of Angmar"
-thefateofangmar_desc:0 ""
+thefateofangmar_desc:0 "Angmar has lain desolate ever since the Witch-king’s defeat at the Battle of Fornost in the Third Age year 1975. Abandoned for centuries, the land now holds scattered remnants of those who dared to settle here. It is time to decide their fate and begin the slow work of rebuilding Angmar’s shattered realm."
 empowerformerangmarnobles:0 "Empower the former Angmar Nobles"
 empowerformerangmarnobles_desc:0 ""
 
 ANG_steady_as_we_go:0 "Steady as we Go"
 ANG_steady_as_we_go_desc:0 ""
 ANG_neutral_foreign_policy:0 "Neutral Foreign Policy"
-ANG_neutral_foreign_policy_desc:0 ""
+ANG_neutral_foreign_policy_desc:0 "We must make our stance clear to all — Angmar seeks no war. Through careful diplomacy, we will inform our neighbors of our neutrality, and perhaps even persuade the dark powers of Mordor that we intend to remain outside their conflicts."
 
 ANG_denounce_the_witch_king_neutral_path:0 "Cast Off the Mantle"
-ANG_denounce_the_witch_king_neutral_path_desc:0 ""
+ANG_denounce_the_witch_king_neutral_path_desc:0 "The shadow of the Witch-king has loomed over Angmar for centuries, a symbol of terror and domination. But we are not his servants, nor shall we bear his cursed legacy any longer. Let it be known — we cast off the mantle of the Black Captain and denounce his name. A new path lies before us."
 ANG_once_again_great_power:0 "Once again a Great Power"
 ANG_once_again_great_power_desc:0 ""
 ANG_no_more_neutrality:0 "No More Neutrality"
 ANG_no_more_neutrality_desc:0 ""
 
 ANG_deterrence:0 "Deterrence"
-ANG_deterrence_desc:0 ""
+ANG_deterrence_desc:0 "True peace is earned through strength. By fortifying our defenses and demonstrating our readiness for war, we ensure that none dare test our resolve. Let our strength be the shield that preserves our peace."
 ANG_its_in_the_past:0 "Bridge Old Schisms"
-ANG_its_in_the_past_desc:0 ""
+ANG_its_in_the_past_desc:0 "The wounds of the past run deep, but they need not define our future. We shall affirm to the enemies of old that our ancient claims are no more, and extend a hand in goodwill. If they accept, perhaps friendship — not enmity — shall guide the days to come."
 ANG_non_agression:0 "Policy of Non-Aggression"
-ANG_non_agression_desc:0 ""
+ANG_non_agression_desc:0 "As tensions rise across Middle-earth, we shall pursue a policy of peace. By seeking non-aggression pacts with our neighbors, we aim to secure our borders and focus on rebuilding Angmar without fear of sudden war."
 ANG_request_investment_neighbours:0 "Attract Foreign Investment"
-ANG_request_investment_neighbours_desc:0 ""
+ANG_request_investment_neighbours_desc:0 "With tensions eased, we turn outward and seek aid to rebuild Angmar. By attracting foreign investments, we hope to bolster our resources and accelerate our recovery."
 
-ANG_focus_on_industry_1:0 "Focus on Industry"
-ANG_focus_on_industry_1_desc:0 ""
+ANG_focus_on_industry_1:0 "Policy of Rebuilding"
+ANG_focus_on_industry_1_desc:0 "We commit to restoring the lands beyond Carn Dûm by developing new civilian industries."
 ANG_focus_on_industry_2:0 "Expand the Industry"
-ANG_focus_on_industry_2_desc:0 ""
+ANG_focus_on_industry_2_desc:0 "Expanding the southern industries will be vital to our rebirth."
 ANG_better_roads:0 "Winter Roads"
-ANG_better_roads_desc:0 ""
+ANG_better_roads_desc:0 "The harsh winters have long hindered travel and trade across our lands. To overcome this, we will invest in improving our roads and infrastructure, ensuring vital supplies and people can move swiftly even in the coldest seasons."
 
 ANG_focus_on_research:0 "Focus on Research"
 ANG_focus_on_research_desc:0 ""
 
 ANG_stay_true_to_the_people:0 "Stay True to the People"
-ANG_stay_true_to_the_people_desc:0 ""
+ANG_stay_true_to_the_people_desc:0 "Our path forward is clear, those brave souls who have settled the lands of Angmar must have the right to shape how our kingdom is governed. True strength lies in the will of the people."
 ANG_invest_in_the_people:0 "Invest in the People"
-ANG_invest_in_the_people_desc:0 ""
+ANG_invest_in_the_people_desc:0 "The Iron Council’s coffers must be directed toward improving the lives of our citizens, ensuring prosperity and stability throughout Angmar."
 ANG_establish_democratic_goverment:0 "Establish a Democratic Goverment"
-ANG_establish_democratic_goverment_desc:0 ""
+ANG_establish_democratic_goverment_desc:0 "The Iron Council will be transformed into a representative body, giving voice to the people and forging a new era of governance for Angmar."
 ANG_grow_a_forest:0 "Establish a Woodcutter's Camp"
-ANG_grow_a_forest_desc:0 ""
+ANG_grow_a_forest_desc:0 "To stimulate the local economy and provide employment, we will establish a woodcutters camp. This public works initiative will harness Angmar’s natural resources and bring work to our people."
 ANG_change_in_governing:0 "Change in Government"
-ANG_change_in_governing_desc:0 ""
+ANG_change_in_governing_desc:0 "We shall formalize the transformations in our leadership, solidifying the new order and ensuring stability for the future of Angmar."
 
 ANG_send_out_a_warning:0 "Send out a Warning"
-ANG_send_out_a_warning_desc:0 ""
+ANG_send_out_a_warning_desc:0 "Gundabad treads dangerous ground. Should they ally with Mordor, we will have no choice but to crush their threat before it consumes us."
 ANG_defeat_our_neighbours_evil:0 "Secure the Threat"
-ANG_defeat_our_neighbours_evil_desc:0 ""
+ANG_defeat_our_neighbours_evil_desc:0 "Gundabad’s defiance endangers us all. We must act decisively and claim their lands to neutralize this looming threat."
 
 ANG_denounce_the_witch_king:0 "Denounce the Witch-King"
-ANG_denounce_the_witch_king_desc:0 ""
+ANG_denounce_the_witch_king_desc:0 "We publicly reject the dark legacy of the Witch King, casting off his shadow and affirming our commitment to a new path for Angmar."
 ANG_create_faction:0 "The Northern Alliance"
-ANG_create_faction_desc:0 ""
+ANG_create_faction_desc:0 "It is in men we must place our hope. Angmar shall rise to lead a new alliance of the free peoples of the North, uniting them against the growing shadows that threaten our lands."
 ANG_protector_of_the_north:0 "Protector of the North"
-ANG_protector_of_the_north_desc:0 ""
+ANG_protector_of_the_north_desc:0 "Our newfound leadership has breathed new life into our people, inspiring hope and determination to defend Angmar and the northern realms."
 ANG_invite_gundabad_coop:0 "Invite Gundabad"
-ANG_invite_gundabad_coop_desc:0 ""
-ANG_create_a_university:0 "Build an University"
-ANG_create_a_university_desc:0 ""
+ANG_invite_gundabad_coop_desc:0 "Gundabad has severed its ties with Mordor. Now is the time to extend an invitation to join our Northern Alliance, strengthening our unity against the darkness."
+ANG_create_a_university:0 "Build a University"
+ANG_create_a_university_desc:0 "To reclaim Angmar’s former glory, knowledge must be our foundation. Establishing a university in Carn Dûm will foster learning and innovation, advancing our mastery over the sciences and arts."
 ANG_improve_gondor_relations:0 "Improve Relations"
 ANG_improve_gondor_relations_desc:0 ""
 ANG_join_gondor:0 "Unite with Gondor"
@@ -73,48 +73,50 @@ ANG_request_outpost_gondor:0 "Request Tol-Fuin"
 ANG_request_outpost_gondor_desc:0 ""
 
 ANG_reconcile_with_arnor:0 "Reconcile with Arnor"
-ANG_reconcile_with_arnor_desc:0 ""
+ANG_reconcile_with_arnor_desc:0 "Though once bitter enemies, the time has come to put the past behind us. We will reach out to the remnants of Arnor and make our intentions clear — we seek peace, not conquest."
 ANG_reunification_with_rhudaur:0 "Reunification with Rhudaur"
-ANG_reunification_with_rhudaur_desc:0 ""
+ANG_reunification_with_rhudaur_desc:0 "Though we once promised peace, the rangers of Rhudaur have proven too weak to secure the North. For the stability of the region and the strength of our people, we shall demand their annexation and bring Rhudaur fully under Angmar’s banner."
 ANG_supply_the_angle:0 "Supply the Angle"
 ANG_supply_the_angle_desc:0 ""
 ANG_invite_cardolan:0 "Invite Cardolan"
-ANG_invite_cardolan_desc:0 ""
+ANG_invite_cardolan_desc:0 "Though but a shadow of its former self, Cardolan remains a notable force in the North. We must seek their allegiance and extend an offer to join our growing alliance."
 ANG_invite_arthedain:0 "Invite Arthedain"
-ANG_invite_arthedain_desc:0 ""
+ANG_invite_arthedain_desc:0 "Arthedain, once the heart of Arnor, still holds pride and strength in its blood. It is time to reach out and invite them to join our alliance — united, the North shall endure."
 ANG_request_control_north_arthedain:0 "Request Northern Arthedain"
-ANG_request_control_north_arthedain_desc:0 ""
+ANG_request_control_north_arthedain_desc:0 "Arthedain is stretched thin, its resources divided across a vast land. If we approach them diplomatically, they may agree to place their northern territories under our stewardship — for the good of the North."
 
 ANG_intergrate_trade_within_faction:0 "Integrate Trade within the Faction"
 ANG_intergrate_trade_within_faction_desc:0 ""
-ANG_invest_in_our_country:0 "Invest in [ROOT.GetName]"
-ANG_invest_in_our_country_desc:0 ""
+ANG_invest_in_our_country:0 "Invest in the [ROOT.GetName]"
+ANG_invest_in_our_country_desc:0 "Our realm has flourished beyond all expectations. With renewed vigor and resources, we can now build a substantial number of new factories to fuel Angmar’s rebirth."
 ANG_the_true_arnor:0 "The True Arnor"
-ANG_the_true_arnor_desc:0 ""
+ANG_the_true_arnor_desc:0 "To restore the true kingdom of Arnor, we must take what is rightfully ours. The time has come to assert our claim through force and reclaim Arthedain."
 ANG_establish_new_arnor:0 "Establish New Arnor"
-ANG_establish_new_arnor_desc:0 ""
+ANG_establish_new_arnor_desc:0 "The time of Angmar has come to an end. From its ashes, a new realm shall rise — one of unity, peace, and strength. We shall reclaim the legacy of the Dúnedain and proclaim the rebirth of Arnor."
 ANG_establish_new_borders:0 "Establish New Borders"
-ANG_establish_new_borders_desc:0 ""
+ANG_establish_new_borders_desc:0 "The people have spoken — Arnor is reborn. It is time to reclaim Arthedain and restore our rightful lands to the kingdom."
 
 ANG_republic_of_angmar:0 "The Republic of Angmar"
-ANG_republic_of_angmar_desc:0 ""
+ANG_republic_of_angmar_desc:0 "The time has come to reshape our nation. We shall officially declare Angmar a republic, embracing the will of the people and forging a new path of governance."
 ANG_nation_of_the_people:0 "Nation of the People"
-ANG_nation_of_the_people_desc:0 ""
+ANG_nation_of_the_people_desc:0 "Elections will be held, giving the people a true voice in shaping the future of Angmar’s republic."
 ANG_mountain_pass:0 "The Mountain Pass"
-ANG_mountain_pass_desc:0 ""
+ANG_mountain_pass_desc:0 "The Vales of Anduin guard the vital path to Erebor. We shall propose overlordship of the northern lands to secure this passage and strengthen our ties with the Dwarves."
 ANG_wood_and_string_mirkwood:0 "Sharing is Caring"
-ANG_wood_and_string_mirkwood_desc:0 ""
+ANG_wood_and_string_mirkwood_desc:0 "Mirkwood holds an overabundance of valuable resources. We shall negotiate resource rights to secure these materials for our realm’s growth."
 ANG_core_east_world:0 "Integrate the Eastern Territories"
-ANG_core_east_world_desc:0 ""
+ANG_core_east_world_desc:0 "The lands of the eastern North are rightful parts of Arnor’s heritage. It is time to bring these territories fully under our rule and unite the kingdom."
 ANG_wisdom_of_centries:0 "Wisdom of Centuries"
-ANG_wisdom_of_centries_desc:0 ""
+ANG_wisdom_of_centries_desc:0 "Our newly acquired lands hold ancient knowledge and recorded history. This wealth of wisdom inspires a renewed spirit of research and innovation throughout our realm."
 ANG_the_true_ruler_of_the_north:0 "True Ruler of the North"
-ANG_the_true_ruler_of_the_north_desc:0 ""
+ANG_the_true_ruler_of_the_north_desc:0 "To secure our legacy, we must fully integrate the northern states of Arthedain under our rule. Only then will we be the undisputed rulers of the North."
+ANG_army_of_our_nation:0 "Army of The Republic"
+ANG_army_of_our_nation_desc:0 "To protect our new republic, we must formalize and strengthen our army, ensuring discipline and readiness for any threat."
 
 ANG_wargoal_isengard:0 "Pre-empt the threat"
-ANG_wargoal_isengard_desc:0 ""
+ANG_wargoal_isengard_desc:0 "Isengard, under the command of Saruman, cannot be trusted. His ambition and shifting allegiances pose a danger to the interests of the North. We must prepare to act before the threat grows beyond control."
 ANG_enslave_the_uruk_hai:0 "Enslave the Uruk-hai"
-ANG_enslave_the_uruk_hai_desc:0 ""
+ANG_enslave_the_uruk_hai_desc:0 "Long ago, Angmar bent foul creatures to its will. With Isengard’s Uruk-hai now within reach, we can once again command such beasts — not as allies, but as tools to serve our greater purpose."
 ANG_reinstate_orthanc:0 "Reinstate the Tower of Orthanc"
 ANG_reinstate_orthanc_desc:0 ""
 ANG_orthanc_give_back_to_gondor:0 "Return Orthanc to its Rightful Owner"
@@ -122,40 +124,44 @@ ANG_orthanc_give_back_to_gondor_desc:0 "In an act of good fate, we should return
 ANG_saruman_has_betrayed_us:0 "Strike Back at Sauron"
 ANG_saruman_has_betrayed_us_desc:0 ""
 
+ANG_interventionism:0 "Interventionism of the Realm"
+ANG_interventionism_desc:0 "The Kingdom of Angmar, guided by the wisdom of old, steps forth to shape the fate of Middle-earth. Though bound by honor and lore, it will intervene in the affairs of distant lands to protect its realm and ancient kin."
+
+
 ### Alternate
 ANG_seek_former_glory:0 "Seek Former Glory"
-ANG_seek_former_glory_desc:0 ""
+ANG_seek_former_glory_desc:0 "Longing for the Witch King's return, we cast our eyes southward. Those lands are rightfully ours, and we shall take them back by force if necessary."
 ANG_terrorize_the_provisional_government:0 "Terrorize the Provisional Government"
 ANG_terrorize_the_provisional_government_desc:0 ""
 ANG_civil_unrest:0 "Civil unrest"
-ANG_civil_unrest_desc:0 ""
+ANG_civil_unrest_desc:0 "Our settlers in these desolate lands grow restless, reluctant to chase after distant past glories. Discontent stirs among the people."
 
 ### Belligerent ###
 ANG_back_to_the_old_ways:0 "Pivot to the Past"
-ANG_back_to_the_old_ways_desc:0 ""
+ANG_back_to_the_old_ways_desc:0 "As a nation, we must turn our gaze back to our roots, reclaiming the legacy that once made us great."
 ANG_seek_help_from_mordor:0 "Seek Help from Mordor"
-ANG_seek_help_from_mordor_desc:0 ""
+ANG_seek_help_from_mordor_desc:0 "To achieve our ambitions, we must turn to the dark power of Mordor."
 ANG_sever_ties_with_gondor:0 "Sever Ties wth Gondor"
 ANG_sever_ties_with_gondor_desc:0 "Attacks of terrorism might cripple the countires production strength, but the harder we strike, the more likely it is for the provisional Gondor government to yield. Once enough support has been gathered for either a communist or fascist cause, a coup d'etat will automatically trigger."
 ANG_join_forces_with_orcs:0 "Join Forces with the Orcs"
-ANG_join_forces_with_orcs_desc:0 ""
+ANG_join_forces_with_orcs_desc:0 "Though our history stands apart, we recognize the strength of the Orcs. Together, as a nation of men, we shall forge a new future."
 ANG_strengthen_the_new_goverment:0 "Strengthen the New Government"
-ANG_strengthen_the_new_goverment_desc:0 ""
+ANG_strengthen_the_new_goverment_desc:0 "We must set aside the fickle wishes of the people and consolidate power. The Dark Council shall rise and lead Angmar to prosperity."
 
 ANG_unite_with_sauron:0 "Unite with Sauron"
-ANG_unite_with_sauron_desc:0 ""
+ANG_unite_with_sauron_desc:0 "The might of Sauron is unstoppable. We must bow and unite under his shadow, for only then can we survive and conquer."
 ANG_welcome_back_the_old_master:0 "Welcome Back the Old Master"
-ANG_welcome_back_the_old_master_desc:0 ""
+ANG_welcome_back_the_old_master_desc:0 "The time has come to restore the true ruler. The Witch King of Angmar returns to claim his throne and lead us into a new era of power."
 ANG_a_force_for_our_master:0 "A Force for our Master"
-ANG_a_force_for_our_master_desc:0 "It is time to build a force worthy for our master Sauron."
+ANG_a_force_for_our_master_desc:0 "Orcs are brutish and lack coordination, we need a force made up of the by our own people of Angmar worthy for our new Master."
 ANG_demand_gundabad:0 "Pressure Gundabad"
-ANG_demand_gundabad_desc:0 ""
+ANG_demand_gundabad_desc:0 "The Orcs of Gundabad must understand their place. It is time they submit and join our cause, strengthening Angmar’s grip on the north."
 ANG_honor_morgoth:0 "Honor Morgoth"
-ANG_honor_morgoth_desc:0 ""
+ANG_honor_morgoth_desc:0 "Though long defeated, the dark legacy of Morgoth still casts its shadow. We honor his power as a reminder of our true destiny."
 ANG_cult_of_the_witch_king:0 "Cult of the Witch King"
-ANG_cult_of_the_witch_king_desc:0 ""
+ANG_cult_of_the_witch_king_desc:0 "The Witch King is more than legend; his mythic presence inspires our armies and fuels our resolve."
 ANG_request_investment:0 "Request Investment"
-ANG_request_investment_desc:0 ""
+ANG_request_investment_desc:0 "Mordor has industrialized heavily, and we must seize this opportunity to rebuild Angmar’s infrastructure and economy."
 ANG_restore_carn_dum:0 "Restore Carn Dûm"
 ANG_restore_carn_dum_desc:0 ""
 ANG_restore_fornost:0 "Restore Fornost"
@@ -164,22 +170,22 @@ ANG_restore_fornost_desc:0 ""
 ANG_our_own_empire:0 "Our own Empire"
 ANG_our_own_empire_desc:0 "It is time to restore the former glory of the Angmar Empire."
 ANG_find_a_new_leader:0 "Find a New Leader"
-ANG_find_a_new_leader_desc:0 ""
+ANG_find_a_new_leader_desc:0 "The Witch King failed us in the distant past and shall never return. We reject his dark reign and seek a new path forward."
 ANG_demand_submission_rhudaur:0 "Demand their Submission"
-ANG_demand_submission_rhudaur_desc:0 ""
+ANG_demand_submission_rhudaur_desc:0 "We shall make it clear to Rhudaur that their allegiance is not optional. Submission is expected."
 ANG_strengthen_our_bonds:0 "Strengthen our Bonds"
-ANG_strengthen_our_bonds_desc:0 ""
+ANG_strengthen_our_bonds_desc:0 "To secure our dominion, we must deepen our control and influence over Rhudaur."
 ANG_legacy_of_a_new_king:0 "Legacy of a New King"
-ANG_legacy_of_a_new_king_desc:0 ""
+ANG_legacy_of_a_new_king_desc:0 "Danthild has risen as our new sovereign, ushering in a legacy of strength and renewal for Angmar."
 ANG_invite_gundabad:0 "Invite Gundabad"
-ANG_invite_gundabad_desc:0 ""
+ANG_invite_gundabad_desc:0 "The orcs of Gundabad will serve our interests. Together, we shall strengthen our hold over the north."
 ANG_strengthen_the_army:0 "Strengthen the Army"
-ANG_strengthen_the_army_desc:0 ""
+ANG_strengthen_the_army_desc:0 "Our forces must grow stronger—through relentless orc breeding, our legions will swell and dominate the battlefield."
 
 ANG_ruler_of_the_west_coast:0 "Rules of the West Coast"
 ANG_ruler_of_the_west_coast_desc:0 ""
 ANG_ruler_by_force:0 "Ruler by Force"
-ANG_ruler_by_force_desc:0 ""
+ANG_ruler_by_force_desc:0 "The time has come to seize power through strength and unyielding will. Only by force shall we command respect and control."
 ANG_reclaim_the_arthedain:0 "Reclaim Arthedain"
 ANG_reclaim_the_arthedain_desc:0 ""
 ANG_reclaim_cardolan:0 "Reclaim Cardolan"
@@ -190,14 +196,14 @@ ANG_intergrate_rhudaur:0 "Integrate Rhudaur"
 ANG_intergrate_rhudaur_desc:0 ""
 
 ANG_reinstate_our_formor_glory:0 "Affirm our Former Glory"
-ANG_reinstate_our_formor_glory_desc:0 ""
+ANG_reinstate_our_formor_glory_desc:0 "Unstoppable and unyielding, the Kingdom of Angmar shall rise once more to dominate the North as it did in ages past."
 ANG_avenge_rivendell:0 "Revenge on Rivendell"
-ANG_avenge_rivendell_desc:0 ""
+ANG_avenge_rivendell_desc:0 "The time has come to settle old scores. Rivendell’s defiance will be crushed, and Angmar’s wrath will be felt across the lands."
 ANG_expend_to_the_east:0 "Expand to the East"
-ANG_expend_to_the_east_desc:0 ""
+ANG_expend_to_the_east_desc:0 "The Vales of Anduin lie open and ripe for conquest. Our destiny awaits beyond the rivers."
 
-ANG_boost_the_industry:0 "Boost the industry"
-ANG_boost_the_industry_desc:0 ""
+ANG_boost_the_industry:0 "Continue Rebuilding"
+ANG_boost_the_industry_desc:0 "Our land lies in ruins, and it is our foremost duty to rebuild. Let reconstruction be our top priority to restore Angmar’s strength and prosperity."
 ANG_dig_out_the_mountains:0 "Dig Out the Mountains"
 ANG_dig_out_the_mountains_desc:0 ""
 ANG_boost_the_industry_civilian:0 "Boost the Civilian Industry"
@@ -212,6 +218,29 @@ ANG_a_human_lead_industry:0 "Human led Industry"
 ANG_a_human_lead_industry_desc:0 ""
 ANG_a_orc_lead_industry:0 "Orc led Industry"
 ANG_a_orc_lead_industry_desc:0 ""
+
+ANG_orc_breeding:0 "Orc Breeding Pits"
+ANG_orc_breeding_desc:0 "In the dark halls of Carn Dûm, ancient pits once again stir. The breeding of orcs has resumed, swelling our armies with fierce and tireless soldiers."
+
+ANG_orc_breeding2:0 "Expanded Breeding Pits"
+ANG_orc_breeding2_desc:0 "The capacity of our breeding pits has been greatly increased. Orcs now pour forth in greater numbers, ready to die for the rebirth of Angmar."
+
+ANG_orc_brutality:0 "Orcish Brutality"
+ANG_orc_brutality_desc:0 "The orcs of Angmar know no mercy and show no restraint. Their methods are savage, their tactics cruel — and they are terrifyingly effective on the battlefield."
+
+ANG_establish_orc_breeding_grounds:0 "Establish Orc Breeding Grounds"
+ANG_establish_orc_breeding_grounds_desc:0 "In the dark halls of Carn Dûm, ancient pits once again stir. The breeding of orcs has resumed, swelling our armies with fierce and tireless soldiers."
+
+ANG_more_orcs:0 "More Orcs"
+ANG_more_orcs_desc:0 "The capacity of our breeding pits has been greatly increased. Orcs now pour forth in greater numbers, ready to die for the rebirth of Angmar."
+
+ANG_embrace_orchish_brutality:0 "Embrace Orcish Brutality"
+ANG_embrace_orchish_brutality_desc:0 "The orcs of Angmar know no mercy and show no restraint. Their methods are savage, their tactics cruel — and they are terrifyingly effective on the battlefield."
+
+ANG_witch_king_force:0 "Force of the Witch-king"
+ANG_witch_king_force_desc:0 "Empowered by the dark will of the Witch-king himself, our elite forces strike with unnatural precision and fury. His presence on the battlefield inspires terror and drives our special units beyond mortal limits."
+
+
 
 ### Hidden part
 ANG_the_return_of_sauron:0 "The Necromancer"
@@ -258,59 +287,179 @@ ANG_orc_farming_desc:0 ""
 ### Expanded Unaligned
 
 ANG_the_path_of_balance:0 "Path of Balance"
-ANG_the_path_of_balance_desc:0 ""
+ANG_the_path_of_balance_desc:0 "A shadow stirs in the East. For now, we shall set aside our ambitions in the South. The time has come to determine our course — will we remain neutral and self-reliant, or seek strength through bonds with our neighbors?"
 
 ANG_rally_the_people:0 "Rally the People"
-ANG_rally_the_people_desc:0 ""
+ANG_rally_the_people_desc:0 "Carn Dûm is growing once more, as families and workers return in search of stability and purpose. Though the future is uncertain, our people look to us for guidance. We must rally them around a common cause and begin shaping the road ahead."
 
 ANG_put_the_squeeze_in:0 "A Permanent Solution"
-ANG_put_the_squeeze_in_desc:0 ""
+ANG_put_the_squeeze_in_desc:0 "The raids from Gundabad have grown too frequent and severe to ignore. To secure our lands and people, we must take decisive action — war is the only path to lasting peace."
 
 ANG_sole_masters_of_gundabad:0 "Sole Masters of Gundabad"
-ANG_sole_masters_of_gundabad_desc:0 ""
+ANG_sole_masters_of_gundabad_desc:0 "Our power now reigns supreme over Gundabad. Many orcs have sworn fealty, while the rest have fled before our might. The land is firmly under our control, heralding a new era of dominance."
 
 ANG_mend_the_conflict:0 "Mend the Conflict"
-ANG_mend_the_conflict_desc:0 ""
+ANG_mend_the_conflict_desc:0 "Rather than resorting to war, we shall send envoys to Gundabad in hopes of easing tensions. Through careful diplomacy, we aim to quell raids and build a fragile peace with the orcs."
 
 ANG_sign_a_pact_with_gundabad:0 "Sign a Pact with Gundabad"
-ANG_sign_a_pact_with_gundabad_desc:0 ""
+ANG_sign_a_pact_with_gundabad_desc:0 "To bring lasting peace to our borderlands, we shall formally enact a non-aggression pact with Gundabad. This agreement seeks to end hostilities and open the way for cautious cooperation."
 
 ANG_trade_deal_with_gundabad:0 "Trade Deal with Gundabad"
-ANG_trade_deal_with_gundabad_desc:0 ""
+ANG_trade_deal_with_gundabad_desc:0 "With hostilities behind us, new opportunities arise. Establishing a trade agreement with Gundabad will strengthen our economies and foster cooperation across the borders."
 
 ANG_a_new_age_for_angmar:0 "Angmar's New Age"
-ANG_a_new_age_for_angmar_desc:0 ""
+ANG_a_new_age_for_angmar_desc:0 "Our nation stands rebuilt from the ashes of the past. With strength, unity, and purpose, we now proudly proclaim the dawn of a new era — the Kingdom of Angmar rises once more."
 
 ANG_invite_forodwaith_settlers:0 "Invite Forodwaith Settlers"
-ANG_invite_forodwaith_settlers_desc:0 ""
+ANG_invite_forodwaith_settlers_desc:0 "To the north lies the harsh, frozen land of Forodwaith — home to scattered, hardy folk who have long endured the cold. In a bid to restore Carn Dûm, we shall reach out to these settlers and invite them southward. Their skills could aid our efforts, though such movement risks upsetting the fragile balance in the region."
 
 ANG_integrate_the_settlers:0 "Settler Integration"
-ANG_integrate_the_settlers_desc:0 ""
+ANG_integrate_the_settlers_desc:0 "The people of the North hold customs different from our own. To build a strong and united nation, we must weave these diverse traditions into a shared identity."
 
 ANG_learn_from_their_methods:0 "Forodwaith Ice-Fishing"
-ANG_learn_from_their_methods_desc:0 ""
+ANG_learn_from_their_methods_desc:0 "The frozen rivers and lakes of Forodwaith hold a hidden bounty. Let us master the ancient art of ice fishing."
 
 ANG_give_the_settlers_jobs:0 "Settler Employment"
-ANG_give_the_settlers_jobs_desc:0 ""
+ANG_give_the_settlers_jobs_desc:0 "With growing numbers in our settlements, we can now fully employ our settlers, harnessing their skills to rebuild and strengthen our lands."
 
 ANG_import_dwarven_steel:0 "Import Dwarven Steel"
-ANG_import_dwarven_steel_desc:0 ""
+ANG_import_dwarven_steel_desc:0 "Our craftsmen require the finest materials to rebuild Angmar’s strength. By importing steel from our dwarven allies, we shall ensure our armies are equipped with the best weapons and armor forged beneath the mountains."
 
 ANG_align_with_erebor:0 "Align with Erebor"
-ANG_align_with_erebor_desc:0 ""
+ANG_align_with_erebor_desc:0 "Mordor has made no offers of peace — and if any should come, they cannot be trusted. The shadow grows, and neutrality may not be enough to shield us. To safeguard our future, we must seek an alliance with Erebor, whose strength and honor may yet keep Angmar free."
 
 ANG_join_erebor:0 "Join Erebor"
-ANG_join_erebor_desc:0 ""
+ANG_join_erebor_desc:0 "Angmar shall formally join Erebor’s faction, standing united against the dark forces that threaten Middle-earth."
 
 ANG_learn_from_the_dwarves:0 "Learn from the Dwarves"
-ANG_learn_from_the_dwarves_desc:0 ""
+ANG_learn_from_the_dwarves_desc:0 "The Dwarves’ mastery of craft and technology is renowned throughout Middle-earth. By sharing knowledge and skills, we can accelerate our own research efforts and forge a stronger future for Angmar."
 
 ANG_skirmishes_with_the_gundabad_orcs:0 "Skirmishes with Gundabad"
-ANG_skirmishes_with_the_gundabad_orcs_desc:0 ""
+ANG_skirmishes_with_the_gundabad_orcs_desc:0 "The orcs of Gundabad frequently raid our borderlands, testing our defenses with frequent skirmishes. We must respond carefully and firmly to protect our people and maintain control of the region."
 
 ANG_forodwaith_settlers:0 "Forodwaith Settlers"
 
 ANG_people_of_angmar:0 "People of Angmar"
+
+
+### Army Focuses ###
+ANG_army_of_angmar:0 "The Army of Angmar"
+ANG_army_of_angmar_desc:0 "Our legions once marched south in terrifying strength, only to be broken at Fornost. We must learn from the past, rebuild our military doctrine, and forge an army worthy of our rebirth. Angmar shall never fall again."
+
+ANG_legacy_of_long_past_wars:0 "Legacy of Long Past Wars"
+ANG_legacy_of_long_past_wars_desc:0 "Though the Kingdom of Angmar lies in the shadow of history, the wars it waged were carefully recorded by those who survived. In these chronicles lie valuable lessons—strategies, failures, and tactics we shall study to prepare for the conflicts of tomorrow."
+
+ANG_new_army_doctrine:0 "New Army Doctrine"
+ANG_new_army_doctrine_desc:0 "The wars of old were fought with brute strength and overwhelming numbers. But times have changed. Our new doctrine emphasizes superior planning, coordination, and the development of specialized units to meet the challenges of modern warfare."
+
+ANG_embrace_mounted_combat:0 "Embrace Mounted Combat"
+ANG_embrace_mounted_combat_desc:0 "The harsh northern terrain has forged hardy riders, and we shall harness their strength. By investing in cavalry tactics and equipment, we enhance both the offensive and defensive capabilities of our mounted troops."
+
+ANG_traditonal_warfare:0 "Traditional Warfare"
+ANG_traditonal_warfare_desc:0 "The strength of disciplined infantry remains the backbone of any true army. We shall double down on tried and tested methods, bolstering our infantry for the conflicts ahead."
+
+ANG_army_dynamic_modifier:0 "Angmar Army"
+ANG_modify_army_dynamic_modifier_intro:0 "Modify §YAngmar Army§! by"
+ANG_new_army_doctrine_tt:0 "$ANG_modify_army_dynamic_modifier_intro$ \n$MODIFIER_MAX_PLANNING$: §G+10.0%§! \n$MODIFIER_SPECIAL_FORCES_CAP$: §G+25.0%§!\n\n"
+ANG_embrace_mounted_combat_tt:0 "$ANG_modify_army_dynamic_modifier_intro$\n$MODIFIER_ARMY_ARMOR_ATTACK_FACTOR$: §G+10.00%§!\n$MODIFIER_ARMY_ARMOR_DEFENCE_FACTOR$: §G+5.00%§!\n\n"
+ANG_tradional_warfare_tt:0 "$ANG_modify_army_dynamic_modifier_intro$\n$MODIFIER_DIG_IN_SPEED_FACTOR$: §G+20%§!\n$MODIFIER_BREAKTHROUGH$: §G+2.5%§!\n$MODIFIER_ARMY_MORALE_FACTOR$: §G+10%§!\n$MODIFIER_ARMY_ORG_REGAIN$: §G+5%§!\n$modifier_army_sub_unit_infantry_attack_factor$: §G+5%§!\n$modifier_army_sub_unit_infantry_defence_factor$: §G+10%§!"
+
+
+
+### Rebuilding Focuses ###
+ANG_let_rebuilding_commence:0 "Let Rebuilding Commence"
+ANG_let_rebuilding_commence_desc:0 "The ruins of Angmar whisper of ancient strength. Our first steps begin with hammer and flame."
+
+ANG_refurbish_old_roads:0 "Refurbish the Old Roads"
+ANG_refurbish_old_roads_desc:0 "Long-neglected paths once carved through the frozen plains and hills. Restoring them will allow faster movement of troops and supplies, and reconnect scattered outposts across the region."
+
+ANG_clear_the_mountain_pass:0 "Clear the Mountain Pass"
+ANG_clear_the_mountain_pass_desc:0 "The mountains around our domain hide veins of iron long untouched. With the right roads carved through rock and snow, we can reach these deposits and fuel our war machine."
+
+ANG_delve_northeast_mountains:0 "Delve into the Northeastern Mountains"
+ANG_delve_northeast_mountains_desc:0 "In the remote peaks of the northeast, ancient tunnels and ruins lie buried beneath ice and silence. Once sealed by the fall of Angmar, they now offer knowledge and relics from a forgotten era. We shall delve deep into these cold depths and reclaim what was lost."
+
+ANG_invite_dwarves_to_mines:0 "Invite the Dwarves to the Mines"
+ANG_invite_dwarves_to_mines_desc:0 "To better exploit the rich veins of iron hidden in our mountains, we extend an uneasy invitation to the Dwarves of Erebor. Their expertise and craftsmanship will be invaluable."
+
+ANG_leather_trade_forochel:0 "Utilize the Ice Bay of Forochel"
+ANG_leather_trade_forochel_desc:0 "The Ice Bay of Forochel offers a vital gateway for traders seeking the finest pelts and hides. By opening our doors to this leather trade, we enrich our lands and arm our warriors with durable leathers."
+
+ANG_spin_up_the_factories:0 "Spin Up the Factories"
+ANG_spin_up_the_factories_desc:0 "The ruined stronghold of Carn Dûm still holds dormant forges and factories buried under centuries of frost and stone. With effort, we shall breathe life into these industrial bones and prepare for the wars to come."
+
+ANG_carn_dum_library:0 "Restore the Carn Dûm Library"
+ANG_carn_dum_library_desc:0 "Beneath the black halls of Carn Dûm lies a vault of lost lore, ancient scripts, and forbidden knowledge. By restoring the library, we can draw upon the forgotten wisdom of shadowed ages to fuel our advancements."
+
+ANG_economic_prosperity:0 "Economic Prosperity"
+ANG_economic_prosperity_desc:0 "With our lands restored and trade flourishing, Angmar experiences newfound prosperity. Our citizens’ needs are better met, allowing more factories to be dedicated to the war effort."
+
+ANG_economic_prosperity_idea:0 "Economic Prosperity"
+ANG_economic_prosperity_idea_desc:0 "Our lands flourish and trade thrives, reducing the burden of consumer goods on our factories and strengthening Angmar’s economy."
+
+
+ANG_carn_dum_alchemy:0 "Carn Dûm Alchemical Revival"
+ANG_carn_dum_alchemy_desc:0 "Ancient tomes and forgotten arts are being unearthed beneath Carn Dûm. A new laboratory has been established to harness alchemical knowledge for the glory of Angmar."
+
+ANG_delve_into_magic:0 "Delve into Magic"
+ANG_delve_into_magic_desc:0 "We turn our gaze to the forgotten arts, seeking power hidden in ancient knowledge."
+
+ANG_human_intellect:0 "Human Intellect"
+ANG_human_intellect_desc:0 "By refining our understanding and methods, we accelerate our path to new discoveries."
+
+ANG_goblin_researchers:0 "Goblin Researchers"
+ANG_goblin_researchers_desc:0 "Crude, clever, and tireless—our goblin minds work day and night to push the boundaries of discovery."
+
+ANG_haste:0 "Haste"
+ANG_haste_desc:0 "Enchanted spells accelerate our troops, granting the army greater speed on the battlefield."
+
+
+ANG_research_at_any_hour:0 "Extended Research Hours"
+ANG_research_at_any_hour_desc:0 "Unlocks the ability to conduct research at any hour, boosting our scientific output."
+
+ANG_approve_magic_in_factories:0 "Approve Magic Use in Factories"
+ANG_approve_magic_in_factories_desc:0 "Harness arcane energies to enhance factory output, increasing production efficiency."
+
+ANG_heavy_experimenting:0 "Heavy Experimenting"
+ANG_heavy_experimenting_desc:0 "Invest deeply in alchemical research, accelerating breakthroughs and magical innovations."
+
+
+
+
+
+
+
+
+### Naval Focuses ###
+ANG_restore_dockyards:0 "Restore the Dockyards of Forochel"
+ANG_restore_dockyards_desc:0 "The Ice Bay of Forochel once held dark piers and icebound harbors. Restoring the old dockyards will open new paths for trade, supply, and the construction of a shadowed fleet."
+
+ANG_spies_of_angmar:0 "Eyes of Angmar"
+ANG_spies_of_angmar_desc:0 "With the Ice Bay of Forochel active once more, merchants and agents now flow in and out under cover of trade. Let us use them to gather secrets, sow unrest, and serve our ambitions across all of Middle-earth."
+
+ANG_streamline_our_spy_methods:0 "Refine the Eyes of Angmar"
+ANG_streamline_our_spy_methods_desc:0 "Consolidate and enhance our intelligence operations. Our reach will expand, ensuring no secret remains hidden from Angmar."
+
+ANG_the_frozen_fleet:0 "The Frozen Fleet"
+ANG_the_frozen_fleet_desc:0 "The frozen fleet will rise once more, as we rebuild Angmar's glory upon the seas. Our ships will patrol the icy waters of the north and extend our influence far beyond the mountains."
+
+ANG_frozen_fleet:0 "Frozen Fleet"
+ANG_frozen_fleet_desc:0 "Our icy waters conceal a fleet reborn. The Frozen Fleet will patrol the northern seas, defending Angmar’s shores and asserting our power over the waters of Middle-earth."
+
+ANG_sea_based_trade_idea:0 "Sea-Based Trade"
+ANG_sea_based_trade_idea_desc:0 "Our ports grant us the advantage of better trade prices and stronger economic ties across the seas."
+
+ANG_extend_dockyards:0 "Extend Dockyards"
+ANG_extend_dockyards_desc:0 "Expand the dockyards along the northern coasts to increase our shipbuilding capacity and secure our dominance over the frozen seas."
+
+ANG_sea_based_trade:0 "Sea-Based Trade"
+ANG_sea_based_trade_desc:0 "Our ports are a marvel of the North, enabling us to secure better prices and favorable terms when trading with distant lands across the seas."
+
+
+
+
+
+
 
 ### Country flags
 ANG_sauron_returned:0 "Sauron has returned in §YAngmar§!"
@@ -327,3 +476,28 @@ ANG_tooltip_demand_northen_states_anduin:0 "§OIf they accept, we will receive t
 ANG_tooltip_request_resources_mirkwood:0 "§OIf they accept, we will receive the following:§!\n §GRights§! to their string in state. §Y[85.GetName]§!"
 ANG_tooltip_more_members_better_bonus:0 "§OThe bonuses are better the more members in the faction there are.§!"
 ANG_tooltip_unlock_advisor_brinley:0 "§GThis will unlock Brinley as a Political Advisor§!"
+
+ANG_investment_request_tt:0 "Send a request for economic investment, if they accept: \n$MODIFIER_CONSUMER_GOODS_FACTOR$: §Y-30%§!\n$MODIFIER_STABILITY_WEEKLY$: §G+0.10%§!"
+ANG_establish_new_arnor_tt:0 "§GAnnex§! §Y[RHD.GetName]§!\nGains core on §Y[62.GetName]§!.\nGains core on §Y[63.GetName]§!.\nGains core on §Y[151.GetName]§!.\nGains core on §Y[64.GetName]§!.\n"
+
+ANG_invite_tt:0 "§YThey are more likely to accept if:§! \nThey have have a high opinion of us.\nThey have a non-aggression pact with us.\nThey are in a war."
+ANG_request_control_north_arthedain_tt:0 "§YThey are more likely to accept if:§! \nThey have have a high opinion of us.\nThey are in our faction."
+ANG_reunification_with_rhudaur_tt:0 "§YThey are more likely to accept if:§! \nThey have have a high opinion of us.\nThey have a non-aggression pact with us."
+
+
+
+
+### Events
+angmar.18.t:0 "[ART.GetName] joins [ANG.GetName]"
+angmar.18.d:0 "[ART.GetName] has joined [ANG.GetName]!"
+angmar.18.a:0 "Wonderful news!"
+angmar.19.t:0 "[ART.GetName] refuses our request for an alliance."
+angmar.19.d:0 "Despite our diplomatic efforts, we could not reach an agreement."
+angmar.19.a:0 "Truly a lost opportunity..."
+
+angmar.20.t:0 "[CAR.GetName] joins [ANG.GetName]"
+angmar.20.d:0 "[CAR.GetName] has joined [ANG.GetName]!"
+angmar.20.a:0 "Wonderful news!"
+angmar.21.t:0 "[CAR.GetName] refuses our request for an alliance."
+angmar.21.d:0 "Despite our diplomatic efforts, we could not reach an agreement."
+angmar.21.a:0 "Truly a lost opportunity..."

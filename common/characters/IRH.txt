@@ -1,0 +1,25 @@
+characters={
+	IRH_dwalin={
+		name="Dwalin"
+		portraits={
+			civilian={
+				large="GFX_portrait_erebor_dwalin"
+				small = "GFX_idea_portrait_erebor_dwalin"
+			}
+			army={
+				large="GFX_portrait_erebor_dwalin"
+				small = "GFX_idea_portrait_erebor_dwalin"
+			}
+		}
+		country_leader={
+			ideology=isolationist
+			expire="1940.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=federative
+			expire="1940.1.1.1"
+			id=-1
+		}
+	}
+}

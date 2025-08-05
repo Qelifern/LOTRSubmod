@@ -78,6 +78,8 @@ ideas = {
 			modifier = {
 				stability_factor = 0.15
 				conscription_factor = 0.15
+				subjects_autonomy_gain = -1.0
+				global_building_slots_factor = 0.20
 			}
 		}
 
@@ -103,5 +105,68 @@ ideas = {
 			}
 		}
 
+		ERE_iron_hill_trade = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_reserve_divisions
+
+			targeted_modifier = {
+				tag = IRH
+				trade_opinion_factor = 1.0
+				trade_cost_for_target_factor = -0.5
+			}
+		}
+
+		ERE_grey_mountain_dragonslayer = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_reserve_divisions
+
+			modifier = {
+				stability_factor = 0.15
+				war_support_factor = 0.25
+				army_attack_factor = 0.1
+				army_defence_factor = 0.1
+			}
+		}
+
+		
+		ERE_dwarf_women_idea = {
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_reserve_divisions
+
+			modifier = {
+				stability_factor = -0.05
+				conscription_factor = 0.1
+				conscription = 0.01
+				weekly_manpower = 5
+			}
+		}
+		
 	}
 }

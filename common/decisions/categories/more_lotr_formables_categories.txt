@@ -1,0 +1,12 @@
+form_the_shadow_of_anduin_category = {
+
+	icon = generic_formable_nations
+
+	picture = GFX_decision_cat_picture_greater_proletarian_germany
+
+	allowed = {
+		original_tag = DGU
+	}
+
+	priority = 50
+}

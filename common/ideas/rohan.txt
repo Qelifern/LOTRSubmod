@@ -1349,6 +1349,22 @@ ideas = {
 			}
 		}
 
+		ROH_forth_eorlingas = {
+
+			allowed = {
+				always = no
+			}
+
+			picture = generic_political_support
+
+			targeted_modifier = {
+				tag = ISE
+				attack_bonus_against = 0.25
+				defense_bonus_against = 0.25
+			}
+
+		}
+
 
 	}
 }

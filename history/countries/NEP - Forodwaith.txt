@@ -8,6 +8,7 @@ add_ideas = {
 	closed_economy
 	no_centralization
 	no_taxes
+	NEP_no_army
 }
 
 set_politics = {

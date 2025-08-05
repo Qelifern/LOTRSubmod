@@ -1,0 +1,23 @@
+spriteTypes = {
+
+    SpriteType = {
+		name = "GFX_archetype_heavy_infantry_equipment_medium"
+		texturefile = "gfx/interface/archetypes/archetype_heavy_infantry_equipment.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_heavy_infantry_equipment_medium"
+		texturefile = "gfx/interface/archetypes/archetype_heavy_infantry_equipment.dds"
+	}
+	
+	SpriteType = {
+		name = "GFX_heavy_infantry_equipment_1_medium"
+		texturefile = "gfx/interface/archetypes/archetype_heavy_infantry_equipment_mithril.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_paratroopers4_medium"
+		texturefile = "gfx/interface/technologies/heavy_infantry_4.dds"
+	}
+
+}

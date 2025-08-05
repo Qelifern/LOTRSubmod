@@ -4,7 +4,7 @@ state={
 	name="STATE_90"
 	resources={
 		steel=43.000
-		aluminium=3.000
+		aluminium=5.000
 	}
 
 	history={
@@ -13,9 +13,10 @@ state={
 			infrastructure = 4
 			air_base = 1
 			arms_factory = 5
-			industrial_complex = 4
+			industrial_complex = 9
 			anti_air_building = 1
-
+			foundry = 1
+			
 
 			2768 = { castle = 1 }
 		}
@@ -24,12 +25,14 @@ state={
 
 		victory_points = { 2768 80 }
 		victory_points = { 5772 1 }
+
+		add_extra_state_shared_building_slots = 6
 	}
 
 	provinces={
 		945 1725 2179 2255 2722 2768 3004 3016 3182 4383 4528 4711 4877 5069 5091 5312 5688 5723 5726 5768 5772 5778 5786
 	}
-	manpower=600000
+	manpower=100000
 	buildings_max_level_factor=1.000
 	state_category=megalopolis
 	local_supplies=5.000
