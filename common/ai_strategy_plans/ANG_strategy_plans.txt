@@ -225,7 +225,7 @@ ANG_belligerent_witch_king_plan = {
         ANG_army_of_angmar
         ANG_legacy_of_long_past_wars
         ANG_new_army_doctrine
-        ANG_traditonal_warfare
+        ANG_traditional_warfare
 
         # POLITICAL
         ANG_reclaim_rhudaur

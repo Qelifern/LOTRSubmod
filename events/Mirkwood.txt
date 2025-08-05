@@ -565,7 +565,6 @@ country_event = {
 		days = 7
 	}
 
-	will_lead_to_war_with = DGU
 	
 	option = { #Accept
 		name = mirkwood.16.a

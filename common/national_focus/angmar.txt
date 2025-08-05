@@ -107,7 +107,7 @@ focus_tree = {
 		prerequisite = { focus = ANG_new_army_doctrine }
 		x = -1
 		y = 2
-		mutually_exclusive = { focus = ANG_embrace_mounted_combat focus = ANG_traditonal_warfare}
+		mutually_exclusive = { focus = ANG_embrace_mounted_combat focus = ANG_traditional_warfare}
 		relative_position_id = ANG_new_army_doctrine
 		cost = 10
 
@@ -126,12 +126,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = ANG_traditonal_warfare
+		id = ANG_traditional_warfare
 		icon = GFX_goal_generic_sword_arrow_and_shield
 		prerequisite = { focus = ANG_new_army_doctrine }
 		x = 1
 		y = 2
-		mutually_exclusive = { focus = ANG_embrace_mounted_combat focus = ANG_traditonal_warfare}
+		mutually_exclusive = { focus = ANG_embrace_mounted_combat focus = ANG_traditional_warfare}
 		relative_position_id = ANG_new_army_doctrine
 		cost = 10
 
@@ -149,7 +149,7 @@ focus_tree = {
 			add_to_variable = { ANG_army_army_org_regain = 0.05 }
 			add_to_variable = { ANG_army_army_infantry_attack_factor = 0.05 }
 			add_to_variable = { ANG_army_army_infantry_defence_factor = 0.1 }
-			custom_effect_tooltip = ANG_traditonal_warfare_tt
+			custom_effect_tooltip = ANG_traditional_warfare_tt
 		}
 	}
 	
@@ -284,16 +284,6 @@ focus_tree = {
 			factor = 5
 		}
 
-		bypass = {
-			60 = {
-				free_building_slots = {
-					building = infrastructure
-					size < 2
-					include_locked = yes
-				}
-			}
-			
-		}
 
 		complete_tooltip = {
 			add_extra_state_shared_building_slots = 1

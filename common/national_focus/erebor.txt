@@ -263,19 +263,7 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Seek an Alliance
-	focus = {
-		id = seekanalliance
-		icon = GFX_goal_support_cooperative
-		ai_will_do = { factor = 7 }
-		available = { cooperative > 0.35 }
-		x =-2
-		y =1
-		prerequisite = { focus = hewhowieldsthekingsjewel}
-		relative_position_id = hewhowieldsthekingsjewel
-		cost = 10
-		completion_reward = { set_politics = { ruling_party = cooperative elections_allowed = no } }
-	}
+	
 
 	#Focus for Prepare for war with Rhun
 	focus = {
@@ -1190,68 +1178,9 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Unite with Gondor
-	focus = {
-		id = unitewithgondor
-		icon = GFX_goal_gondor
-		ai_will_do = { factor = 5 }
-		available = {
-			GON = { is_faction_leader = yes }
-			NOT = { GON = { has_government = belligerent } }
-			OR = { has_government = cooperative has_government = unaligned }
-			NOT = { is_puppet = yes }
-			NOT = { has_war_with = GON }
-		}
-		bypass = { is_in_faction_with = GON }
-		x =1
-		y =1
-		mutually_exclusive = { focus = standwithdale }
-		prerequisite = { focus = seekanalliance}
-		relative_position_id = seekanalliance
-		cost = 10
-		available_if_capitulated = no
-		completion_reward = { 
-			GON = { country_event = { id = gondor.7 } } 
-		}
-	}
+	
 
-	focus = {
-		id = ERE_gondor_research_sharing
-		icon = GFX_goal_generic_gondor_research
-		ai_will_do = { factor = 8 }
-		available = { 
-			is_in_faction_with = GON
-		}
-		relative_position_id = unitewithgondor
-		x = 0
-		y = 1
-		prerequisite = { focus = unitewithgondor}
-		cost = 10
-		completion_reward = { 			
-			GON = {
-				country_event = {
-					id = gondor.8
-				}
-			} 
-		}
-	}
-
-	focus = {
-		id = ERE_a_fighting_king
-		icon = GFX_focus_hun_elect_a_king
-		ai_will_do = { factor = 8 }
-		available = { 
-
-		}
-		relative_position_id = standwithdale
-		x = 0
-		y = 1
-		prerequisite = { focus = unitewithgondor focus = standwithdale }
-		cost = 10
-		completion_reward = { 			
-			add_ideas = ERE_a_fighting_king
-		}
-	}
+	
 
 	focus = {
 		id = ERE_for_the_greater_good
@@ -1323,6 +1252,66 @@ focus_tree = {
 		}
 	}
 
+	#Focus for Seek an Alliance
+	focus = {
+		id = seekanalliance
+		icon = GFX_goal_support_cooperative
+		ai_will_do = { factor = 7 }
+		available = { cooperative > 0.35 }
+		x =-2
+		y =1
+		prerequisite = { focus = hewhowieldsthekingsjewel}
+		relative_position_id = hewhowieldsthekingsjewel
+		cost = 10
+		completion_reward = { set_politics = { ruling_party = cooperative elections_allowed = no } }
+	}
+
+	#Focus for Unite with Gondor
+	focus = {
+		id = unitewithgondor
+		icon = GFX_goal_gondor
+		ai_will_do = { factor = 5 }
+		available = {
+			GON = { is_faction_leader = yes }
+			NOT = { GON = { has_government = belligerent } }
+			OR = { has_government = cooperative has_government = unaligned }
+			NOT = { is_puppet = yes }
+			NOT = { has_war_with = GON }
+		}
+		bypass = { is_in_faction_with = GON }
+		x =1
+		y =1
+		mutually_exclusive = { focus = standwithdale }
+		prerequisite = { focus = seekanalliance}
+		relative_position_id = seekanalliance
+		cost = 10
+		available_if_capitulated = no
+		completion_reward = { 
+			GON = { country_event = { id = gondor.7 } } 
+		}
+	}
+
+	focus = {
+		id = ERE_gondor_research_sharing
+		icon = GFX_goal_generic_gondor_research
+		ai_will_do = { factor = 8 }
+		available = { 
+			is_in_faction_with = GON
+		}
+		relative_position_id = unitewithgondor
+		x = 0
+		y = 1
+		prerequisite = { focus = unitewithgondor}
+		cost = 10
+		completion_reward = { 			
+			GON = {
+				country_event = {
+					id = gondor.8
+				}
+			} 
+		}
+	}
+
 	#Focus for Stand with dale
 	focus = {
 		id = standwithdale
@@ -1344,6 +1333,23 @@ focus_tree = {
 		completion_reward = {
 			create_faction = "northern_protection_league"
 			DAL = { country_event = { days = 0 id = erebor.2 } } }
+	}
+
+	focus = {
+		id = ERE_a_fighting_king
+		icon = GFX_focus_hun_elect_a_king
+		ai_will_do = { factor = 8 }
+		available = { 
+
+		}
+		relative_position_id = standwithdale
+		x = 0
+		y = 1
+		prerequisite = { focus = unitewithgondor focus = standwithdale }
+		cost = 10
+		completion_reward = { 			
+			add_ideas = ERE_a_fighting_king
+		}
 	}
 
 
