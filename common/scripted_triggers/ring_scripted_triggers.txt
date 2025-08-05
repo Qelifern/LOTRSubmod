@@ -1,0 +1,266 @@
+
+# @docs(Ring): The ring mechanic is enabled in the custom game rules
+ring_mechanic_is_enabled = {
+	has_game_rule = { rule = enable_ring_mechanic option = YES }
+}
+
+
+# @docs(Ring): THIS controls the territory the fellowship is currently in
+can_attempt_ring_interception = {
+	controls_state = global.fs_currentstate
+}
+
+# @docs(Ring): The ring has been destroyed
+ring_has_been_destroyed = {
+	has_global_flag = fs_ring_destroyed
+}
+
+# @docs(Ring): The ring has been seized by a country at some point
+ring_has_been_seized = {
+	has_global_flag = fs_ring_seized
+}
+
+# @docs(Ring): The fellowship has left the shire
+fellowship_has_started = {
+	has_global_flag = fs_started
+}
+
+# @docs(Ring): The fellowship has left the shire, *and* the ring has neither been destroyed nor seized
+fellowship_is_active = {
+	ring_has_been_destroyed = no
+	ring_has_been_seized = no
+	fellowship_has_started = yes
+}
+
+
+# @docs(Ring): True if the fellowship is currently in a state controlled by THIS
+fellowship_in_controlled_territory = {
+	custom_trigger_tooltip = {
+		tooltip = "The Fellowship is in a controlled state."
+		if = {
+			limit = { has_variable = global.fs_currentstate }
+			var:global.fs_currentstate = {
+				is_controlled_by = PREV
+			}
+		}
+		else = {
+			has_variable = global.fs_currentstate
+		}
+	}
+}
+
+# @docs(Ring): True if the fellowship is currently in a core state of THIS (does not have to be controlled)
+fellowship_in_core_territory = {
+	custom_trigger_tooltip = {
+		tooltip = "The Fellowship is in a core state."
+		if = {
+			limit = { has_variable = global.fs_currentstate }
+			var:global.fs_currentstate = {
+				is_core_of = PREV
+			}
+		}
+		else = {
+			has_variable = global.fs_currentstate
+		}
+	}
+}
+
+# @docs(Ring): True if the fellowship is currently in a core state of THIS, controlled by THIS
+fellowship_in_controlled_core_territory = {
+	custom_trigger_tooltip = {
+		tooltip = "The Fellowship is in a core and controlled state."
+		if = {
+			limit = { has_variable = global.fs_currentstate }
+			var:global.fs_currentstate = {
+				is_controlled_by = PREV
+				is_core_of = PREV
+			}
+		}
+		else = {
+			has_variable = global.fs_currentstate
+		}
+	}
+}
+
+
+ring_frodo_is_dead = {
+	SHI = {
+		FS_frodo = {
+			is_dead = yes
+		}
+	}
+}
+
+ring_frodo_is_not_dead = {
+	custom_trigger_tooltip = {
+		tooltip = "Frodo is not dead"
+		ring_frodo_is_dead = no
+	}
+}
+
+ring_haldir_is_dead = {
+	SHI = {
+		FS_haldir = {
+			is_dead = yes
+		}
+	}
+}
+
+
+ring_ringbearer_is_dead = {
+	SHI = {
+		OR = {
+			AND = {
+				NOT = { has_global_flag = fs_elven_fellowship }
+				ring_frodo_is_dead = yes
+			}
+			AND = {
+				has_global_flag = fs_elven_fellowship
+				ring_haldir_is_dead = yes
+			}
+		}
+	}
+}
+
+# @docs(Ring): Boromir is dead
+ring_boromir_is_dead = {
+	SHI = {
+		FS_boromir = {
+			is_dead = yes
+		}
+	}
+}
+
+# @docs(Ring): Aragorn is dead
+ring_aragorn_is_dead = {
+	SHI = {
+		FS_aragorn = {
+			is_dead = yes
+		}
+	}
+}
+
+# @docs(Ring): Merry is dead
+ring_merry_is_dead = {
+	SHI = {
+		FS_merry = {
+			is_dead = yes
+		}
+	}
+}
+
+# @docs(Ring): Pippin is dead
+ring_pippin_is_dead = {
+	SHI = {
+		FS_pippin = {
+			is_dead = yes
+		}
+	}
+}
+
+# @docs(Ring): Gandalf is dead
+ring_gandalf_is_dead = {
+	SHI = {
+		FS_gandalf = {
+			is_dead = yes
+		}
+	}
+}
+
+# @docs(Ring): THIS is a character currently in the fellowship
+ring_is_fs_member = {
+	is_in_array = { global.fs_members = THIS }
+}
+
+# @docs(Ring): THIS is not a character currently in the fellowship
+ring_is_not_fs_member = {
+	NOT = {
+		is_in_array = { global.fs_members = THIS }
+	}
+}
+
+# @docs(Ring): THIS has the One Ring in their possession
+ring_has_the_ring = {
+	custom_trigger_tooltip = {
+		tooltip = ring_has_the_ring_tt
+
+		OR = {
+			has_idea = one_true_ring
+			has_idea = one_true_ring_2
+		}
+	}
+}
+
+# @docs(Ring): Aragorn is currently in the fellowship
+ring_aragorn_in_fellowship = {
+	SHI = {
+		FS_aragorn = { ring_is_fs_member = yes }
+	}
+}
+
+# @docs(Ring): Gandalf is currently in the fellowship
+ring_gandalf_in_fellowship = {
+	SHI = {
+		FS_gandalf = { ring_is_fs_member = yes }
+	}
+}
+
+# @docs(Ring): Sam is currently in the fellowship
+ring_sam_in_fellowship = {
+	SHI = {
+		FS_sam = { ring_is_fs_member = yes }
+	}
+}
+
+# @docs(Ring): Boromir is currently in the fellowship
+ring_boromir_in_fellowship = {
+	SHI = {
+		FS_boromir = { ring_is_fs_member = yes }
+	}
+}
+
+# @docs(Ring): Faramir is currently in the fellowship
+ring_faramir_in_fellowship = {
+	custom_trigger_tooltip = {
+		tooltip = "Faramir is in the fellowship"
+		SHI = {
+			FS_faramir = { ring_is_fs_member = yes }
+		}
+	}
+}
+
+# @docs(Ring): Haldir is currently in the fellowship
+ring_haldir_in_fellowship = {
+	SHI = {
+		FS_haldir = { ring_is_fs_member = yes }
+	}
+}
+
+# @docs(Ring): Orophin is currently in the fellowship
+ring_orophin_in_fellowship = {
+	SHI = {
+		FS_orophin = { ring_is_fs_member = yes }
+	}
+}
+
+# The countries that have "special" interactions with the ring-mechanic
+# IE. countries that should not be able to intercept/help at will
+ring_has_special_interaction = {
+	OR = {
+		tag = RIV
+    	tag = LTH
+    	tag = MOA
+    	tag = MOC
+		tag = MOR
+		# Gondor can intercept only if it is the elven fellowship
+		AND = {
+			tag = GON
+			NOT = { has_global_flag = fs_elven_fellowship }
+		}
+	}
+}
+
+# @docs(Ring): The One Ring has been destroyed
+ring_is_destroyed = {
+	has_global_flag = fs_ring_destroyed
+}

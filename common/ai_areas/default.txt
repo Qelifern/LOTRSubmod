@@ -1,0 +1,153 @@
+areas = {
+
+	forodwaith = {
+        continents = {
+			forodwaith
+		}
+    }
+
+    lindon = {
+		continents = {
+			lindon
+		}
+    }
+
+    eriador = {
+        continents = {
+			eriador
+		}
+    }
+
+    rhovanion = {
+        continents = {
+			rhovanion
+		}
+    }
+
+    erebor = {
+        continents = {
+			erebor
+		}
+    }
+
+	rhun = {
+		continents = {
+			rhun
+		}
+	}
+
+    mordor = {
+        continents = {
+			mordor
+		}
+    }
+	
+	harad = {
+        continents = {
+			harad
+		}
+    }
+
+	rohan = {
+		continents = {
+			rohan
+		}
+	}
+
+	gondor = {
+
+		continents = {
+			gondor
+		}
+	}
+
+	mirkwood = {
+
+		continents = {
+			mirkwood
+		}
+	}
+
+	enedwaith = {
+
+		continents = {
+			enedwaith
+		}
+	}
+
+	vale = {
+
+		continents = {
+			vale
+		}
+	}
+
+	hollin = {
+
+		continents = {
+			hollin
+		}
+	}
+
+	gap_of_rohan = {
+
+		strategic_regions = {
+			60
+			84
+			15
+		}
+	}
+
+	durwaith_laur = {
+
+		strategic_regions = {
+			84
+		}
+	}
+
+	the_wold = {
+
+		strategic_regions = {
+			48
+		}
+	}
+
+	eastfold_anorien = {
+
+		strategic_regions = {
+			53
+			6
+		}
+	}
+
+	ithilien = {
+
+		strategic_regions = {
+			73
+			77
+		}
+	}
+
+	lebennin = {
+
+		strategic_regions = {
+			71
+		}
+	}
+
+	harad_umbar_coast = {
+
+		strategic_regions = {
+			143
+			166
+			162
+		}
+	}
+
+	gondor_belly_coast = {
+
+		strategic_regions = {
+			50
+		}
+	}
+}

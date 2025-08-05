@@ -1,0 +1,265 @@
+﻿###########################
+# Entwood Events
+###########################
+
+add_namespace = entwood
+
+# Entwood War Consensus
+country_event = {
+	id = entwood.1
+	title = entwood.1.t
+	desc = entwood.1.d
+	picture = GFX_report_event_paper
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENT
+		date > 3020.3.1 
+		has_global_flag = ents_burned
+		has_war = no
+		ISE = { has_war = yes }
+	}
+
+	mean_time_to_happen = {
+		days = 150
+	}
+	
+	option = { #Accept
+		name = entwood.1.a
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 35
+				ISE = { has_war_with = ROH }
+			}
+			modifier = {
+				add = 25
+				ISE = { has_government = belligerent }
+			}
+			modifier = {
+				add = 50
+				cooperative > 0.3
+			}
+			modifier = {
+				add = 35
+				NOT = { ring_pippin_is_dead = yes }
+			}
+			modifier = {
+				add = 35
+				NOT = { ring_merry_is_dead = yes }
+			}
+		}
+		declare_war_on = { target = ISE type = puppet_wargoal_focus } 
+		hidden_effect = { news_event = { hours = 10 id = news.349 }}
+	}
+	option = { #Refuse
+		name = entwood.1.b
+		ai_chance = {
+			base = 75
+		}
+	}
+	
+}
+
+
+# Entwives in Mirkwood
+country_event = {
+	id = entwood.2
+	title = entwood.2.t
+	desc = entwood.2.d
+	picture = GFX_report_event_paper
+
+	is_triggered_only = yes
+
+	option = {
+		name = entwood.2.a
+		set_global_flag = entwives_in_mirkwood
+	}
+}
+
+# Entwives in Brown Lands
+country_event = {
+	id = entwood.3
+	title = entwood.3.t
+	desc = entwood.3.d
+	picture = GFX_report_event_paper
+
+	is_triggered_only = yes
+
+	option = {
+		name = entwood.3.a
+		set_global_flag = entwives_in_brownlands
+	}
+}
+
+# Entwives in Lothlorien
+country_event = {
+	id = entwood.4
+	title = entwood.4.t
+	desc = entwood.4.d
+	picture = GFX_report_event_paper
+
+	is_triggered_only = yes
+
+	option = {
+		name = entwood.4.a
+		set_global_flag = entwives_in_lothlorien
+	}
+}
+
+# Entwives in Lindon
+country_event = {
+	id = entwood.5
+	title = entwood.5.t
+	desc = entwood.5.d
+	picture = GFX_report_event_paper
+
+	is_triggered_only = yes
+
+	option = {
+		name = entwood.5.a
+		set_global_flag = entwives_in_lindon
+	}
+}
+
+# Entwood request the Entwives be returned
+country_event = {
+	id = entwood.6
+	title = entwood.6.t
+	desc = entwood.6.d
+	picture = GFX_report_event_paper
+	
+	is_triggered_only = yes
+	
+	option = { #Accept
+		name = entwood.6.a
+		ai_chance = {
+			base = 30
+			modifier = {
+				has_opinion = { target = ENT value > 0 }
+				add = 30
+			}
+			modifier = {
+				has_opinion = { target = ENT value > 50 }
+				add = 30
+			}
+			modifier = {
+				has_opinion = { target = ENT value > 80 }
+				add = 30
+			}
+		}
+		ENT = { country_event = { days = 1 id = entwood.9 } }
+	}
+	option = { #Refuse
+		name = entwood.6.b
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 600
+				has_war_with = ENT
+			}
+		}
+		ENT = { country_event = { days = 1 id = entwood.8 } }
+	}
+}
+
+# Saruman burns Entwood
+country_event = {
+	id = entwood.7
+	title = entwood.7.t
+	desc = entwood.7.d
+	picture = GFX_report_event_paper
+
+	is_triggered_only = yes
+
+	option = {
+		name = entwood.7.a
+		ENT = { add_opinion_modifier = { target = ISE modifier = isr_entwood_burned } }
+		29 = { damage_building = { type = infrastructure damage = 5 } }
+		29 = { damage_building = { type = arms_factory damage = 5 } }
+		add_resource = { type = rubber amount = -10 state = 29 }
+		add_manpower = -2500
+	}
+}
+
+# Entwives denied
+country_event = {
+	id = entwood.8
+	title = entwood.8.t
+	desc = entwood.8.d
+	picture = GFX_report_event_paper
+
+	is_triggered_only = yes
+
+	option = {
+		name = entwood.8.a
+		create_wargoal = { type = annex_everything target = FROM }
+	}
+}
+
+# Entwives returned
+country_event = {
+	id = entwood.9
+	title = entwood.9.t
+	desc = entwood.9.d
+	picture = GFX_report_event_paper
+
+	is_triggered_only = yes
+
+	option = {
+		name = entwood.9.a
+		set_global_flag = entwives_set_free
+	}
+}
+
+# Isengard requests increasing relations
+country_event = {
+	id = entwood.10
+	title = entwood.10.t
+	desc = entwood.10.d
+	picture = GFX_report_event_paper
+	
+	is_triggered_only = yes
+	
+	option = { #Accept
+		name = entwood.10.a
+		ai_chance = {
+			base = 30
+			modifier = {
+				has_opinion = { target = ENT value > 0 }
+				add = 30
+			}
+			modifier = {
+				has_opinion = { target = ENT value > 50 }
+				add = 30
+			}
+			modifier = {
+				has_opinion = { target = ENT value > 80 }
+				add = 30
+			}
+		}
+		diplomatic_relation = {
+			country = ISE
+			relation = non_aggression_pact
+		}
+		add_opinion_modifier = { target = ISE modifier = small_increase }
+		ISE = {
+			country_event = { id = isengard.15 }
+		}
+	}
+	option = { #Refuse
+		name = entwood.10.b
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 600
+				has_war_with = ENT
+			}
+		}
+		ISE = {
+			country_event = { id = isengard.16 }
+			event_option_tooltip = isengard.16.a
+		}
+	}
+}

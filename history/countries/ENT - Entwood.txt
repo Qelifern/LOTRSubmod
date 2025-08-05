@@ -1,0 +1,40 @@
+capital = 29
+
+oob = "ENT_1936"
+
+recruit_character = ENT_treebeard
+recruit_character = ENT_fladrif
+recruit_character = ENT_birchseed
+
+set_research_slots = 1
+
+set_technology = {
+	ent_infantry = 1
+
+	infantry_weapons = 1
+	tech_support = 1
+	tech_engineers = 1
+	trench_warfare = 1
+	basic_cav = 1
+	gw_artillery = 1
+}
+
+add_ideas = {
+	volunteer_service
+	ENT_not_so_hasty
+	ENT_lost_entwives
+}
+
+set_politics = {
+	ruling_party = unaligned
+	last_election = "1932.5.21"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	cooperative = 0
+	belligerent = 0
+	revolutionary = 0
+	unaligned = 100
+}

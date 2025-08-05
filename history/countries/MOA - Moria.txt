@@ -1,0 +1,49 @@
+capital = 73
+
+oob = "MOA_1936"
+
+recruit_character = MOA_balin
+recruit_character = MOA_gloin
+recruit_character = MOA_bane
+recruit_character = MOA_ori
+recruit_character = MOA_oin
+
+recruit_character = MOA_thrili
+recruit_character = MOA_nali
+recruit_character = MOA_frar
+recruit_character = MOA_loni
+recruit_character = MOA_floi
+
+recruit_character = MOA_gimli
+
+set_research_slots = 3
+
+add_ideas = {
+	limited_levy
+}
+
+set_technology = {
+	infantry_weapons = 1
+	tech_support = 1
+	tech_engineers = 1
+	trade_caravan = 1
+	gw_artillery = 1
+
+	boar_horses_module = 1
+}
+
+ERE = { puppet = MOA }
+
+set_politics = {
+	ruling_party = unaligned
+	last_election = "1933.10.16"
+	election_frequency = 36
+	elections_allowed = no
+}
+
+set_popularities = {
+	cooperative = 17
+	belligerent = 0
+	revolutionary = 0
+	unaligned = 83
+}

@@ -1,0 +1,43 @@
+ROH_stablemasters_guild = {
+	name = eorling_ridewardens
+	icon = GFX_mio_generic_horse_1
+
+	allowed = {
+		original_tag = ROH
+	}
+
+	include = generic_stablemasters_guild
+}
+
+ROH_farmers_guild = {
+	name = riddermark_farmsteaders
+	icon = GFX_mio_generic_farming_1
+
+	allowed = {
+		original_tag = ROH
+	}
+
+	include = generic_farmers_guild
+}
+
+ROH_knights_guild = {
+	name = dawnward_cavaliers
+	icon = GFX_mio_generic_8
+
+	allowed = {
+		original_tag = ROH
+	}
+
+	include = generic_knights_guild
+}
+
+ROH_blacksmith_guild = {
+	name = helms_forge_guild
+	icon = GFX_mio_generic_blacksmith_2
+
+	allowed = {
+		original_tag = ROH
+	}
+
+	include = generic_blacksmith_guild
+}

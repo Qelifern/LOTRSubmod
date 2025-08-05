@@ -1,0 +1,793 @@
+
+
+default_unit_production = {
+	# If adding country-unique ones, bear in mind that they STACK unless excluding countries in the enable
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = infantry
+		value = 35
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = artillery
+		value = 25
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = support
+		value = 12
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 15
+	}
+}
+
+default_surplus_management = {
+	# If we manage to get all equipment we want, keep producing more stuff according to this
+	enable = {
+		always = yes  # For now, applies to everyone
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_surplus_management
+		id = infantry_equipment
+		value = 10
+	}
+
+	ai_strategy = {
+		type = equipment_production_surplus_management
+		id = support_equipment
+		value = 8
+	}
+
+	ai_strategy = {
+		type = equipment_production_surplus_management
+		id = artillery_equipment
+		value = 8
+	}
+
+	ai_strategy = {  # Potentially move into a "specialization" strategy
+		type = equipment_production_surplus_management
+		id = anti_tank_equipment
+		value = 5
+	}
+
+	ai_strategy = {
+		type = equipment_production_surplus_management
+		id = convoy
+		value = 5
+	}
+}
+
+surplus_management_light_cav = {
+	enable = {
+		target_light_cav_strat = yes
+	}
+	abort = {
+		target_light_cav_strat = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_surplus_management
+		id = light_cavalry_chassis
+		value = 8
+	}
+}
+
+surplus_management_catapults = {
+	enable = {
+		target_catapults_strat = yes
+	}
+	abort = {
+		target_catapults_strat = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_surplus_management
+		id = catapult_chassis
+		value = 8
+	}
+}
+
+surplus_management_heavy_cav = {
+	enable = {
+		OR = {
+			target_heavy_cav_strat = yes
+			target_heavy_cav_chariots_strat = yes
+		}
+	}
+	abort = {
+		target_heavy_cav_strat = no
+		target_heavy_cav_chariots_strat = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_surplus_management
+		id = heavy_cavalry_chassis
+		value = 8
+	}
+}
+
+surplus_management_siege_machines = {
+	enable = {
+		target_siege_machines_strat = yes
+	}
+	abort = {
+		target_siege_machines_strat = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_surplus_management
+		id = siege_machine_chassis
+		value = 8
+	}
+}
+
+surplus_management_chariots = {
+	enable = {
+		OR = {
+			target_heavy_cav_chariots_strat = yes
+			target_chariots_strat = yes
+		}
+	}
+	abort = {
+		target_heavy_cav_chariots_strat = no
+		target_chariots_strat = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_production_surplus_management
+		id = chariot_chassis
+		value = 8
+	}
+}
+
+focus_on_more_armor = {
+	enable = {
+		num_of_military_factories > 10
+	}
+	abort = {
+		always = no
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 15
+	}
+}
+
+focus_on_more_armor = {
+	enable = {
+		num_of_military_factories > 12
+		has_equipment = { infantry_equipment > 3000 }
+	}
+	abort = {
+		always = no
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 25
+	}
+}
+
+focus_on_more_armor = {
+	enable = {
+		num_of_military_factories > 15
+		has_equipment = { infantry_equipment > 6000 }
+	}
+	abort = {
+		always = no
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 25
+	}
+}
+
+focus_on_more_armor = {
+	enable = {
+		num_of_military_factories > 20
+		has_equipment = { infantry_equipment > 10000 }
+	}
+	abort = {
+		always = no
+	}
+
+	ai_strategy = {
+		type = equipment_production_factor
+		id = armor
+		value = 50
+	}
+}
+
+
+default_pp_spend_amount = {
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = pp_spend_amount
+		id = idea
+		value = 100
+	}
+
+	ai_strategy = {
+		type = pp_spend_amount
+		id = decision
+		value = 100
+	}
+}
+
+
+default_area_priority = {
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = area_priority
+		id = gondor
+		value = 100
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = forodwaith
+		value = 0
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = mordor
+		value = 100
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = enedwaith
+		value = 40
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = rohan
+		value = 75
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = harad
+		value = 50
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = rhovanion
+		value = 10
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = erebor
+		value = 35
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = mirkwood
+		value = 25
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = hollin
+		value = 75
+	}
+
+	ai_strategy = {
+		type = area_priority
+		id = eriador
+		value = 25
+	}
+
+}
+
+default_area_priority_non_east = {
+    enable = {
+        NOT = { is_eastern = yes }
+    }
+    abort_when_not_enabled = yes
+
+    ai_strategy = {
+        type = area_priority
+        id = rhovanion
+        value = -20
+    }
+    ai_strategy = {
+        type = area_priority
+        id = rhun
+        value = -70
+    }
+	ai_strategy = {
+        type = area_priority
+        id = harad
+        value = -70
+    }
+}
+
+default_stockpile_management = {
+	enable = {
+		num_divisions > 150
+	}
+
+	abort = {
+		num_divisions < 130
+	}
+
+	ai_strategy = {
+		type = equipment_stockpile_surplus_ratio
+		value = 35 # add this to default PRODUCTION_EQUIPMENT_SURPLUS_FACTOR
+	}
+}
+
+default_market_stockpile_management = {
+	enable = {
+		always = yes
+		# NOT = { original_tag = GER } # commented until actually needs override
+	}
+	abort_when_not_enabled = yes
+
+	# Hold your trains there, partner
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = train
+		value = 20  # only start considering selling trains if surplus more than 20
+	}
+	ai_strategy = {
+		type = equipment_market_min_for_sale
+		id = train
+		value = 5  # only put up for sale in chunks of 5
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_factor
+		id = train
+		value = -50  # put fewer trains up for sale
+	}
+
+	# Better not put all your boats up for sail
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = convoy
+		value = 100  # only start considering selling convoys if surplus more than 100
+	}
+	ai_strategy = {
+		type = equipment_market_min_for_sale
+		id = convoy
+		value = 30  # only put up for sale in chunks of 5
+	}
+}
+
+default_market_stockpile_management_if_at_war = {
+	enable = {
+		has_war = yes
+		# something something preparing for war?
+		# NOT = { original_tag = GER } # commented until actually needs override
+	}
+	abort_when_not_enabled = yes
+
+	# Don't sell stuff that we need for the war
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = infantry
+		value = 20000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = support
+		value = 6000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = artillery
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = motorized
+		value = 1000
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = train
+		value = 50
+	}
+	ai_strategy = {
+		type = equipment_market_for_sale_threshold
+		id = convoy
+		value = 50
+	}
+}
+
+DEFAULT_early_template_design = {
+	enable = {
+		date < 3020.1.1
+	}
+	abort = {
+		date > 3020.1.1
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = push
+		value = -15
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = infantry
+		value = 35
+	}
+}
+
+DEFAULT_late_template_design = {
+	enable = {
+		date > 3020.1.1
+	}
+	abort = {
+		always = no
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = push
+		value = 15
+	}
+}
+
+save_admiral_pp_for_later = {
+	enable = {
+		has_war = no
+		threat < 0.3
+		has_political_power < 200
+	}
+	abort = {
+		OR = {
+			has_war = yes
+			threat > 0.3
+			has_political_power > 200
+		}
+	}
+
+	ai_strategy = { # dont burn PP on admirals (can still get free ones)
+		type = pp_spend_priority
+		id = admiral
+		value = -100
+	}
+}
+
+do_not_waste_pp_if_saving_for_manpower_laws = {
+
+	enable = {
+		manpower_per_military_factory < 50
+		has_war = yes
+	}
+	abort = {
+		OR = {
+			manpower_per_military_factory > 50
+			has_war = no
+		}
+	}
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = relation
+		value = -9999
+	}
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = guarantee
+		value = -9999
+	}
+}
+
+build_intelligence_agency_as_major = {
+	enable = {
+		is_major = yes
+		OR = {
+			has_war = yes
+			date > 3019.1.1
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = intelligence_agency_usable_factories
+		value = 5
+	}
+
+}
+
+build_intelligence_agency = {
+	enable = {
+		date > 3021.1.1
+		has_war = no
+		num_of_civilian_factories > 18
+	}
+	abort = {
+		OR = {
+			has_war = yes
+			num_of_civilian_factories < 18
+		}
+	}
+
+	ai_strategy = {
+		type = intelligence_agency_usable_factories
+		value = 5
+	}
+
+}
+
+upgrade_intelligence_agency = {
+	enable = {
+		date > 3021.1.1
+		num_of_civilian_factories > 40
+	}
+	abort = {
+		OR = {
+			num_of_civilian_factories < 30
+		}
+	}
+
+	ai_strategy = {
+		type = intelligence_agency_usable_factories
+		value = 5
+	}
+}
+
+upgrade_intelligence_agency_as_spy_master = {
+	enable = {
+		is_spymaster = yes
+		OR = {
+			has_war = no
+			num_of_civilian_factories > 40
+		}
+	}
+	abort = {
+		is_spymaster = no
+		num_of_civilian_factories < 30
+	}
+
+	ai_strategy = {
+		type = intelligence_agency_usable_factories
+		value = 10
+	}
+}
+
+add_intelligence_agency_normal_upgrade_prio = {
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = intelligence_agency_branch_desire_factor
+		id = branch_intelligence
+		value = 1000
+	}
+	ai_strategy = {
+		type = intelligence_agency_branch_desire_factor
+		id = branch_defense
+		value = 1000
+	}
+	ai_strategy = {
+		type = intelligence_agency_branch_desire_factor
+		id = branch_operation
+		value = 500
+	}
+	ai_strategy = {
+		type = intelligence_agency_branch_desire_factor
+		id = branch_operative
+		value = 100
+	}
+	ai_strategy = {
+		type = intelligence_agency_branch_desire_factor
+		id = branch_crypto
+		value = 2000
+	}
+}
+
+ask_foreign_manpower_as_major = {
+	enable = {
+		is_major = yes
+		garrison_manpower_need > 20000
+	}
+
+	abort = {
+		garrison_manpower_need < 10000
+	}
+
+	ai_strategy = {
+		type = asking_foreign_garrison
+		value = 100
+		# id = ITA # id is optionnal. If it is filled, the value will just apply for this country. If not, the value will apply for all countries.
+	}
+}
+
+more_upgrades_as_spymaster = {
+
+	enable = {
+		is_spymaster = yes
+	}
+
+	abort = {
+		is_spymaster = no
+	}
+
+	ai_strategy = {
+		type = agency_ai_base_num_factories_factor
+		value = -50    # -50% on the define
+	}
+
+	ai_strategy = {
+		type = agency_ai_per_upgrade_factories_factor
+		value = -25    # -25% on the define
+	}
+}
+
+
+put_garrisons_on_high_prio = {
+	enable = {
+		always = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = garrison_reinforcement_priority
+		value = 100 # positive is high prio, negative is low prio
+	}
+}
+
+keep_one_factory_on_supp = {
+	enable = {
+		num_of_military_factories > 5
+	}
+	abort = {
+		always = no
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = support
+		value = 1
+	}
+}
+
+keep_one_factory_on_arty = {
+	enable = {
+		num_of_military_factories > 14
+	}
+	abort = {
+		always = no
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = artillery
+		value = 1
+	}
+}
+
+keep_one_factory_on_truck = {
+	enable = {
+		num_of_military_factories > 13
+	}
+	abort = {
+		always = no
+	}
+
+	ai_strategy = {
+		type = equipment_production_min_factories
+		id = motorized
+		value = 1
+	}
+}
+
+dont_build_light_cav_unless_its_our_strat = {
+	enable = {
+		target_light_cav_strat = no
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = light_cavalry_chassis
+		value = -80
+	}
+}
+
+dont_build_light_cav_unless_its_our_strat_2 = {
+	enable = {
+		target_light_cav_strat = no
+		date > "3020.1.1"
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = light_cavalry_chassis
+		value = -5
+	}
+}
+
+prioritize_template_with_high_strats = {
+	enable = {
+		target_siege_machines_strat = yes
+		target_heavy_cav_strat = yes
+		target_catapults_strat = yes
+		target_heavy_cav_chariots_strat = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = division_template
+		value = 25
+	}
+}
+
+# For some reson the AI likes to slack around with these specific template strats
+prioritize_template_with_specific_strats = {
+	enable = {
+		target_siege_machines_strat = yes
+		target_heavy_cav_chariots_strat = yes
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = land_xp_spend_priority
+		id = division_template
+		value = 100
+	}
+}
+
+heavy_cav_strat_produce_equipment = {
+	enable = {
+		num_of_military_factories > 15
+		has_equipment = { heavy_cavalry_chassis < 600 }
+	}
+	abort = {
+		target_heavy_cav_strat = no
+		target_heavy_cav_chariots_strat = no
+	}
+
+	ai_strategy = {
+		type = equipment_variant_production_factor
+		id = heavy_cavalry_chassis
+		value = 50
+	}
+}

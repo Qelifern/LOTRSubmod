@@ -1,0 +1,223 @@
+bookmarks = {
+	bookmark = {
+		name = "WAR_OF_THE_RING_NAME"
+		desc = "WAR_OF_THE_RING_DESC"
+		date = 3018.1.1.12
+		picture = "GFX_bookmark_warofthering"
+		default_country = "GON"
+		default = yes
+		
+		"MOR"={
+			history = "MOR_WAR_OF_THE_RING_DESC"
+			ideology = belligerent
+			ideas = {
+				MOR_select_image
+			}
+			focuses = {
+				resistsauron
+				gatherthenazgl
+				second_wave
+			}
+		}
+
+		"GON"={
+			history = "GON_WAR_OF_THE_RING_DESC"
+			ideology = unaligned
+			ideas = {
+				GON_select_image
+			}
+			focuses = {
+				GON_crown_aragorn_king
+				GON_ithilien_crisis
+				GON_gondor_needs_no_king
+			}
+		}
+
+		"ROH"={
+			history = "ROH_WAR_OF_THE_RING_DESC"
+			ideology = cooperative
+			ideas = {
+				ROH_select_image
+			}
+			focuses = {
+				ROH_eorlingas_united
+				ROH_call_a_landsmeet
+				ROH_isolate_the_king
+			}
+		}
+
+		"ISE"={
+			history = "ISE_WAR_OF_THE_RING_DESC"
+			ideology = unaligned
+			ideas = {
+				ISE_select_image
+			}
+			focuses = {
+				waysofthedark
+				whc_rekindlewhitecouncil
+				unitewithgandalf
+			}
+		}
+
+		"RIV"={
+			history = "RIV_WAR_OF_THE_RING_DESC"
+			ideology = unaligned
+			ideas = {
+				RIV_select_image
+			}
+			focuses = {
+				assasinateelrond
+				reforgethebladeofnarsil
+				holdthecouncilofelrond
+			}
+		}
+
+		"ERE"={
+			history = "ERE_WAR_OF_THE_RING_DESC"
+			ideology = unaligned
+			ideas = {
+				ERE_select_image
+			}
+			focuses = {
+				homeofthedwarves
+				powertothemonarchs
+				powertotheminers
+			}
+		}
+
+		"LTH"={
+			history = "LTH_WAR_OF_THE_RING_DESC"
+			ideology = unaligned
+			ideas = {
+				LTH_select_image
+			}
+			focuses = {
+				lth_thenoldorelite
+				lth_harmonicascendancy
+				lth_aegisoflight
+			}
+		}
+
+		###Minor
+		"HAR" = {
+			minor = yes
+			history = "HAR_WAR_OF_THE_RING_DESC"
+			ideology = unaligned
+			ideas = {
+				HAR_select_image
+			}
+			focuses = {
+				standasone
+				autonomouscommunities
+				follow_the_dark_lord
+			}
+		}
+
+		"RHU" = {
+			minor = yes
+			history = "RHU_WAR_OF_THE_RING_DESC"
+			ideology = unaligned
+			ideas = {
+				RHU_select_image
+			}
+			focuses = {
+				RHU_follow_the_dark_lord
+				RHU_follow_the_wizards
+				RHU_civil_war
+			}
+		}
+
+		"ANG" = {
+			minor = yes
+			history = "ANG_WAR_OF_THE_RING_DESC"
+			ideology = unaligned
+			ideas = {
+				ANG_select_image
+			}
+			focuses = {
+				ANG_stay_true_to_the_people
+				ANG_our_own_empire
+				ANG_unite_with_sauron
+			}
+		}
+
+		"ART" = {
+			minor = yes
+			history = "ART_WAR_OF_THE_RING_DESC"
+			ideology = unaligned
+			ideas = {
+				ART_select_image
+			}
+			focuses = {
+				ART_support_the_monarchists
+				ART_may_morgoth_guide_us
+				ART_revolution_time
+			}
+		}
+
+		"SHI" = {
+			minor = yes
+			history = "SHI_WAR_OF_THE_RING_DESC"
+			ideology = unaligned
+			ideas = {
+				SHI_select_image
+			}
+			focuses = {
+				empowertheshirriffs
+				questionarthedainsstrength
+				traditionalhobbitpacifism
+			}
+		}
+
+		"MOA" = {
+			minor = yes
+			history = "MOA_WAR_OF_THE_RING_DESC"
+			ideology = unaligned
+			ideas = {
+				MOA_select_image
+			}
+			focuses = {
+				submittothebalrog
+				digtoodeep
+				formtheminersbureau
+			}
+		}
+
+		"LIN" = {
+			minor = yes
+			history = "LIN_WAR_OF_THE_RING_DESC"
+			ideology = unaligned
+			ideas = {
+				LIN_select_image
+			}
+			focuses = {
+				ea_thecouncilofquendi
+				ea_theelvenalliance
+				ea_hegemony
+			}
+		}
+
+		"ELU" = {
+			minor = yes
+			history = "ELU_WAR_OF_THE_RING_DESC"
+			ideology = unaligned
+			ideas = {
+				ELU_select_image
+			}
+			focuses = {
+				ELU_durins_coronation
+				ELU_age_of_the_miners
+				ELU_warrior_king
+			}
+		}
+
+		"---"={
+			history = "OTHER_WAR_OF_THE_RING_DESC"
+		}
+
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

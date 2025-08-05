@@ -1,0 +1,132 @@
+BEACON_category = {
+	Light_the_beacon = {
+        icon = GFX_decision_beacons
+		cost = 200
+
+        allowed = {
+            OR = {
+                tag = GON
+                tag = ROH
+            }
+        }
+
+		visible = {
+            always = yes
+            
+		}
+
+        available = {
+            has_defensive_war = yes
+            enemies_strength_ratio > 1.5
+            if = {
+                limit = {
+                    tag = GON
+                }
+                the_other_gondor_does_not_exist = yes
+                NOT = {
+                    has_war_with = ROH
+                    is_in_faction_with = ROH
+                    all_allied_country = {
+                        has_war_with = ROH
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    tag = ROH
+                }
+                has_completed_focus = ROH_reaffirm_the_oath_of_eorl
+                NOT = {
+                    has_war_with = GON
+                    is_in_faction_with = GON
+                    all_allied_country = {
+                        has_war_with = GON
+                    }
+                }
+            }
+        }
+
+		fire_only_once = yes
+        fixed_random_seed = no
+		complete_effect = {
+			if = {
+                limit = {
+                    tag = GON
+                }
+                ROH = {
+                    country_event = { id = old_alliances.1 days = 5 }
+                }
+            }
+            else_if = {
+                limit = {
+                    tag = ROH
+                }
+                GON = {
+                    country_event = { id = old_alliances.2 days = 5 }
+                }
+            }
+		}
+		ai_will_do = {
+			factor = 5
+            modifier = {
+                factor = 0
+                tag = ROH
+                is_historical_focus_on = yes
+                surrender_progress < 0.6
+            }
+            modifier = {
+                factor = 3
+                tag = GON
+                surrender_progress > 0.1
+            }
+            modifier = {
+                add = 10
+                is_historical_focus_on = no
+                has_defensive_war = yes
+            }
+            modifier = {
+                factor = 10
+                surrender_progress > 0.5
+            }
+            modifier = {
+                factor = 10
+                surrender_progress > 0.8
+            }
+		}
+	}
+
+    GON_send_aid_to_rohan = {
+        icon = GFX_decision_rohan
+		cost = 100
+
+        allowed = {
+            tag = GON
+        }
+
+        visible = {
+            ROH = { has_war_with = ISE }
+            NOT = { has_war_with = ROH }
+        }
+
+        available = {
+			has_equipment = {
+                infantry_equipment > 1000
+            }
+        }
+
+		fire_only_once = yes
+		complete_effect = {
+			ROH = {
+                country_event = rohan.8
+            }
+            event_option_tooltip = rohan.8.a
+		}
+		ai_will_do = {
+			factor = 1
+            modifier = {
+                factor = 3
+                ROH = { is_ai = no }
+            }
+		}
+    }
+}

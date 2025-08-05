@@ -1,0 +1,23 @@
+capital = 108
+
+recruit_character = UMB_hamrol
+recruit_character = UMB_khakrood
+recruit_character = UMB_tiqqood
+recruit_character = UMB_khukra
+
+set_research_slots = 2
+
+
+set_politics = {
+	ruling_party = unaligned
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	cooperative = 15
+	belligerent = 30
+	revolutionary = 0
+	unaligned = 55
+}

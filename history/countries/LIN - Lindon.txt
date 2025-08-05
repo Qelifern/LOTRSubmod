@@ -1,0 +1,52 @@
+capital = 54
+
+oob = "LIN_1936"
+
+recruit_character = LIN_cirdan
+recruit_character = LIN_glorfindel
+recruit_character = LIN_galdor
+recruit_character = LIN_merufan
+recruit_character = LIN_flieuvethel
+recruit_character = LIN_alroanthir
+recruit_character = LIN_zeeorlas
+recruit_character = LIN_mayisha
+recruit_character = LIN_aidurae
+
+set_research_slots = 3
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	horse_drawn_infantry = 1
+	gw_artillery = 1
+	basic_cav = 1
+	light_cav2 = 1
+	longship_0 = 1
+	longship_1 = 1
+	war_galley_0 = 1
+	caravel_0 = 1
+	merchant_ship = 1
+	transport = 1
+	fleet_in_being = 1
+	trade_caravan = 1
+}
+
+add_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past }
+
+set_politics = {
+	ruling_party = unaligned
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	cooperative = 10
+	belligerent = 5
+	revolutionary = 5
+	unaligned = 80
+}

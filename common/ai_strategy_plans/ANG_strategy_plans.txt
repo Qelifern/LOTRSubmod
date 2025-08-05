@@ -1,0 +1,297 @@
+ANG_historical_plan = {
+    name = "Angmar historical plan"
+    desc = "Historical behavior for Angmar"
+    
+    allowed = {
+        original_tag = ANG
+    }
+
+    enable = {
+        OR = {
+			ANG = {
+				is_historical_focus_on = yes
+				OR = {
+					has_game_rule = {
+						rule = ANG_AI_BEHAVIOR 
+						option = DEFAULT
+					}
+				}
+			}
+			has_game_rule = {
+				rule = ANG_AI_BEHAVIOR 
+				option = UNALIGNED_HISTORICAL
+			}
+		}
+    }
+    abort = {
+        always = no
+    }
+
+    ai_national_focuses = {
+        ANG_the_path_of_balance
+		ANG_denounce_the_witch_king_neutral_path
+        ANG_invite_forodwaith_settlers
+        ANG_rally_the_people
+		ANG_its_in_the_past
+        ANG_integrate_the_settlers
+        ANG_learn_from_their_methods
+        ANG_better_roads
+        ANG_skirmishes_with_the_gundabad_orcs
+        ANG_give_the_settlers_jobs
+        ANG_its_in_the_past
+        ANG_neutral_foreign_policy
+        ANG_non_agression
+        ANG_deterrence
+        ANG_request_investment_neighbours
+        ANG_create_a_university
+        ANG_focus_on_industry_1
+        ANG_focus_on_industry_2
+        ANG_boost_the_industry
+        ANG_a_human_lead_industry
+        ANG_boost_the_industry_civilian
+        ANG_long_term_plan
+        ANG_dig_out_the_mountains
+        ANG_expand_the_farms
+        ANG_boost_the_industry_civilian_2
+        ANG_put_the_squeeze_in
+        ANG_sole_masters_of_gundabad
+        ANG_a_new_age_for_angmar
+    }
+}
+
+ANG_belligerent_plan = {
+    name = "Angmar Belligerent plan"
+    desc = "Belligerent behavior for Angmar"
+    
+    allowed = {
+        original_tag = ANG
+    }
+
+    enable = {
+        OR = {
+			ANG = {
+                is_historical_focus_on = no
+                has_country_flag = gameplan_going_belligerent
+			}
+		}
+    }
+    abort = {
+        always = no
+    }
+
+    ai_national_focuses = {
+        ##Political part 1
+        thefateofangmar
+        ANG_seek_former_glory
+        ##Industrial part 1
+        ANG_boost_the_industry
+        ANG_boost_the_industry_civilian
+        industrial_effort
+        ##Political part 2
+        ANG_civil_unrest
+        ANG_back_to_the_old_ways
+        ##Industrial part 2
+        ANG_dig_out_the_mountains
+        construction_effort
+        ANG_long_term_plan
+        construction_effort_2
+        ##Political part 3
+        ANG_seek_help_from_mordor
+        ANG_join_forces_with_orcs
+        ANG_strengthen_the_new_goverment
+        ##Industrial part 2
+        ANG_a_orc_lead_industry
+    }
+}
+
+ANG_belligerent_witch_king_plan = {
+    name = "Angmar Belligerent Witch King plan"
+    desc = "Belligerent behavior for Angmar getting back the Witch King"
+    
+    allowed = {
+        original_tag = ANG
+    }
+
+    enable = {
+        has_country_flag = gameplan_going_belligerent_witch_king
+    }
+    abort = {
+        always = no
+    }
+
+    ai_national_focuses = {
+        ##Political part 1
+        thefateofangmar
+        ANG_seek_former_glory
+        ##Industrial part 1
+        ANG_boost_the_industry
+        ANG_boost_the_industry_civilian
+        industrial_effort
+        ##Political part 2
+        ANG_civil_unrest
+        ANG_back_to_the_old_ways
+        ##Industrial part 2
+        ANG_dig_out_the_mountains
+        construction_effort
+        ANG_long_term_plan
+        construction_effort_2
+        ##Political part 3
+        ANG_seek_help_from_mordor
+        ANG_join_forces_with_orcs
+        ANG_strengthen_the_new_goverment
+        ##Industrial part 2
+        ANG_a_orc_lead_industry
+        ##Political part 4
+        ANG_unite_with_sauron
+        ANG_welcome_back_the_old_master
+        ANG_cult_of_the_witch_king
+    }
+}
+
+ANG_belligerent_plan = {
+    name = "Angmar Belligerent own empire plan"
+    desc = "Belligerent behavior for Angmar setting up there own empire"
+    
+    allowed = {
+        original_tag = ANG
+    }
+
+    enable = {
+        has_country_flag = gameplan_going_belligerent_own_empire
+    }
+    abort = {
+        always = no
+    }
+
+    ideas = {
+        
+    }
+
+    traits = {
+        superiority_preacher = 100
+        rabble_rouser = 0
+        cautious_stoicist = 0
+        benevolent_protector = 0
+    }
+
+    ai_national_focuses = {
+        ##Political part 1
+        thefateofangmar
+        ANG_seek_former_glory
+        ##Industrial part 1
+        ANG_boost_the_industry
+        ANG_boost_the_industry_civilian
+        industrial_effort
+        ##Political part 2
+        ANG_civil_unrest
+        ANG_back_to_the_old_ways
+        ##Industrial part 2
+        ANG_dig_out_the_mountains
+        construction_effort
+        ANG_long_term_plan
+        construction_effort_2
+        ##Political part 3
+        ANG_seek_help_from_mordor
+        ANG_join_forces_with_orcs
+        ANG_strengthen_the_new_goverment
+        ##Industrial part 2
+        ANG_a_orc_lead_industry
+        ##Political part 4
+        ANG_our_own_empire
+        ANG_find_a_new_leader
+        ANG_demand_submission_rhudaur
+    }
+}
+
+ANG_cooperative_new_arnor_plan = {
+    name = "Angmar Cooperative plan"
+    desc = "Cooperative behavior for Angmar"
+    
+    allowed = {
+        original_tag = ANG
+    }
+
+    enable = {
+        OR = {
+			ANG = {
+                is_historical_focus_on = no
+                has_country_flag = gameplan_going_cooperative_new_arnor
+			}
+		}
+    }
+    abort = {
+        always = no
+    }
+
+    ai_national_focuses = {
+        ##Political part 1
+        thefateofangmar
+        ANG_stay_true_to_the_people
+        ##Industrial part 1
+        industrial_effort
+        construction_effort
+        ANG_boost_the_industry
+        ANG_grow_a_forest
+        ANG_boost_the_industry_civilian
+        ANG_invest_in_the_people
+        ANG_change_in_governing
+        ##Political part 2
+        ANG_establish_democratic_goverment
+        ANG_denounce_the_witch_king
+        ANG_reconcile_with_arnor
+        ##Industrial part 2
+        ANG_a_human_lead_industry
+        ANG_long_term_plan
+        ANG_boost_the_industry_civilian_2
+
+        ANG_establish_new_arnor
+        ANG_invest_in_our_country
+    }
+}
+
+ANG_cooperative_republic_plan = {
+    name = "Angmar Cooperative plan"
+    desc = "Cooperative behavior for Angmar"
+    
+    allowed = {
+        original_tag = ANG
+    }
+
+    enable = {
+        OR = {
+			ANG = {
+                is_historical_focus_on = no
+                has_country_flag = gameplan_going_cooperative_republic
+			}
+		}
+    }
+    abort = {
+        always = no
+    }
+
+    ai_national_focuses = {
+        ##Political part 1
+        thefateofangmar
+        ANG_stay_true_to_the_people
+        ##Industrial part 1
+        industrial_effort
+        construction_effort
+        ANG_boost_the_industry
+        ANG_grow_a_forest
+        ANG_boost_the_industry_civilian
+        ANG_invest_in_the_people
+        ANG_change_in_governing
+        ##Political part 2
+        ANG_establish_democratic_goverment
+        ANG_denounce_the_witch_king
+        ANG_reconcile_with_arnor
+        ##Industrial part 2
+        ANG_a_human_lead_industry
+        ANG_long_term_plan
+        ANG_boost_the_industry_civilian_2
+
+        ANG_republic_of_angmar
+        ANG_nation_of_the_people
+        ANG_invest_in_our_country
+    }
+}

@@ -1,0 +1,294 @@
+﻿###########################
+# Erebor Events
+###########################
+
+add_namespace = erebor
+
+# Demand Dale
+country_event = {
+	id = erebor.1
+	title = erebor.1.t
+	desc = erebor.1.d
+	picture = GFX_report_event_paper
+
+	is_triggered_only = yes
+
+	option = { # Accept
+		name = erebor.1.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 10
+				ERE = { has_army_size = { size > 40 } }
+			}
+		}
+ 		ERE = { annex_country = { target = DAL } }
+	}
+	option = { # Refuse
+		name = erebor.1.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				any_other_country = {
+					has_guaranteed = DAL
+				}
+				factor = 5
+			}
+			modifier = {
+				add = 70
+				OR = { MIR = { has_government = unaligned } MIR = { has_government = cooperative } }
+				country_exists = MIR
+				MIR = { has_army_size = { size > 20 } }
+			}
+		}
+		ERE = { create_wargoal = { type = annex_everything target = DAL } }
+	}
+}
+
+# Ask Dale to join Faction
+country_event = {
+	id = erebor.2
+	title = erebor.2.t
+	desc = erebor.2.d
+	picture = GFX_report_event_elven_alliance
+
+	is_triggered_only = yes
+
+	option = { # Accept
+		name = erebor.2.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 10
+				ERE = { has_army_size = { size > 30 } }
+			}
+			modifier = {
+				add = 10
+				OR = {
+					AND = { ERE = { has_government = cooperative } DAL = { has_government = cooperative } }
+					AND = { ERE = { has_government = revolutionary } DAL = { has_government = revolutionary } }
+					AND = { ERE = { has_government = belligerent } DAL = { has_government = belligerent } }
+				}
+			}
+			modifier = {
+				has_opinion = { target = ERE value > 50 }
+				add = 50
+			}
+		}
+ 		ERE = { add_to_faction = DAL }
+	}
+	option = { # Refuse
+		name = erebor.2.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				is_in_faction = yes
+			}
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+	}
+}
+
+# Rhun asks right to resources
+country_event = {
+	id = erebor.3
+	title = erebor.3.t
+	desc = erebor.3.d
+	picture = GFX_report_event_elven_alliance
+
+	is_triggered_only = yes
+
+	option = { # Accept
+		name = erebor.3.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 10
+				OR = {
+					AND = { ERE = { has_government = belligerent } RHU = { has_government = belligerent } }
+				}
+			}
+			modifier = {
+				has_opinion = { target = RHU value > 75 }
+				add = 25
+			}
+			modifier = {
+				add = -100
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 20
+				is_in_faction_with = RHU
+			}
+		}
+		RHU = { 
+			country_event = { id = rhun.2 }
+		}
+ 		give_resource_rights = { receiver = RHU state = 93 }
+		set_global_flag = ERE_has_given_resources_rights
+	}
+	option = { # Refuse
+		name = erebor.3.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				is_in_faction = yes
+			}
+			modifier = {
+				add = 100
+				is_historical_focus_on = yes
+			}
+		}
+		RHU = {
+			country_event = { id = rhun.1 }
+			add_opinion_modifier = {
+				target = ERE
+				modifier = small_decrease
+			}
+		}
+	}
+}
+
+# Rhun demands acces to iron
+country_event = {
+	id = erebor.4
+	title = erebor.4.t
+	desc = erebor.4.d
+	picture = GFX_report_event_elven_alliance
+
+	is_triggered_only = yes
+
+	option = { # Accept
+		name = erebor.4.a
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 10
+				OR = {
+					AND = { ERE = { has_government = belligerent } RHU = { has_government = belligerent } }
+				}
+			}
+			modifier = {
+				has_opinion = { target = RHU value > 75 }
+				add = 25
+			}
+			modifier = {
+				add = -100
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 25
+				has_war = yes
+			}
+		}
+		add_stability = -0.05
+		add_political_power = -50
+		add_war_support = -0.05
+ 		RHU = {
+			add_opinion_modifier = {
+				target = ERE
+				modifier = small_increase
+			}
+			set_state_owner = 93
+			country_event = { id = rhun.2}
+		}
+
+	}
+	option = { # Refuse
+		name = erebor.4.b
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 50
+				is_in_faction = yes
+			}
+			modifier = {
+				add = 100
+				is_historical_focus_on = yes
+			}
+		}
+		add_stability = 0.05
+		add_war_support = 0.10
+		RHU = {
+			country_event = { id = rhun.3 }
+			create_wargoal = {
+				type = take_state_focus
+				target = ERE
+				generator = { 93 }
+			}
+		}
+	}
+}
+
+#Mordor invites Erebor to faction The Dark Pact
+country_event = {
+	id = erebor.5
+	title = erebor.5.t
+	desc = erebor.5.d
+	picture = GFX_report_event_paper
+
+	is_triggered_only = yes
+
+	option = { # Accept
+		name = erebor.5.a
+		ai_chance = {
+			base = 50
+		}
+		add_political_power = 50
+		MOR = {
+			add_to_faction = ERE
+		}
+	}
+	option = { # Refuse
+		name = erebor.5.b
+		ai_chance = {
+			base = 25
+		}
+		add_political_power = -100
+		MOR = {
+			add_opinion_modifier = {
+				target = ERE
+				modifier = small_decrease 
+			}
+		}
+	}
+}
+
+#COUNTRY NAME asked to join faction
+country_event = {
+	id = erebor.6
+	title = erebor.6.t
+	desc = erebor.6.d
+	picture = GFX_report_event_ring
+
+	is_triggered_only = yes
+
+	option = {
+		name = erebor.6.a
+		ai_chance = {
+			base = 50
+		}
+		ERE = {
+			add_to_faction = FROM
+		}
+	}
+
+	option = {
+		name = erebor.6.b
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -25
+		FROM = {
+			add_opinion_modifier = {
+				target = ERE
+				modifier = small_decrease 
+			}
+		}
+	}
+}

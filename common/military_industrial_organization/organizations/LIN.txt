@@ -1,0 +1,55 @@
+LIN_shipbuilders_guild = {
+	name = shipwrights_of_the_grey_havens
+	icon = GFX_mio_generic_ships_2
+
+	allowed = {
+		OR = {
+			original_tag = LIN
+			original_tag = HLI
+		}
+	}
+
+	include = generic_shipbuilders_guild
+}
+
+LIN_ballistics_guild = {
+	name = sindar_bowcrafters
+	icon = GFX_mio_generic_archers_3
+
+	allowed = {
+		OR = {
+			original_tag = LIN
+			original_tag = HLI
+		}
+	}
+
+	include = generic_ballistics_guild
+}
+
+LIN_blacksmith_guild = {
+	name = lune_metalworkers
+	icon = GFX_mio_generic_8
+
+	allowed = {
+		OR = {
+			original_tag = LIN
+			original_tag = HLI
+		}
+	}
+
+	include = generic_blacksmith_guild
+}
+
+LIN_woodcutters_guild = {
+	name = ossiriand_woodworkers
+	icon = GFX_mio_generic_farming_3
+
+	allowed = {
+		OR = {
+			original_tag = LIN
+			original_tag = HLI
+		}
+	}
+
+	include = generic_woodcutters_guild
+}

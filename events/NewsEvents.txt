@@ -1,0 +1,1211 @@
+﻿###########################
+# News Events
+###########################
+
+add_namespace = news
+
+# Saruman dies
+news_event = {
+	id = news.406
+	title = news.406.t
+	desc = news.406.d
+	picture = GFX_news_event_saruman_dies
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.406.a
+	}
+}
+
+# Rohan and Isengard sign temporary truce
+news_event = {
+	id = news.405
+	title = news.405.t
+	desc = news.405.d
+	picture = GFX_news_event_saruman_grima
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.405.a
+	}
+}
+
+# Rohan submits to Isengard
+news_event = {
+	id = news.404
+	title = news.404.t
+	desc = news.404.d
+	picture = GFX_news_event_isengard_army
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.404.a
+	}
+}
+
+# Theoden dies via poisoning
+news_event = {
+	id = news.403
+	title = news.403.t
+	desc = news.403.d
+	picture = GFX_news_event_theoden_death_o
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.403.a
+	}
+}
+
+# Angmar establishes new Arnor
+news_event = {
+	id = news.402
+	title = news.402.t
+	desc = news.402.d
+	picture = GFX_news_event_angmar_carn_dum
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.402.a
+	}
+}
+
+# Stewartship flees to Tolfalas
+news_event = {
+	id = news.401
+	title = news.401.t
+	desc = news.401.d
+	picture = GFX_news_event_ships
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.401.a
+	}
+}
+
+# Revolution in Gondor
+news_event = {
+	id = news.400
+	title = news.400.t
+	desc = news.400.d
+	picture = GFX_news_event_uprising
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.400.a
+	}
+}
+
+# Gondor shares intrest in retaking Haronder
+news_event = {
+	id = news.399
+	title = news.399.t
+	desc = news.399.d
+	picture = GFX_news_event_gondor_army
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.399.a
+	}
+}
+
+# Gondor doesnt reconize Aragorns claim to the crown
+news_event = {
+	id = news.398
+	title = news.398.t
+	desc = news.398.d
+	picture = GFX_news_event_gondor_coronation
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.398.a
+	}
+}
+
+# Celeborn Leaves
+news_event = {
+	id = news.397
+	title = news.397.t
+	desc = news.397.d
+	picture = GFX_news_event_celeborn
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.397.a
+	}
+}
+
+# Elven Fellowship
+news_event = {
+	id = news.396
+	title = news.396.t
+	desc = news.396.d
+	picture = GFX_news_event_ring_lorien_intercept
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.396.a
+	}
+}
+
+# Frodo and Bilbo leave middle earth
+news_event = {
+	id = news.395
+	title = news.395.t
+	desc = news.395.d
+	picture = GFX_news_event_sailaway
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.395.a
+	}
+}
+
+# Galadriel and Celeborn leave middle earth
+news_event = {
+	id = news.394
+	title = news.394.t
+	desc = news.394.d
+	picture = GFX_news_event_sailaway
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.394.a
+	}
+}
+
+# Durin's Bane dies
+news_event = {
+	id = news.393
+	title = news.393.t
+	desc = news.393.d
+	picture = GFX_news_event_balrog
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.393.a
+	}
+}
+
+# The return of Sauron
+news_event = {
+	id = news.392
+	title = news.392.t
+	desc = news.392.d
+	picture = GFX_news_event_ring_shire
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.392.a
+	}
+}
+
+#Storm over Redhorn pass
+news_event = {
+	id = news.390
+	title = news.390.t
+	desc = news.390.d
+	picture = GFX_news_event_redhorn_storm
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.390.a
+	}
+}
+
+#Country X seizes the ring
+news_event = {
+	id = news.389
+	title = news.389.t
+	desc = news.389.d
+	picture = GFX_news_event_ring_shire
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.389.a
+	}
+}
+
+#Helms Deep breached
+news_event = {
+	id = news.388
+	title = news.388.t
+	desc = news.388.d
+	picture = GFX_news_event_roh_helmsdeep_breached
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.388.a
+	}
+}
+
+#Isengard betrays Sauron
+news_event = {
+	id = news.387
+	title = news.387.t
+	desc = news.387.d
+	picture = GFX_news_event_saruman
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.387.a
+	}
+}
+
+#Claims Black Gate Outskirts
+news_event = {
+	id = news.386
+	title = news.386.t
+	desc = news.386.d
+	picture = GFX_news_event_dagorlad_nazgul
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.386.a
+	}
+}
+
+# Rhun cooperative civil war
+news_event = {
+	id = news.385
+	title = news.385.t
+	desc = news.385.d
+	picture = GFX_news_event_rhun_army
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.385.a
+	}
+}
+
+# Rhun declares Khamul the new dark lord
+news_event = {
+	id = news.384
+	title = news.384.t
+	desc = news.384.d
+	picture = GFX_news_event_rhun_army
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.384.a
+	}
+}
+
+
+# Dol Guldur independant
+news_event = {
+	id = news.383
+	title = news.383.t
+	desc = news.383.d
+	picture = GFX_news_event_dolguldur
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.383.a
+	}
+}
+
+# Spiders declare war on mirkwood
+news_event = {
+	id = news.382
+	title = news.382.t
+	desc = news.382.d
+	picture = GFX_news_event_spiders
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.382.a
+	}
+}
+
+# Ring destroyed
+news_event = {
+	id = news.381
+	title = news.381.t
+	desc = news.381.d
+	picture = GFX_news_event_gon_denethor_suicide
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.381.a
+	}
+}
+
+# Faramir dies at Osgiliath
+news_event = {
+	id = news.380
+	title = news.380.t
+	desc = news.380.d
+	picture = GFX_news_event_faramir_dead
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.380.a
+	}
+}
+
+# Boromir dies at Osgiliath
+news_event = {
+	id = news.379
+	title = news.379.t
+	desc = news.379.d
+	picture = GFX_news_event_boromir_dead
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.379.a
+	}
+}
+
+# Faramir dies by Lurtz
+news_event = {
+	id = news.378
+	title = news.378.t
+	desc = news.378.d
+	picture = GFX_news_event_faramir_dead
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.378.a
+	}
+}
+
+# Boromir dies by Lurtz
+news_event = {
+	id = news.377
+	title = news.377.t
+	desc = news.377.d
+	picture = GFX_news_event_boromir_dead
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.377.a
+	}
+}
+
+# Ring destroyed
+news_event = {
+	id = news.376
+	title = news.376.t
+	desc = {
+		text = news.376.d
+		trigger = { NOT = { has_global_flag = fs_elven_fellowship } }
+	}
+	desc = {
+		text = news.376.d_elves
+		trigger = { has_global_flag = fs_elven_fellowship }
+	}
+	picture = GFX_news_event_ring_destroyed
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.376.a
+	}
+}
+
+# Ring intercepted at marshes
+news_event = {
+	id = news.375
+	title = news.375.t
+	desc = news.375.d
+	picture = GFX_news_event_dagorlad_nazgul
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.375.a
+	}
+}
+
+# Boromir takes Ring
+news_event = {
+	id = news.374
+	title = news.374.t
+	desc = news.374.d
+	picture = GFX_news_event_ring_boromir
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.374.a
+	}
+}
+
+# Ring intercepted at Isengard
+news_event = {
+	id = news.373
+	title = news.373.t
+	desc = news.373.d
+	picture = GFX_news_event_ring_isengard
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.373.a
+	}
+}
+
+# Galadriel takes Ring from Frodo
+news_event = {
+	id = news.372
+	title = news.372.t
+	desc = news.372.d
+	picture = GFX_news_event_ring_lorien_intercept
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.372.a
+	}
+}
+
+# Ring intercepted at Lorien
+news_event = {
+	id = news.371
+	title = news.371.t
+	desc = news.371.d
+	picture = GFX_news_event_ring_lorien_take
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.371.a
+	}
+}
+
+# Ring taken at Shire
+news_event = {
+	id = news.370
+	title = news.370.t
+	desc = news.370.d
+	picture = GFX_news_event_ring_shire
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.370.a
+	}
+}
+
+# Sauron Unleashed
+news_event = {
+	id = news.369
+	title = news.369.t
+	desc = news.369.d
+	picture = GFX_news_event_sauron
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.369.a
+	}
+}
+
+# Denethor crowned King
+news_event = {
+	id = news.368
+	title = news.368.t
+	desc = news.368.d
+	picture = GFX_news_event_gondor_coronation
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.368.a
+	}
+}
+
+# Gondor strikes deal with sauron
+news_event = {
+	id = news.367
+	title = news.367.t
+	desc = news.367.d
+	picture = GFX_news_event_sauron
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.367.a
+	}
+}
+
+# Aragorn crowned King
+news_event = {
+	id = news.366
+	title = news.366.t
+	desc = news.366.d
+	picture = GFX_news_event_gondor_coronation
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.366.a
+	}
+}
+
+# Army of the dead rises
+news_event = {
+	id = news.365
+	title = news.365.t
+	desc = news.365.d
+	picture = GFX_news_event_gon_dead_army
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.365.a
+	}
+}
+
+# Enedwaith stand with Saruman
+news_event = {
+	id = news.364
+	title = news.364.t
+	desc = news.364.d
+	picture = GFX_news_event_enedwaith_saruman
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.364.a
+	}
+}
+
+# Lorien unite with Sauron
+news_event = {
+	id = news.363
+	title = news.363.t
+	desc = news.363.d
+	picture = GFX_news_event_sauron
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.363.a
+	}
+}
+
+# Galadriel leves middle earth
+news_event = {
+	id = news.362
+	title = news.362.t
+	desc = news.362.d
+	picture = GFX_news_event_sailaway
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.362.a
+	}
+}
+
+# Moria submit to Balrog
+news_event = {
+	id = news.361
+	title = news.361.t
+	desc = news.361.d
+	picture = GFX_news_event_balrog
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.361.a
+	}
+}
+
+# Rivendell Initiative
+news_event = {
+	id = news.360
+	title = news.360.t
+	desc = news.360.d
+	picture = GFX_news_event_elrond
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.360.a
+	}
+}
+
+# Rivendell blame Dwarves
+news_event = {
+	id = news.359
+	title = news.359.t
+	desc = news.359.d
+	picture = GFX_news_event_dwarves
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.359.a
+	}
+}
+
+# Rivendell blame Rangers
+news_event = {
+	id = news.358
+	title = news.358.t
+	desc = news.358.d
+	picture = GFX_news_event_rangers
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.358.a
+	}
+}
+
+# Elrond dies
+news_event = {
+	id = news.357
+	title = news.357.t
+	desc = news.357.d
+	picture = GFX_news_event_major_death
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.357.a
+	}
+}
+
+# Dawn of the 1st Hobbit empire
+news_event = {
+	id = news.356
+	title = news.356.t
+	desc = news.356.d
+	picture = GFX_news_event_hobbit_party
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.356.a
+	}
+}
+
+# Shire seeks independance
+news_event = {
+	id = news.355
+	title = news.355.t
+	desc = news.355.d
+	picture = GFX_news_event_shire
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.355.a
+	}
+}
+
+# Shire introduces 3rd breakfast
+news_event = {
+	id = news.354
+	title = news.354.t
+	desc = news.354.d
+	picture = GFX_news_event_hobbit_party
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.354.a
+	}
+}
+
+# Arthedain seek to unite Arnor
+news_event = {
+	id = news.353
+	title = news.353.t
+	desc = news.353.d
+	picture = GFX_news_event_rangers
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.353.a
+	}
+}
+
+# Angmar denounce witch king
+news_event = {
+	id = news.352
+	title = news.352.t
+	desc = news.352.d
+	picture = GFX_news_event_witch_king_angmar
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.352.a
+	}
+}
+
+# Angmar seeks Independance
+news_event = {
+	id = news.351
+	title = news.351.t
+	desc = news.351.d
+	picture = GFX_news_event_angmar
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.351.a
+	}
+}
+
+# Mirkwood intervenes
+news_event = {
+	id = news.350
+	title = news.350.t
+	desc = news.350.d
+	picture = GFX_news_event_mirkwood_army
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.350.a
+	}
+}
+
+# Last March of the Ents
+news_event = {
+	id = news.349
+	title = news.349.t
+	desc = news.349.d
+	picture = GFX_news_event_ents
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.349.a
+	}
+}
+
+# Harad Civil War
+news_event = {
+	id = news.348
+	title = news.348.t
+	desc = news.348.d
+	picture = GFX_news_event_harad_war
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.348.a
+	}
+}
+
+# Harad unites with Sauron
+news_event = {
+	id = news.347
+	title = news.347.t
+	desc = news.347.d
+	picture = GFX_news_event_harad
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.347.a
+	}
+}
+
+# Rhun unites with Sauron
+news_event = {
+	id = news.346
+	title = news.346.t
+	desc = news.346.d
+	picture = GFX_news_event_rhun_army
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.346.a
+	}
+}
+
+# Dagorlad unites with Sauron
+news_event = {
+	id = news.345
+	title = news.345.t
+	desc = news.345.d
+	picture = GFX_news_event_dagorlad_nazgul
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.345.a
+	}
+}
+
+# Moria overrun by orcs
+news_event = {
+	id = news.344
+	title = news.344.t
+	desc = news.344.d
+	picture = GFX_news_event_moria_overrun
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.344.a
+	}
+}
+
+# Boromir Dies trying to steal ring
+news_event = {
+	id = news.343
+	title = news.343.t
+	desc = news.343.d
+	picture = GFX_news_event_boromir_dead
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.343.a
+	}
+}
+
+# Grima Killed
+news_event = {
+	id = news.342
+	title = news.342.t
+	desc = news.342.d
+	picture = GFX_news_event_roh_grima_exiled
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.342.a
+	}
+}
+
+# Grima Exiled
+news_event = {
+	id = news.341
+	title = news.341.t
+	desc = news.341.d
+	picture = GFX_news_event_roh_grima_exiled
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.341.a
+	}
+}
+
+# Theodred dies from unknown causes
+news_event = {
+	id = news.340
+	title = news.340.t
+	desc = news.340.d
+	picture = GFX_news_event_roh_theodred_dead
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.340.a
+	}
+}
+
+# Theoden dies from desease
+news_event = {
+	id = news.339
+	title = news.339.t
+	desc = news.339.d
+	picture = GFX_news_event_roh_theoden_dead
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.339.a
+	}
+}
+
+# Grima Eowyn wedding
+news_event = {
+	id = news.338
+	title = news.338.t
+	desc = news.338.d
+	picture = GFX_news_event_roh_grima_eowyn_marriage
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.338.a
+	}
+}
+
+# Theoden becomes ill
+news_event = {
+	id = news.337
+	title = news.337.t
+	desc = news.337.d
+	picture = GFX_news_event_roh_theoden_ill
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.337.a
+	}
+}
+
+# Theodred dies
+news_event = {
+	id = news.336
+	title = news.336.t
+	desc = news.336.d
+	picture = GFX_news_event_roh_theodred_dead
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.336.a
+	}
+}
+
+# Saruman denounces Rohan
+news_event = {
+	id = news.335
+	title = news.335.t
+	desc = news.335.d
+	picture = GFX_news_event_saruman
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.335.a
+	}
+}
+
+# Gandalf and Saruman announce Alliance
+news_event = {
+	id = news.334
+	title = news.334.t
+	desc = news.334.d
+	picture = GFX_news_event_gandalf_saruman_alliance
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.334.a
+	}
+}
+
+# Gandalf imprisoned by Saruman
+news_event = {
+	id = news.333
+	title = news.333.t
+	desc = news.333.d
+	picture = GFX_news_event_gandalf_saruman_fight
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.333.a
+	}
+}
+
+# Elrond holds council
+news_event = {
+	id = news.332
+	title = news.332.t
+	desc = news.332.d
+	picture = GFX_news_event_council_of_elrond
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.332.a
+	}
+}
+
+# Bilbo disappears
+news_event = {
+	id = news.331
+	title = news.331.t
+	desc = news.331.d
+	picture = GFX_news_event_bilbo
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = news.331.a
+
+		custom_effect_tooltip = news.331.a.tt
+	}
+}

@@ -1,0 +1,45 @@
+capital = 149
+
+oob = "CAR_1936"
+
+recruit_character = CAR_odbur
+recruit_character = CAR_rickarl
+recruit_character = CAR_heorfald
+recruit_character = CAR_roddac
+recruit_character = CAR_arnond
+recruit_character = ART_barliman_butterbur_car
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	basic_cav = 1
+	gw_artillery = 1
+	horse_drawn_infantry = 1
+	tech_recon = 1
+	tech_support = 1
+	trade_caravan = 1
+	rangers = 1
+}
+
+add_ideas = {
+	free_trade
+}
+
+set_research_slots = 2
+
+add_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past_trade }
+add_opinion_modifier = { target = ANG modifier = ANG_enemy_of_the_past }
+
+set_politics = {
+	ruling_party = unaligned
+	last_election = "1934.2.11"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	cooperative = 38
+	belligerent = 0
+	revolutionary = 2
+	unaligned = 60
+}

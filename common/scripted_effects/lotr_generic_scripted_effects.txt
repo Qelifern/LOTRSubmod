@@ -1,0 +1,605 @@
+
+
+
+
+
+# @docs(Generic): Retires a character, shows '[Character] dies' as a tooltip
+lotr_kill_character = {
+    custom_effect_tooltip = kill_character_tt
+    hidden_effect = {
+        set_character_flag = is_dead
+        retire = yes
+        on_character_killed = yes
+    }
+}
+
+# @docs(Generic): Retires a character
+lotr_retire_character = {
+    set_character_flag = is_retired
+    retire = yes
+    hidden_effect = {
+        on_character_retired = yes   
+    }
+}
+
+
+# @docs(Generic): Pseudo-Retire a character, without removing them from the leader-pool
+lotr_pseudo_retire_character = {
+    effect_tooltip = {
+        retire = yes
+    }
+    set_character_flag = is_retired
+    hidden_effect = {
+        on_character_retired = yes   
+    }
+}
+
+
+# @docs(Generic): A pseudo on-action that gets called whenever a character dies via the kill_character effect.
+on_character_killed = {
+
+    # Deal with Rohan Lords
+    if = {
+        limit = { rohan_lords_is_horselord = yes }
+        ROH = {
+            rohan_lords_replace_characters_on_death = yes
+        }
+    }
+}
+
+
+# @docs(Generic): A pseudo on-action that gets called whenever a character is retired
+on_character_retired = {
+
+    # Deal with Rohan Lords
+    if = {
+        limit = { rohan_lords_is_horselord = yes }
+        ROH = {
+            rohan_lords_replace_characters_on_retired = yes
+        }
+    }
+}
+
+
+# @docs(Generic): ROOT steals a technology from THIS
+give_steal_tech_from_country = {
+    ROOT = {
+        steal_random_tech_bonus = {
+            category = lotr_infantry
+            category = lotr_support_tech
+            category = lotr_cavalry
+            category = lotr_machines
+            category = lotr_knowledge
+            category = lotr_labour
+            category = lotr_sailing
+
+            ahead_reduction = 0.8
+            bonus = 1.2
+            base_bonus = 1.1
+            dynamic = yes
+            name = stolen_tech_bonus
+            target = PREV
+            uses = 2
+        }
+    }
+}
+
+# @docs(Generic): ROOT gets 20% intel in all categories on THIS
+give_intel_on_country = {
+    ROOT = {
+        add_intel = {
+            target = PREV
+            civilian_intel = 20
+            army_intel = 20
+            navy_intel = 20
+            airforce_intel = 20
+        }
+    }
+}
+
+
+# @docs(Generic): Increase a country's levies law with no pre-requisite checks
+increase_levies = {
+    if = { limit = { has_idea = no_standing_army } swap_ideas = { add_idea = priviledged_service remove_idea = no_standing_army } }
+    else_if = { limit = { has_idea = priviledged_service } swap_ideas = { add_idea = volunteer_service remove_idea = priviledged_service } }
+    else_if = { limit = { has_idea = volunteer_service } swap_ideas = { add_idea = limited_levy remove_idea = volunteer_service } }
+    else_if = { limit = { has_idea = limited_levy } swap_ideas = { add_idea = extensive_levy remove_idea = limited_levy } }
+    else_if = { limit = { has_idea = limited_levy } swap_ideas = { add_idea = mass_levy remove_idea = limited_levy } }
+}
+
+# @docs(Generic): Increase a country's centralization law with no pre-requisite checks
+increase_centralization = {
+    if = { limit = { has_idea = no_centralization } swap_ideas = { add_idea = weak_centralization remove_idea = no_centralization } }
+    else_if = { limit = { has_idea = weak_centralization } swap_ideas = { add_idea = moderate_centralization remove_idea = weak_centralization } }
+    else_if = { limit = { has_idea = moderate_centralization } swap_ideas = { add_idea = strong_centralization remove_idea = moderate_centralization } }
+    else_if = { limit = { has_idea = strong_centralization } swap_ideas = { add_idea = very_strong_centralization remove_idea = strong_centralization } }
+    else = { add_political_power = 150 }
+}
+
+# @docs(Generic): Decrease a country's centralization law with no pre-requisite checks
+decrease_centralization = {
+    if = { limit = { has_idea = weak_centralization } swap_ideas = { remove_idea = weak_centralization add_idea = no_centralization } }
+    else_if = { limit = { has_idea = moderate_centralization } swap_ideas = { remove_idea = moderate_centralization add_idea = weak_centralization } }
+    else_if = { limit = { has_idea = strong_centralization } swap_ideas = { remove_idea = strong_centralization add_idea = moderate_centralization } }
+    else_if = { limit = { has_idea = very_strong_centralization } swap_ideas = { remove_idea = very_strong_centralization add_idea = strong_centralization } }
+    else = { add_political_power = 100 }
+}
+
+# @docs(Generic): Adds a building slot and civilian factory to a state
+add_building_slot_and_civ = {
+    add_extra_state_shared_building_slots = 1
+    add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+}
+
+# @docs(Generic): Adds a building slot and military factory to a state
+add_building_slot_and_mil = {
+    add_extra_state_shared_building_slots = 1
+    add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+}
+
+# @docs(Generic): Adds 2 building slots and civilian factories to a state
+add_building_slot_and_civ_x2 = {
+    add_extra_state_shared_building_slots = 2
+    add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+}
+
+# @docs(Generic): Adds 2 building slots and military factories to a state
+add_building_slot_and_mil_x2 = {
+    add_extra_state_shared_building_slots = 2
+    add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+}
+
+# @docs(Generic): Adds 3 building slots and civilian factories to a state
+add_building_slot_and_civ_x3 = {
+    add_extra_state_shared_building_slots = 3
+    add_building_construction = { type = industrial_complex level = 3 instant_build = yes }
+}
+
+# @docs(Generic): Adds 3 building slots and military factories to a state
+add_building_slot_and_mil_x3 = {
+    add_extra_state_shared_building_slots = 3
+    add_building_construction = { type = arms_factory level = 3 instant_build = yes }
+}
+
+# @docs(Generic): Adds 4 building slots and civilian factories to a state
+add_building_slot_and_civ_x4 = {
+    add_extra_state_shared_building_slots = 4
+    add_building_construction = { type = industrial_complex level = 4 instant_build = yes }
+}
+
+# @docs(Generic): Adds 4 building slots and military factories to a state
+add_building_slot_and_mil_x4 = {
+    add_extra_state_shared_building_slots = 4
+    add_building_construction = { type = arms_factory level = 4 instant_build = yes }
+}
+
+# @docs(Moria): Kill/Retire the Durin's Bane character (Does not remove the state modifiers)
+kill_durins_bane = {
+    MOA = { MOA_bane = { lotr_kill_character = yes } }
+    hidden_effect = {
+        set_global_flag = durins_bane_dead
+        MOC = { MOC_bane = { retire = yes } }
+        news_event = { id = news.393 days = 7 }
+    }
+}
+
+# @docs(Moria): Remove the "Loose Balrog" state modifiers from moria
+remove_durins_bane_from_moria = {
+    73 = { remove_dynamic_modifier = { modifier = moria_loose_balrog } }
+    134 = { remove_dynamic_modifier = { modifier = moria_loose_balrog } }
+}
+
+# @docs(Generic): Add a building slot and civilian factory to a random controlled state
+random_state_add_building_slot_and_civ = {
+    random_controlled_state = {
+        custom_effect_tooltip = random_state_add_building_slot_and_civ_tt
+        hidden_effect = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+        }
+    }
+}
+
+# @docs(Generic): Add a building slot and military factory to a random controlled state
+random_state_add_building_slot_and_mil = {
+    random_controlled_state = {
+        custom_effect_tooltip = random_state_add_building_slot_and_mil_tt
+        hidden_effect = {
+            add_extra_state_shared_building_slots = 1
+            add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+        }
+    }
+}
+
+# @docs(Generic): Add a building slot and dockyard factory to a random controlled state
+random_state_add_building_slot_and_doc = {
+    random_controlled_state = {
+        limit = { is_coastal = yes }
+        custom_effect_tooltip = random_state_add_building_slot_and_doc_tt
+        hidden_effect = {
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = { type = dockyard level = 1 instant_build = yes }
+        }
+    }
+}
+
+# @docs(Generic): Add 2 building slots and civilian factories to a random controlled state
+random_state_add_building_slot_and_civ_x2 = {
+    random_controlled_state = {
+        custom_effect_tooltip = random_state_add_building_slot_and_civ_x2_tt
+        hidden_effect = {
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+        }
+    }
+}
+
+# @docs(Generic): Add 2 building slots and military factories to a random controlled state
+random_state_add_building_slot_and_mil_x2 = {
+    random_controlled_state = {
+        custom_effect_tooltip = random_state_add_building_slot_and_mil_x2_tt
+        hidden_effect = {
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+        }
+    }
+}
+
+# @docs(Generic): Add 2 building slots and dockyard factories to a random controlled state
+random_state_add_building_slot_and_doc_x2 = {
+    random_controlled_state = {
+        limit = { is_coastal = yes }
+        custom_effect_tooltip = random_state_add_building_slot_and_doc_x2_tt
+        hidden_effect = {
+            add_extra_state_shared_building_slots = 2
+            add_building_construction = { type = dockyard level = 2 instant_build = yes }
+        }
+    }
+}
+
+# @docs(Generic): Add 3 building slots and civilian factories to a random controlled state
+random_state_add_building_slot_and_civ_x3 = {
+    random_controlled_state = {
+        custom_effect_tooltip = random_state_add_building_slot_and_civ_x3_tt
+        hidden_effect = {
+            add_extra_state_shared_building_slots = 3
+            add_building_construction = { type = industrial_complex level = 3 instant_build = yes }
+        }
+    }
+}
+
+# @docs(Generic): Add 3 building slots and military factories to a random controlled state
+random_state_add_building_slot_and_mil_x3 = {
+    random_controlled_state = {
+        custom_effect_tooltip = random_state_add_building_slot_and_mil_x3_tt
+        hidden_effect = {
+            add_extra_state_shared_building_slots = 3
+            add_building_construction = { type = arms_factory level = 3 instant_build = yes }
+        }
+    }
+}
+
+# @docs(Generic): Add 3 building slots and dockyard factories to a random controlled state
+random_state_add_building_slot_and_doc_x3 = {
+    random_controlled_state = {
+        limit = { is_coastal = yes }
+        custom_effect_tooltip = random_state_add_building_slot_and_doc_x3_tt
+        hidden_effect = {
+            add_extra_state_shared_building_slots = 3
+            add_building_construction = { type = dockyard level = 3 instant_build = yes }
+        }
+    }
+}
+
+# @docs(Generic): Add 4 building slots and civilian factories to a random controlled state
+random_state_add_building_slot_and_civ_x4 = {
+    random_controlled_state = {
+        custom_effect_tooltip = random_state_add_building_slot_and_civ_x4_tt
+        hidden_effect = {
+            add_extra_state_shared_building_slots = 4
+            add_building_construction = { type = industrial_complex level = 4 instant_build = yes }
+        }
+    }
+}
+
+# @docs(Generic): Add 4 building slots and military factories to a random controlled state
+random_state_add_building_slot_and_mil_x4 = {
+    random_controlled_state = {
+        custom_effect_tooltip = random_state_add_building_slot_and_mil_x4_tt
+        hidden_effect = {
+            add_extra_state_shared_building_slots = 4
+            add_building_construction = { type = arms_factory level = 4 instant_build = yes }
+        }
+    }
+}
+
+# @docs(Generic): Add 4 building slots and dockyard factories to a random controlled state
+random_state_add_building_slot_and_doc_x4 = {
+    random_controlled_state = {
+        limit = { is_coastal = yes }
+        custom_effect_tooltip = random_state_add_building_slot_and_doc_x4_tt
+        hidden_effect = {
+            add_extra_state_shared_building_slots = 4
+            add_building_construction = { type = dockyard level = 4 instant_build = yes }
+        }
+    }
+}
+
+# @docs(Generic): Send and event to a country inviting them to form a non-aggression pact
+invite_to_non_aggession_pact = {
+    country_event = { id = lotr_generic.13 days = 1 }
+}
+
+# @docs(Generic): Send and event to a country inviting them to your faction
+invite_to_faction = {
+    country_event = { id = lotr_generic.11 days = 1 }
+}
+
+# @docs(Generic): Send and event to a country asking to join their faction
+ask_to_join_faction = {
+    country_event = { id = lotr_generic.8 days = 1 }
+}
+
+# @docs(Generic): Temporarily store the ideologies of ROOT. You can use `restore_ideologies_post_puppeting` to restore said ideologies after being puppeted.
+store_ideologies_before_puppeting = {
+    get_current_ideology_popularities = yes
+    get_current_ruling_party = yes
+}
+
+# @docs(Generic): Restore the ideologies of ROOT that it had *before* being puppeted. You have to run `store_ideologies_before_puppeting` before.
+restore_ideologies_post_puppeting = {
+    # if this is run the same frame as store_ideologies the game crashes, that's why we do it next frame through a hidden event
+    ROOT = { country_event = { id = generic.26 hours = 1 } }
+}
+
+get_current_ideology_popularities = {
+    set_variable = { ROOT.revo_support_before_change = ROOT.party_popularity_100@revolutionary }
+    set_variable = { ROOT.coop_support_before_change = ROOT.party_popularity_100@cooperative }
+    set_variable = { ROOT.bell_support_before_change = ROOT.party_popularity_100@belligerent }
+    set_variable = { ROOT.unal_support_before_change = ROOT.party_popularity_100@unaligned }
+}
+get_current_ruling_party = {
+    set_variable = { ROOT.ruling_ideology_before_change = ROOT.current_party_ideology_group }
+}
+
+restore_ideology_popularities = {
+    hidden_effect = {
+        # Reset popluarities to what they were before puppeting 
+        set_popularities = {
+            revolutionary = ROOT.revo_support_before_change
+            cooperative = ROOT.coop_support_before_change
+            belligerent = ROOT.bell_support_before_change
+            unaligned = ROOT.unal_support_before_change
+        }
+        clear_variable = ROOT.revo_support_before_change
+        clear_variable = ROOT.coop_support_before_change
+        clear_variable = ROOT.bell_support_before_change
+        clear_variable = ROOT.unal_support_before_change
+    }
+}
+restore_ruling_party = {
+    ROOT = {
+        set_politics = {
+            ruling_party = var:ROOT.ruling_ideology_before_change
+            #ruling_party = revolutionary
+        }
+        clear_variable = ROOT.ruling_ideology_before_change
+    }
+}
+
+# @docs(Generic): reduces tax-law to low (unless it is none) and disallows a higher tax law
+disallow_medium_and_low_taxes = {
+    if = { limit = { has_idea = medium_taxes } swap_ideas = { remove_idea = medium_taxes add_idea = low_taxes } }
+    if = { limit = { has_idea = high_taxes } swap_ideas = { remove_idea = high_taxes add_idea = low_taxes } }
+    custom_effect_tooltip = "disallow_medium_and_low_taxes_tt"
+    set_country_flag = medium_and_low_taxes_not_allowed
+}
+
+# @docs(Generic): reduces tax-law to low (unless it is none) and disallows a higher tax law for a year
+disallow_medium_and_low_taxes_1y = {
+    if = { limit = { has_idea = medium_taxes } swap_ideas = { remove_idea = medium_taxes add_idea = low_taxes } }
+    if = { limit = { has_idea = high_taxes } swap_ideas = { remove_idea = high_taxes add_idea = low_taxes } }
+    custom_effect_tooltip = "disallow_medium_and_low_taxes_1y_tt"
+    set_country_flag = {
+        flag = medium_and_low_taxes_not_allowed
+        days = 370
+    }
+}
+
+# @docs(Generic): ROOT sends a delegation to THIS, giving them three options to respond
+send_delegation_to_country = {
+    custom_effect_tooltip = send_delegation_to_country_tt
+    hidden_effect = {
+        country_event = { id = lotr_generic.6 days = 1 }
+    }
+}
+
+# @docs(Generic): Remove all collaboration other countries have on ROOT
+remove_all_collaboration = {
+    custom_effect_tooltip = remove_all_collaboration_tt
+    hidden_effect = {
+        every_country = {
+            limit = { has_collaboration = { target = ROOT value > 0 } }
+            set_collaboration = {
+                target = ROOT
+                value = 0
+            }
+        }
+    }
+}
+
+# @docs(Generic): The current scrope receives a number of fake intel divisions, which are dissolved automatically after ~120 days
+create_fake_divisions = {
+    ROOT = {
+        hidden_effect = {
+            if = {
+                # create template if not exist
+                limit = {
+                    not = {
+                        has_country_flag = fake_intel_template_created
+                    }
+                }
+                division_template = {
+                    name = "Fake Intel Division"
+
+                    is_fake_intel_division = yes
+                    is_locked = yes
+                    regiments = {
+                        fake_intel_unit = { x = 0 y = 0 }
+                    }
+                }
+                set_country_flag = fake_intel_template_created
+            }
+
+            # give it an id and store id & current date so it can be deleted later
+            if = {
+                limit = { NOT = { has_variable = fake_intel_id } }
+                set_variable = { fake_intel_id = 1000 }
+            }
+            set_temp_variable = { id_to_set = fake_intel_id }
+            add_to_variable = { fake_intel_id = 1 }
+            add_to_array = {
+                fake_intel_ids_to_delete = id_to_set
+            }
+            set_variable = { num_days_for_fake_intel_id@var:id_to_set = global.num_days }
+
+            # minimum of 0.25 of current armies or 8
+            set_temp_variable = { num_to_create = num_armies }
+            multiply_temp_variable = { num_to_create = 0.25 }
+            round_temp_variable = num_to_create
+            add_to_temp_variable = { num_to_create = 1 }
+            clamp_temp_variable = {
+                var = num_to_create
+                min = 8
+            }
+
+            # create actual units
+            capital_scope = {
+                create_unit = {
+                    division = "division_template = \"Fake Intel Division\" start_experience_factor = 0.5"
+                    owner = PREV
+                    count = num_to_create
+                    id = id_to_set
+                }
+            }
+
+            # will delete them after 90 days
+            country_event = { id = lar_fake_intel_units.1 days = 120 random_days = 30 }
+        }
+    }
+    custom_effect_tooltip = CUSTOM_EFFECT_CREATE_FAKE_ARMIES_RESULT
+}
+
+# Non-generic variant of the effect above
+sp_mirror_image_create_fake_divisions = {
+    ROOT = {
+        hidden_effect = {
+            if = {
+                # create template if not exist
+                limit = {
+                    not = {
+                        has_country_flag = fake_intel_template_created
+                    }
+                }
+                division_template = {
+                    name = "Fake Intel Division"
+
+                    is_fake_intel_division = yes
+                    is_locked = yes
+                    regiments = {
+                        fake_intel_unit = { x = 0 y = 0 }
+                    }
+                }
+                set_country_flag = fake_intel_template_created
+            }
+
+            # give it an id and store id & current date so it can be deleted later
+            if = {
+                limit = { NOT = { has_variable = fake_intel_id } }
+                set_variable = { fake_intel_id = 1000 }
+            }
+            set_temp_variable = { id_to_set = fake_intel_id }
+            add_to_variable = { fake_intel_id = 1 }
+            add_to_array = {
+                fake_intel_ids_to_delete = id_to_set
+            }
+            set_variable = { num_days_for_fake_intel_id@var:id_to_set = global.num_days }
+
+            # minimum of 0.25 of current armies or 8
+            set_temp_variable = { num_to_create = num_armies }
+
+            if = {
+                limit = { has_country_flag = sp_mirror_image_increase_amount }
+                multiply_temp_variable = { num_to_create = 0.35 }
+            }
+            else = {
+                multiply_temp_variable = { num_to_create = 0.25 }
+            }
+
+            round_temp_variable = num_to_create
+            add_to_temp_variable = { num_to_create = 1 }
+
+            if = {
+                limit = { has_country_flag = sp_mirror_image_increase_amount }
+                clamp_temp_variable = { var = num_to_create min = 15 }
+            }
+            else = {
+                clamp_temp_variable = { var = num_to_create min = 10 }
+            }
+
+            # create actual units
+            capital_scope = {
+                create_unit = {
+                    division = "division_template = \"Fake Intel Division\" start_experience_factor = 0.5"
+                    owner = PREV
+                    count = num_to_create
+                    id = id_to_set
+                }
+            }
+
+            # will delete them after 90 days
+            if = {
+                limit = {
+                     has_variable = sp_mirror_image_duration
+                }
+                country_event = { id = lar_fake_intel_units.1 days = sp_mirror_image_duration random_days = 30 }
+            }
+            else = {
+                country_event = { id = lar_fake_intel_units.1 days = 120 random_days = 30 }
+            }
+        }
+    }
+    custom_effect_tooltip = CUSTOM_EFFECT_CREATE_FAKE_ARMIES_RESULT
+}
+
+# @docs(Generic): Add 10% popularity to the ruling party of THIS
+add_ruling_party_support = {
+    IF = {
+        limit = { has_government = unaligned }
+        add_popularity = {
+            ideology = unaligned #these do not take FROM/ROOTs/var:actor_country
+            popularity = 0.1
+        }
+    }
+    ELSE_IF = {
+        limit = { has_government = revolutionary }
+        add_popularity = {
+            ideology = revolutionary #these do not take FROM/ROOTs/var:actor_country
+            popularity = 0.1
+        }
+    }
+    ELSE_IF = {
+        limit = { has_government = cooperative }
+        add_popularity = {
+            ideology = cooperative #these do not take FROM/ROOTs/var:actor_country
+            popularity = 0.1
+        }
+    }
+    ELSE_IF = {
+        limit = { has_government = belligerent }
+        add_popularity = {
+            ideology = belligerent #these do not take FROM/ROOTs/var:actor_country
+            popularity = 0.1
+        }
+    }
+}

@@ -1,0 +1,27 @@
+# Some advisors need certain variables updated regularly. We do this in a scripted effect which we trigger on a weekly basis from here.
+
+
+on_actions = {
+	
+	on_weekly  = {
+
+		effect = {
+
+			# To modify additional vars on a weekly basis, head on over to common/scripted_effects/00_lotr_advisors(...).txt
+			lotr_advisors_update_vars_weekly = yes
+
+		}
+
+	}
+
+	on_monthly = {
+		effect = {
+			if = {
+				limit = { has_idea_with_trait = political_schemer }
+				set_temp_variable = { pp_bonus_temp = num_of_operatives }
+				multiply_temp_variable = { pp_bonus_temp = 10 }
+				add_political_power = pp_bonus_temp
+			}
+		}
+	}
+}

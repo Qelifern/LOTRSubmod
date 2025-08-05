@@ -1,0 +1,25 @@
+
+
+
+# @docs(Eagles): checks if THIS is under the maximum cap for eagles/fellbeasts
+can_produce_eagles = {
+	set_temp_variable = {
+		eagle_count = var:num_deployed_planes 
+	}
+	add_to_temp_variable = {
+		eagle_count = var:num_equipment@archetype_generic_airframe
+	}
+	check_variable = {
+		eagle_count < lotr_max_eagle_count
+	}
+}
+
+# @docs(Eagles): THIS has unlocked any of the techs or special projects allowing them to build air units
+has_eagle_tech = {
+	OR = {
+		has_tech = eagle_domestication
+		has_tech = eagle_domestication_men
+		has_tech = fellbeast_domestication
+		is_special_project_completed = sp:sp_eagle_domestication
+	}
+}

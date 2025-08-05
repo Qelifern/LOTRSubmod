@@ -1,0 +1,265 @@
+division_template = {
+	name = "Infantry Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+		infantry = { x = 3 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "Scout Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+	}
+}
+division_template = {
+	name = "Light Oliphant Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		light_cavalry = { x= 2 y = 0 }
+		light_cavalry = { x= 2 y = 1 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+division_template = {
+	name = "Cavalry Division"
+	regiments = {
+		light_cavalry = { x = 0 y = 0 }
+		light_cavalry = { x = 0 y = 1 }
+		light_cavalry = { x = 0 y = 2 }
+		light_cavalry = { x = 1 y = 0 }
+		light_cavalry = { x = 1 y = 1 }
+		light_cavalry = { x = 1 y = 2 }
+	}
+}
+
+
+##### OOB #####
+units = {
+
+	division = {
+		name = "Khand Nomads"
+		location = 7507
+		division_template = "Scout Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Khand Nomads"
+		location = 7338
+		division_template = "Scout Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Khand Nomads"
+		location = 7398
+		division_template = "Scout Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Khand Nomads"
+		location = 7507
+		division_template = "Scout Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Khand Nomads"
+		location = 7600
+		division_template = "Scout Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "Umbar Regiment"
+		location = 1332
+		division_template = "Infantry Division"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+	}
+	division = {
+		name = "Umbar Regiment"
+		location = 7590
+		division_template = "Infantry Division"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
+	}
+	division = {
+		name = "Umbar Regiment"
+		location = 5283
+		division_template = "Infantry Division"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+	}
+	division = {
+		name = "First Mûmakil Battalion"
+		location = 962
+		division_template = "Light Oliphant Division"
+		start_experience_factor = 1.0
+		start_equipment_factor = 0.8
+	}
+	division = {
+		name = "Mûmakil Battalion"
+		location = 221
+		division_template = "Light Oliphant Division"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.5
+	}
+	division = {
+		name = "Mûmakil Battalion"
+		location = 399
+		division_template = "Light Oliphant Division"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.7
+	}
+	division = {
+		name = "Cavalry Division"
+		location = 4322
+		division_template = "Cavalry Division"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.4
+	}
+	division = {
+		name = "Cavalry Division"
+		location = 7600
+		division_template = "Cavalry Division"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.3
+	}
+
+
+
+	navy = {
+		name = "Pellardur Pirates"
+		base = 7678
+		location = 7678
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+	}
+
+	navy = {
+		name = "Umbar Flotilla"
+		base = 4898
+		location = 4898
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+	}
+
+	navy = {
+		name = "Harondor Fleet"
+		base = 4359
+		location = 4359
+		ship = { definition = galley equipment = { galley_hull_1 = {amount = 1 owner = HAR} } }
+		ship = { definition = galley equipment = { galley_hull_1 = {amount = 1 owner = HAR} } }
+		ship = { definition = galley equipment = { galley_hull_1 = {amount = 1 owner = HAR} } }
+		ship = { definition = galley equipment = { galley_hull_1 = {amount = 1 owner = HAR} } }
+		ship = { definition = galley equipment = { galley_hull_1 = {amount = 1 owner = HAR} } }
+		ship = { definition = galley equipment = { galley_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = galley equipment = { galley_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = galley equipment = { galley_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = galley equipment = { galley_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+		ship = { definition = longship equipment = { longship_hull_0 = {amount = 1 owner = HAR} } }
+	}
+
+}
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect =
+{
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_0
+			creator = "HAR"
+		}
+		requested_factories = 3
+		progress = 0.1
+		efficiency = 20
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "HAR"
+		}
+		requested_factories = 1
+		progress = 0.3
+		efficiency = 15
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "HAR"
+		}
+		requested_factories = 1
+		progress = 0.4
+		efficiency = 30
+	}
+	add_equipment_production = {
+			equipment = {
+				type = light_cavalry_chassis_1
+				creator = "HAR"
+			}
+			requested_factories = 1
+			progress = 0.35
+			efficiency = 100
+		}
+
+
+		add_equipment_production = {
+			equipment = {
+				type = galley_hull_1
+				creator = "HAR"
+			}
+			requested_factories = 1
+			progress = 0.7
+			amount = 1
+		}
+		add_equipment_production = {
+			equipment = {
+				type = longship_hull_0
+				creator = "HAR"
+			}
+			requested_factories = 1
+			progress = 0.7
+			amount = 5
+		}
+}

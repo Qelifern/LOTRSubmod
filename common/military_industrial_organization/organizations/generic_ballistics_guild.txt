@@ -1,0 +1,408 @@
+generic_ballistics_guild = {
+	icon = GFX_mio_generic_3
+	name = ballistics_guild
+
+	allowed = {
+		always = no
+	}
+
+	equipment_type = {
+		lotr_equipment_crossbow
+		lotr_equipment_bow
+		lotr_equipment_windlance
+		lotr_equipment_ballista
+	}
+	research_categories = {
+		lotr_infantry_archery
+		lotr_machines_ballista
+		lotr_machines_windlance
+	}
+	
+	tree_header_text = {
+		text = weapons
+		x = 1
+	}
+
+	tree_header_text = {
+		text = methodology
+		x = 6
+	}
+
+	tree_header_text = {
+		text = standardization
+		x = 9
+	}
+
+	initial_trait = {
+		name = ballistics_specialization
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+
+		production_bonus = {
+			production_cost_factor = -0.03
+		}
+	}
+
+	trait = {
+		token = shortbow_specialization
+		name = shortbow_specialization
+
+		# archers speed and supply consumption and other stuff
+		limit_to_equipment_type = { lotr_equipment_bow }
+		equipment_bonus = {
+			supply_consumption_factor = -0.05
+			maximum_speed = 0.05
+		}
+
+		icon = GFX_generic_mio_trait_archer
+		position = { x=0 y=0 }
+	}
+
+	trait = {
+		token = reinforced_limbs
+		name = reinforced_limbs
+		any_parent = { shortbow_specialization }
+
+		# Add reliability and other stuff
+		equipment_bonus = {
+			reliability = 0.03
+			soft_attack = 0.02
+			hard_attack = 0.02
+		}
+		# more resource and production cost
+		production_bonus = {
+			production_resource_need_factor = 0.03
+		}
+
+		relative_position_id = shortbow_specialization
+
+		icon = GFX_generic_mio_trait_icon_armor_value
+		position = { x=0 y=1 }
+	}
+
+	trait = {
+		token = key_ring_trigger
+		name = key_ring_trigger
+		any_parent = { reinforced_limbs }
+
+		relative_position_id = shortbow_specialization
+
+		# more soft attack, more training time
+		equipment_bonus = {
+			reliability = -0.02
+			soft_attack = 0.02
+			hard_attack = 0.02
+		}
+
+		mutually_exclusive = { master_fletching }
+
+		icon = GFX_generic_mio_keyring
+		position = { x=0 y=2 }
+	}
+
+	trait = {
+		token = agility_training
+		name = agility_training
+		any_parent = { key_ring_trigger }
+
+		relative_position_id = shortbow_specialization
+
+		# add speed, lower combat width, increase training time
+		equipment_bonus = {
+			maximum_speed = 0.05
+		}
+
+		icon = GFX_generic_mio_trait_icon_air_agility
+		position = { x=0 y=4 }
+	}
+
+	trait = {
+		token = longbow_specialization
+		name = longbow_specialization
+		
+		mutually_exclusive = { crossbow_specialization }
+
+		limit_to_equipment_type = { lotr_equipment_bow }
+
+		# add SA and HA
+		equipment_bonus = {
+			soft_attack = 0.05
+		}
+
+		icon = GFX_generic_mio_trait_archer
+		position = { x=1 y=0 }
+	}
+
+	trait = {
+		token = silent_draw
+		name = silent_draw
+		any_parent = { longbow_specialization }
+
+		relative_position_id = longbow_specialization
+
+		limit_to_equipment_type = { lotr_equipment_bow }
+
+		# increase org, decrease SA
+		equipment_bonus = {
+			soft_attack = 0.03
+		}
+
+		icon = GFX_generic_mio_trait_bow
+		position = { x=0 y=1 }
+	}
+
+	trait = {
+		token = master_fletching
+		name = master_fletching
+		any_parent = { silent_draw }
+
+		relative_position_id = longbow_specialization
+
+		# increase piercing and HA
+		equipment_bonus = {
+			ap_attack = 0.05
+			hard_attack = 0.05
+		}
+
+		mutually_exclusive = { key_ring_trigger }
+
+		icon = GFX_generic_mio_trait_fletching
+		position = { x=0 y=2 }
+	}
+
+	trait = {
+		token = crossbow_specialization
+		name = crossbow_specialization
+		
+		mutually_exclusive = { longbow_specialization }
+
+		limit_to_equipment_type = { lotr_equipment_crossbow }
+
+		# improve everything about crossbows
+		# decrease training time
+		equipment_bonus = {
+			ap_attack = 0.05
+			hard_attack = 0.05
+			soft_attack = 0.05
+		}
+
+		icon = GFX_generic_mio_trait_crossbow_2
+		position = { x=2 y=0 }
+	}
+
+	trait = {
+		token = eagles_eye_construction
+		name = eagles_eye_construction
+		any_parent = { crossbow_specialization }
+
+		limit_to_equipment_type = { lotr_equipment_crossbow }
+
+		relative_position_id = crossbow_specialization
+
+		# increase SA, HA and weight
+		equipment_bonus = {
+			ap_attack = 0.05
+			hard_attack = 0.05
+		}
+
+		icon = GFX_generic_mio_trait_scope
+		position = { x=0 y=1 }
+	}
+
+	trait = {
+		token = plaited_string
+		name = plaited_string
+		any_parent = { eagles_eye_construction master_fletching }
+
+		relative_position_id = crossbow_specialization
+
+		# increase reliability, and attack
+		equipment_bonus = {
+			reliability = 0.02
+			soft_attack = 0.05
+		}
+
+		icon = GFX_generic_mio_trait_string
+		position = { x=0 y=3 }
+	}
+
+	trait = {
+		token = ballistic_methodology
+		name = ballistic_methodology
+
+		# increase research bonus
+		# Add a single-use research bonus to scriptorium
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.15
+		}
+
+		icon = GFX_generic_mio_trait_blueprint
+		position = { x=6 y=0 }
+	}
+
+	trait = {
+		token = trajectory_estimation
+		name = trajectory_estimation
+
+		any_parent = { ballistic_methodology }
+		relative_position_id = ballistic_methodology
+
+		limit_to_equipment_type = { lotr_equipment_ballista lotr_equipment_windlance }
+
+		# ballistas and air-lances: increase all attack
+		equipment_bonus = {
+			hard_attack = 0.05
+			soft_attack = 0.05
+		}
+
+		icon = GFX_generic_mio_trait_icon_naval_range
+		position = { x=0 y=1 }
+	}
+
+	trait = {
+		token = weight_adjustment
+		name = projectile_weight_adjustment
+
+		any_parent = { trajectory_estimation }
+		relative_position_id = ballistic_methodology
+
+		limit_to_equipment_type = { lotr_equipment_ballista lotr_equipment_windlance }
+
+		# decrease weight and supply consumption
+		equipment_bonus = {
+			fuel_consumption = -0.10
+		}
+
+		icon = GFX_generic_mio_trait_icon_weight
+		position = { x=0 y=3 }
+	}
+
+	trait = {
+		token = airborne_projectiles
+		name = airborne_projectiles
+
+		any_parent = { weight_adjustment plaited_string }
+		relative_position_id = ballistic_methodology
+
+		# AA buff
+		limit_to_equipment_type = { lotr_equipment_windlance }
+		equipment_bonus = {
+			air_attack = 0.1
+		}
+
+		icon = GFX_generic_mio_trait_ballista
+		position = { x=-2 y=4 }
+	}
+
+	trait = {
+		token = field_ballistics
+		name = field_ballistics
+
+		any_parent = { trajectory_estimation eagles_eye_construction }
+		relative_position_id = ballistic_methodology
+
+		# Ballista buffs
+		limit_to_equipment_type = { lotr_equipment_ballista }
+		equipment_bonus = {
+			ap_attack = 0.05
+			defense = 0.05
+		}
+
+		icon = GFX_generic_mio_trait_ballista
+		position = { x=-2 y=2 }
+	}
+
+	trait = {
+		token = explosive_arrows_ballista
+		name = explosive_arrows_ballista
+
+		all_parents = { field_ballistics }
+		relative_position_id = field_ballistics
+
+		mutually_exclusive = { piercing_arrows_ballista }
+
+		# Ballista buffs
+		limit_to_equipment_type = { lotr_equipment_ballista }
+		equipment_bonus = {
+			soft_attack = 0.25
+			hard_attack = -0.25
+			ap_attack = -0.25
+		}
+
+		icon = GFX_generic_mio_trait_explosion
+		position = { x=-1 y=1 }
+	}
+
+	trait = {
+		token = piercing_arrows_ballista
+		name = armor_piercing_ballista
+
+		all_parents = { field_ballistics }
+		relative_position_id = field_ballistics
+
+		mutually_exclusive = { explosive_arrows_ballista }
+
+		# Ballista buffs
+		limit_to_equipment_type = { lotr_equipment_ballista }
+		equipment_bonus = {
+			soft_attack = -0.25
+			hard_attack = 0.25
+			ap_attack = 0.25
+		}
+
+		icon = GFX_generic_mio_trait_icon_breakthrough
+		position = { x=1 y=1 }
+	}
+
+	trait = {
+		token = production_standardization
+		name = production_standardization
+
+		# more production speed
+		production_bonus = {
+			production_efficiency_cap_factor = 0.03
+			production_efficiency_gain_factor = 0.03
+		}
+
+		icon = GFX_generic_mio_trait_sword
+		position = { x=9 y=0 }
+	}
+
+	trait = {
+		token = standardize_draw_weight
+		name = standardize_drawweight
+		
+		any_parent = { production_standardization }
+		any_parent = { trajectory_estimation }
+		relative_position_id = production_standardization
+
+		# more production speed gain
+		production_bonus = {
+			production_conversion_speed_factor = 0.03
+			production_cost_factor = -0.03
+		}
+
+		icon = GFX_generic_mio_trait_icon_weight
+		position = { x=0 y=2 }
+	}
+
+	trait = {
+		token = standardize_projectiles
+		name = standardize_projectiles
+		
+		any_parent = { standardize_draw_weight }
+		any_parent = { weight_adjustment }
+		relative_position_id = production_standardization
+
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.33
+			military_industrial_organization_design_team_change_cost = -0.33
+		}
+
+		icon = GFX_generic_mio_trait_icon_weight
+		position = { x=0 y=4 }
+	}
+}
+
