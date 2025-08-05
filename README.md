@@ -2,8 +2,6 @@
 
 
 
-!\[img](https://steamuserimages-a.akamaihd.net/ugc/2014835196556028806/C9F439399E0C57D2F15CBF9E0196E657EB6D2DEC/?imw=637\&imh=358\&ima=fit\&impolicy=Letterbox\&imcolor=%23000000\&letterbox=true) 
-
 
 
 
