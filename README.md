@@ -4,6 +4,10 @@
 
 
 
+\### Submod for https://steamcommunity.com/sharedfiles/filedetails/?id=1314446921
+
+
+
 
 
 --- Additions designed to more accurately mirror the historical events of the War of the Ring.
