@@ -1,0 +1,82 @@
+﻿###########################
+# dolguldur Events
+###########################
+
+add_namespace = dolguldur
+
+
+
+country_event = {
+	id = dolguldur.1
+	title = dolguldur.1.t
+	desc = dolguldur.1.d
+	picture = GFX_report_event_paper
+	
+	is_triggered_only = yes
+	
+	option = { #Accept
+		name = dolguldur.1.a
+		ai_chance = {
+			base = 25
+		}
+
+		MOR = {
+			country_event = dolguldur.2
+		}
+		
+		
+	}
+	option = { #Refuse
+		name = dolguldur.1.b
+		MOR = {
+			country_event = dolguldur.3
+		}
+	}
+}
+
+
+### Dolguldur accepts unification
+country_event = {
+	id = dolguldur.2
+	title = dolguldur.2.t
+	desc = dolguldur.2.d
+	picture = GFX_report_event_paper
+	
+	is_triggered_only = yes
+	
+	option = { #Accept
+		name = dolguldur.2.a
+		ai_chance = {
+			base = 25
+		}
+
+		MOR = {
+			custom_effect_tooltip = MOR_tooltip_adunaphel_returned
+			set_variable = { has_send_adunaphel_away = 0 }
+			annex_country = { target = DGU transfer_troops = yes }
+		}
+		
+		
+	}
+}
+
+### Dolguldur refuses unification
+country_event = {
+	id = dolguldur.3
+	title = dolguldur.3.t
+	desc = dolguldur.3.d
+	picture = GFX_report_event_paper
+	
+	is_triggered_only = yes
+	
+	option = { #Accept
+		name = dolguldur.3.a
+		ai_chance = {
+			base = 25
+		}		
+		
+	}
+}
+
+
+

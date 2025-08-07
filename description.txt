@@ -1,7 +1,7 @@
 ---1.0.0
 !!! Not compatible with any other submod !!!
 
-
+Submod for https://steamcommunity.com/sharedfiles/filedetails/?id=1314446921
 
 --- Additions designed to more accurately mirror the historical events of the War of the Ring.
 - The region known as the Grey Mountains is now a part of the Northern Wastes (alt history. -> with Erebor having focuses to reclaim the Grey Mountains)

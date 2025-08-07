@@ -2658,9 +2658,9 @@ focus = {
 	}
 	cost = 10
 	completion_reward = {
-		custom_effect_tooltip = MOR_tooltip_adunaphel_returned
-		set_variable = { has_send_adunaphel_away = 0 }
-		annex_country = { target = DGU transfer_troops = yes }
+		DGU = {
+			country_event = dolguldur.1
+		}
 	}
 }
 

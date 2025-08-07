@@ -31,7 +31,7 @@ focus_tree = {
 		icon = GFX_goal_mor_dark_dol_guldur_fortress
 		ai_will_do = { factor = 100 }
 		search_filters = { FOCUS_FILTER_POLITICAL }
-		x = 40
+		x = 30
 		y = 0
 		cost = 2
 		available = {
@@ -568,6 +568,10 @@ focus_tree = {
 				}
 				
 			}	
+
+			MOR = {
+				has_government = belligerent
+			}
 			
 		}
 		
@@ -613,9 +617,10 @@ focus_tree = {
 			
 			
 			MOR = {
-				puppet = DGU
+				add_to_faction = DGU
 			}
-			
+
+
 		}
 	}
 
