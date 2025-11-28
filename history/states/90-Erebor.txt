@@ -5,6 +5,7 @@ state={
 	resources={
 		steel=43.000
 		aluminium=5.000
+		coal=40.000
 	}
 
 	history={

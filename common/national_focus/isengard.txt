@@ -704,6 +704,7 @@ focus_tree = {
 			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 15000 producer = ISE }
 			ENT = { country_event = { days = 1 id = entwood.7 } }
 			add_resource = { type = chromium amount = 60 state = 31 }
+			add_resource = { type = coal amount = 60 state = 31 }
 		}
 	}
 

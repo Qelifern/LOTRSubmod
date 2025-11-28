@@ -1,4 +1,4 @@
-version="1.0.0"
+version="1.0.2"
 picture="lotr.png"
 dependencies={
 	"Lord of the Rings Mod"
@@ -14,5 +14,5 @@ tags={
 	"Technologies"
 }
 name="Lord of the Rings Submod"
-supported_version="1.16.9"
+supported_version="1.17.*"
 remote_file_id="3542990050"

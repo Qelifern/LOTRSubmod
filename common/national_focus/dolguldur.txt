@@ -82,6 +82,7 @@ focus_tree = {
 			add_resource = { type = oil amount = 16 state = 87 }
 			add_resource = { type = chromium amount = 18 state = 87 }
 			add_resource = { type = tungsten amount = 2 state = 87 }
+			add_resource = { type = coal amount = 27 state = 87 }
 		}
 	}
 
